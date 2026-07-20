@@ -1,0 +1,8 @@
+SITE DUVAL GRAVURE & DÉCOUPE LASER
+
+POUR L'OUVRIR :
+1. Décompresse le fichier ZIP.
+2. Double-clique sur index.html.
+3. Le site s'ouvrira dans ton navigateur, même sans Internet.
+
+Le site comprend une page d'accueil, une galerie filtrable, un agrandissement des photos, les contacts et une version téléphone.
