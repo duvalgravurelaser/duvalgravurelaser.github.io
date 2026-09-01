@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Version V5 : légendes galerie corrigées le 21/07/2026 -->
+<!-- Version V6 : tarifs + nouvelles créations - 01/09/2026 -->
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -11,215 +11,190 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .price{display:block;margin-top:7px;font-size:1.05rem;font-weight:800;color:#d8b875}
+    .gallery-overlay small.price-note{display:block;margin-top:3px;font-size:.72rem;opacity:.9}
+    .pricing-note{max-width:850px;margin:18px auto 28px;padding:16px 20px;border:1px solid rgba(181,139,73,.35);border-radius:16px;background:rgba(181,139,73,.08);text-align:center}
+    .pricing-note strong{display:block;margin-bottom:3px}
+  </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#accueil"><img src="assets/logo.png" alt="Logo Duval Gravure & Découpe Laser"></a>
-    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-    <nav>
-      <a href="#creations">Créations</a>
-      <a href="#savoir-faire">Savoir-faire</a>
-      <a href="#galerie">Galerie</a>
-      <a href="#reseaux">Réseaux</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header class="topbar">
+  <a class="brand" href="#accueil"><img src="assets/logo.png" alt="Logo Duval Gravure & Découpe Laser"></a>
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <nav><a href="#creations">Créations</a><a href="#savoir-faire">Savoir-faire</a><a href="#galerie">Galerie</a><a href="#reseaux">Réseaux</a><a href="#contact">Contact</a></nav>
+</header>
 
-  <main>
-    <section class="hero" id="accueil">
-      <div class="hero-bg"></div><div class="hero-shade"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Artisan créateur en Aveyron</p>
-        <h1>Des créations qui racontent une histoire.</h1>
-        <p class="hero-subtitle">Créations artisanales en bois & impression 3D, fabriquées en Aveyron.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#galerie">Découvrir mes créations</a>
-          <a class="btn btn-ghost" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet." target="_blank" rel="noopener">Parler de mon projet</a>
-        </div>
-      </div>
-      <a class="scroll-hint" href="#creations" aria-label="Découvrir la suite">↓</a>
-    </section>
-
-    <section class="intro section" id="creations">
-      <div class="section-kicker">Du bois brut à l’objet fini</div>
-      <h2>Une fabrication locale, soignée et originale</h2>
-      <p class="lead">Je conçois et fabrique des objets décoratifs, souvenirs locaux, bijoux en bois et pièces imprimées en 3D. Chaque création est préparée dans mon atelier avec une attention particulière portée aux détails.</p>
-      <div class="categories">
-        <article class="category-card reveal"><span class="icon">◆</span><h3>Souvenirs locaux</h3><p>Porte-clés, magnets et marque-pages inspirés des Gorges du Tarn et de la Jonte.</p></article>
-        <article class="category-card reveal"><span class="icon">✦</span><h3>Décoration</h3><p>Tableaux multicouches, silhouettes murales, prénoms et enseignes.</p></article>
-        <article class="category-card reveal"><span class="icon">◌</span><h3>Bijoux en bois</h3><p>Boucles d’oreilles originales, naturelles ou colorées, découpées avec précision.</p></article>
-        <article class="category-card reveal"><span class="icon">⬡</span><h3>Impression 3D</h3><p>Figurines, objets pratiques et petites séries réalisées avec soin.</p></article>
-      </div>
-    </section>
-
-    <section class="craft section dark-section" id="savoir-faire">
-      <div class="craft-grid">
-        <div class="craft-copy reveal">
-          <div class="section-kicker">Mon savoir-faire</div>
-          <h2>Une idée, un dessin, une création.</h2>
-          <p>Je travaille principalement le bois par gravure et découpe laser, puis j’assemble, colore et termine chaque pièce à la main. L’impression 3D me permet aussi de créer des formes et des objets différents.</p>
-          <ul class="check-list">
-            <li>Fabrication artisanale en Aveyron</li>
-            <li>Créations originales et petites séries</li>
-            <li>Projets pour particuliers et professionnels</li>
-            <li>Travail sur mesure selon la faisabilité</li>
-          </ul>
-        </div>
-        <div class="craft-visual reveal">
-          <img src="assets/hero.webp" alt="Stand de créations artisanales Duval">
-          <div class="stamp">Fabriqué<br>en Aveyron</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="gallery-section section" id="galerie">
-      <div class="section-kicker">Portfolio</div>
-      <h2>Quelques réalisations</h2>
-      <p class="lead">Cliquez sur une photo pour l’agrandir.</p>
-      <div class="filters">
-        <button class="filter active" data-filter="all">Tout</button>
-        <button class="filter" data-filter="tableaux">Tableaux</button>
-        <button class="filter" data-filter="bijoux">Bijoux</button>
-        <button class="filter" data-filter="souvenirs">Souvenirs</button>
-        <button class="filter" data-filter="decoration">Décoration</button>
-        <button class="filter" data-filter="3d">Impression 3D</button>
-      </div>
-      <div class="gallery-grid"><button class="gallery-card reveal" data-category="tableaux" data-title="Collection artisanale" data-image="assets/gallery-01.webp">
-      <img src="assets/gallery-01.webp" alt="Collection artisanale" loading="lazy">
-      <span class="gallery-overlay"><strong>Collection artisanale</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="tableaux" data-title="Les Gorges en bois multicouche" data-image="assets/gallery-02.webp">
-      <img src="assets/gallery-02.webp" alt="Les Gorges en bois multicouche" loading="lazy">
-      <span class="gallery-overlay"><strong>Les Gorges en bois multicouche</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="tableaux" data-title="Tableau vautours des Gorges" data-image="assets/gallery-03.webp">
-      <img src="assets/gallery-03.webp" alt="Tableau vautours des Gorges" loading="lazy">
-      <span class="gallery-overlay"><strong>Tableau vautours des Gorges</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="tableaux" data-title="Tableau famille personnalisé" data-image="assets/gallery-04.webp">
-      <img src="assets/gallery-04.webp" alt="Tableau famille personnalisé" loading="lazy">
-      <span class="gallery-overlay"><strong>Tableau famille personnalisé</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles paysage des Gorges" data-image="assets/gallery-05.webp">
-      <img src="assets/gallery-05.webp" alt="Boucles paysage des Gorges" loading="lazy">
-      <span class="gallery-overlay"><strong>Boucles paysage des Gorges</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles papillons gravées" data-image="assets/gallery-06.webp">
-      <img src="assets/gallery-06.webp" alt="Boucles papillons gravées" loading="lazy">
-      <span class="gallery-overlay"><strong>Boucles papillons gravées</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles lotus en bois" data-image="assets/gallery-07.webp">
-      <img src="assets/gallery-07.webp" alt="Boucles lotus en bois" loading="lazy">
-      <span class="gallery-overlay"><strong>Boucles lotus en bois</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles chats personnalisées" data-image="assets/gallery-08.webp">
-      <img src="assets/gallery-08.webp" alt="Boucles chats personnalisées" loading="lazy">
-      <span class="gallery-overlay"><strong>Boucles chats personnalisées</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Présentoir de porte-clés" data-image="assets/gallery-09.webp">
-      <img src="assets/gallery-09.webp" alt="Présentoir de porte-clés" loading="lazy">
-      <span class="gallery-overlay"><strong>Présentoir de porte-clés</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Porte-clé Les Douzes" data-image="assets/gallery-10.webp">
-      <img src="assets/gallery-10.webp" alt="Porte-clé Les Douzes" loading="lazy">
-      <span class="gallery-overlay"><strong>Porte-clé Les Douzes</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Porte-clé Gorges de la Jonte" data-image="assets/gallery-11.webp">
-      <img src="assets/gallery-11.webp" alt="Porte-clé Gorges de la Jonte" loading="lazy">
-      <span class="gallery-overlay"><strong>Porte-clé Gorges de la Jonte</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="decoration" data-title="Prénoms personnalisés" data-image="assets/gallery-12.webp">
-      <img src="assets/gallery-12.webp" alt="Prénoms personnalisés" loading="lazy">
-      <span class="gallery-overlay"><strong>Prénoms personnalisés</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="decoration" data-title="Prénoms décoratifs multicouches" data-image="assets/gallery-13.webp">
-      <img src="assets/gallery-13.webp" alt="Prénoms décoratifs multicouches" loading="lazy">
-      <span class="gallery-overlay"><strong>Prénoms décoratifs multicouches</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Marque-page vautour Jonte" data-image="assets/gallery-14.webp">
-      <img src="assets/gallery-14.webp" alt="Marque-page vautour Jonte" loading="lazy">
-      <span class="gallery-overlay"><strong>Marque-page vautour Jonte</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="decoration" data-title="Silhouette murale personnalisée" data-image="assets/gallery-15.webp">
-      <img src="assets/gallery-15.webp" alt="Silhouette murale personnalisée" loading="lazy">
-      <span class="gallery-overlay"><strong>Silhouette murale personnalisée</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="decoration" data-title="Décoration de porte animaux" data-image="assets/gallery-16.webp">
-      <img src="assets/gallery-16.webp" alt="Décoration de porte animaux" loading="lazy">
-      <span class="gallery-overlay"><strong>Décoration de porte animaux</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Gypaète imprimé en 3D" data-image="assets/gallery-17.webp">
-      <img src="assets/gallery-17.webp" alt="Gypaète imprimé en 3D" loading="lazy">
-      <span class="gallery-overlay"><strong>Gypaète imprimé en 3D</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Série de vautours en impression 3D" data-image="assets/gallery-18.webp">
-      <img src="assets/gallery-18.webp" alt="Série de vautours en impression 3D" loading="lazy">
-      <span class="gallery-overlay"><strong>Série de vautours en impression 3D</strong><small>Voir en grand</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Collection de vautours 3D" data-image="assets/gallery-19.webp">
-      <img src="assets/gallery-19.webp" alt="Collection de vautours 3D" loading="lazy">
-      <span class="gallery-overlay"><strong>Collection de vautours 3D</strong><small>Voir en grand</small></span>
-    </button></div>
-    </section>
-
-    <section class="quote-section"><div class="quote-inner reveal"><p>« Du bois brut… et quelques minutes plus tard, une création unique. »</p></div></section>
-
-
-    <section class="social-section section" id="reseaux">
-      <div class="social-wrap reveal">
-        <div>
-          <div class="section-kicker">Suivez mon travail</div>
-          <h2>Retrouvez mes nouveautés sur les réseaux</h2>
-          <p>Découvrez les créations en cours, les nouveautés et les coulisses de l’atelier.</p>
-        </div>
-        <div class="social-buttons">
-          <a href="https://www.instagram.com/duval.gravure.laser" target="_blank" rel="noopener">
-            <span class="social-icon">◎</span>
-            <strong>Instagram</strong>
-            <small>@duval.gravure.laser</small>
-          </a>
-          <a href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" target="_blank" rel="noopener">
-            <span class="social-icon">f</span>
-            <strong>Facebook</strong>
-            <small>Duval Gravure & Découpe Laser</small>
-          </a>
-          <a href="https://www.tiktok.com/@duval.gravure.laser" target="_blank" rel="noopener">
-            <span class="social-icon">♪</span>
-            <strong>TikTok</strong>
-            <small>@duval.gravure.laser</small>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact section" id="contact">
-      <div class="contact-card reveal">
-        <div><div class="section-kicker">Une idée en tête ?</div><h2>Parlons de votre projet</h2><p>Pour une création, un cadeau, une petite série ou une demande professionnelle, contactez-moi directement.</p></div>
-        <div class="contact-actions">
-          <a class="contact-link primary" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20un%20devis%20pour..." target="_blank" rel="noopener"><span>WhatsApp</span><strong>Écrire maintenant</strong></a>
-          <a class="contact-link" href="tel:+33788518623"><span>Téléphone</span><strong>07 88 51 86 23</strong></a>
-          <a class="contact-link" href="mailto:anthonyduval4812@outlook.fr"><span>E-mail</span><strong>Envoyer un message</strong></a>
-          <a class="contact-link" href="https://www.instagram.com/duval.gravure.laser/" target="_blank" rel="noopener"><span>Instagram</span><strong>@duval.gravure.laser</strong></a>
-          <a class="contact-link" href="https://www.tiktok.com/@duval.gravure.laser" target="_blank" rel="noopener"><span>TikTok</span><strong>@duval.gravure.laser</strong></a>
-          <a class="contact-link" href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" target="_blank" rel="noopener"><span>Facebook</span><strong>Duval Gravure & Découpe Laser</strong></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <img src="assets/logo.png" alt="">
-    <p>Duval Gravure & Découpe Laser</p>
-    <small>Créations artisanales en bois & impression 3D, fabriquées en Aveyron.</small>
-    <div class="footer-socials">
-      <a href="https://www.instagram.com/duval.gravure.laser" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://www.tiktok.com/@duval.gravure.laser" target="_blank" rel="noopener">TikTok</a>
+<main>
+<section class="hero" id="accueil">
+  <div class="hero-bg"></div><div class="hero-shade"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Artisan créateur en Aveyron</p>
+    <h1>Des créations qui racontent une histoire.</h1>
+    <p class="hero-subtitle">Créations artisanales en bois & impression 3D, fabriquées en Aveyron.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#galerie">Découvrir mes créations</a>
+      <a class="btn btn-ghost" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet." target="_blank" rel="noopener">Parler de mon projet</a>
     </div>
-    <small>© <span id="year"></span> Anthony Duval — Tous droits réservés.</small>
-  </footer>
+  </div>
+  <a class="scroll-hint" href="#creations" aria-label="Découvrir la suite">↓</a>
+</section>
 
-  <dialog class="lightbox"><button class="lightbox-close" aria-label="Fermer">×</button><img src="" alt=""><p></p></dialog>
-  <script src="script.js"></script>
-</body>
-</html>
+<section class="intro section" id="creations">
+  <div class="section-kicker">Du bois brut à l’objet fini</div>
+  <h2>Une fabrication locale, soignée et originale</h2>
+  <p class="lead">Je conçois et fabrique des objets décoratifs, souvenirs locaux, bijoux en bois et pièces imprimées en 3D. Chaque création est préparée dans mon atelier avec une attention particulière portée aux détails.</p>
+  <div class="categories">
+    <article class="category-card reveal"><span class="icon">◆</span><h3>Souvenirs locaux</h3><p>Porte-clés, magnets et marque-pages inspirés des Gorges du Tarn et de la Jonte.</p></article>
+    <article class="category-card reveal"><span class="icon">✦</span><h3>Décoration</h3><p>Tableaux multicouches, silhouettes murales, prénoms et enseignes.</p></article>
+    <article class="category-card reveal"><span class="icon">◌</span><h3>Bijoux en bois</h3><p>Boucles d’oreilles originales, naturelles ou colorées, découpées avec précision.</p></article>
+    <article class="category-card reveal"><span class="icon">⬡</span><h3>Impression 3D</h3><p>Figurines, porte-clés et petites séries réalisées avec soin.</p></article>
+  </div>
+</section>
+
+<section class="craft section dark-section" id="savoir-faire">
+  <div class="craft-grid">
+    <div class="craft-copy reveal">
+      <div class="section-kicker">Mon savoir-faire</div><h2>Une idée, un dessin, une création.</h2>
+      <p>Je travaille principalement le bois par gravure et découpe laser, puis j’assemble, colore et termine chaque pièce à la main. L’impression 3D me permet aussi de créer des formes et des objets différents.</p>
+      <ul class="check-list"><li>Fabrication artisanale en Aveyron</li><li>Créations originales et petites séries</li><li>Projets pour particuliers et professionnels</li><li>Travail sur mesure selon la faisabilité</li></ul>
+    </div>
+    <div class="craft-visual reveal"><img src="assets/hero.webp" alt="Stand de créations artisanales Duval"><div class="stamp">Fabriqué<br>en Aveyron</div></div>
+  </div>
+</section>
+
+<section class="gallery-section section" id="galerie">
+  <div class="section-kicker">Portfolio & tarifs</div>
+  <h2>Quelques réalisations</h2>
+  <p class="lead">Cliquez sur une photo pour l’agrandir.</p>
+  <div class="pricing-note"><strong>Commandes en quantité : tarif dégressif sur devis.</strong><span>Tarifs professionnels : sur devis.</span></div>
+  <div class="filters">
+    <button class="filter active" data-filter="all">Tout</button><button class="filter" data-filter="tableaux">Tableaux</button><button class="filter" data-filter="bijoux">Bijoux</button><button class="filter" data-filter="souvenirs">Souvenirs</button><button class="filter" data-filter="decoration">Décoration</button><button class="filter" data-filter="3d">Impression 3D</button>
+  </div>
+  <div class="gallery-grid">
+<button class="gallery-card reveal" data-category="tableaux" data-title="Collection artisanale — 19,90 €" data-image="assets/gallery-01.webp">
+      <img src="assets/gallery-01.webp" alt="Collection artisanale" loading="lazy">
+      <span class="gallery-overlay"><strong>Collection artisanale</strong><span class="price">19,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="tableaux" data-title="Les Gorges en bois multicouche — 19,90 €" data-image="assets/gallery-02.webp">
+      <img src="assets/gallery-02.webp" alt="Les Gorges en bois multicouche" loading="lazy">
+      <span class="gallery-overlay"><strong>Les Gorges en bois multicouche</strong><span class="price">19,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="tableaux" data-title="Tableau vautours des Gorges — 19,90 €" data-image="assets/gallery-03.webp">
+      <img src="assets/gallery-03.webp" alt="Tableau vautours des Gorges" loading="lazy">
+      <span class="gallery-overlay"><strong>Tableau vautours des Gorges</strong><span class="price">19,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="tableaux" data-title="Tableau famille personnalisé — 19,90 €" data-image="assets/gallery-04.webp">
+      <img src="assets/gallery-04.webp" alt="Tableau famille personnalisé" loading="lazy">
+      <span class="gallery-overlay"><strong>Tableau famille personnalisé</strong><span class="price">19,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles paysage des Gorges — 9,90 €" data-image="assets/gallery-05.webp">
+      <img src="assets/gallery-05.webp" alt="Boucles paysage des Gorges" loading="lazy">
+      <span class="gallery-overlay"><strong>Boucles paysage des Gorges</strong><span class="price">9,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles papillons gravées — 9,90 €" data-image="assets/gallery-06.webp">
+      <img src="assets/gallery-06.webp" alt="Boucles papillons gravées" loading="lazy">
+      <span class="gallery-overlay"><strong>Boucles papillons gravées</strong><span class="price">9,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles lotus en bois — 9,90 €" data-image="assets/gallery-07.webp">
+      <img src="assets/gallery-07.webp" alt="Boucles lotus en bois" loading="lazy">
+      <span class="gallery-overlay"><strong>Boucles lotus en bois</strong><span class="price">9,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles chats personnalisées — 9,90 €" data-image="assets/gallery-08.webp">
+      <img src="assets/gallery-08.webp" alt="Boucles chats personnalisées" loading="lazy">
+      <span class="gallery-overlay"><strong>Boucles chats personnalisées</strong><span class="price">9,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="souvenirs" data-title="Présentoir de porte-clés — 4,90 €" data-image="assets/gallery-09.webp">
+      <img src="assets/gallery-09.webp" alt="Présentoir de porte-clés" loading="lazy">
+      <span class="gallery-overlay"><strong>Présentoir de porte-clés</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="souvenirs" data-title="Porte-clé Les Douzes — 4,90 €" data-image="assets/gallery-10.webp">
+      <img src="assets/gallery-10.webp" alt="Porte-clé Les Douzes" loading="lazy">
+      <span class="gallery-overlay"><strong>Porte-clé Les Douzes</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="souvenirs" data-title="Porte-clé Gorges de la Jonte — 4,90 €" data-image="assets/gallery-11.webp">
+      <img src="assets/gallery-11.webp" alt="Porte-clé Gorges de la Jonte" loading="lazy">
+      <span class="gallery-overlay"><strong>Porte-clé Gorges de la Jonte</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="decoration" data-title="Prénoms personnalisés — 15 €" data-image="assets/gallery-12.webp">
+      <img src="assets/gallery-12.webp" alt="Prénoms personnalisés" loading="lazy">
+      <span class="gallery-overlay"><strong>Prénoms personnalisés</strong><span class="price">15 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="decoration" data-title="Prénoms décoratifs multicouches — 15 €" data-image="assets/gallery-13.webp">
+      <img src="assets/gallery-13.webp" alt="Prénoms décoratifs multicouches" loading="lazy">
+      <span class="gallery-overlay"><strong>Prénoms décoratifs multicouches</strong><span class="price">15 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="souvenirs" data-title="Marque-page vautour Jonte — 4 €" data-image="assets/gallery-14.webp">
+      <img src="assets/gallery-14.webp" alt="Marque-page vautour Jonte" loading="lazy">
+      <span class="gallery-overlay"><strong>Marque-page vautour Jonte</strong><span class="price">4 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="decoration" data-title="Silhouette murale personnalisée — 15 €" data-image="assets/gallery-15.webp">
+      <img src="assets/gallery-15.webp" alt="Silhouette murale personnalisée" loading="lazy">
+      <span class="gallery-overlay"><strong>Silhouette murale personnalisée</strong><span class="price">15 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="decoration" data-title="Décoration de porte animaux — 25 €" data-image="assets/gallery-16.webp">
+      <img src="assets/gallery-16.webp" alt="Décoration de porte animaux" loading="lazy">
+      <span class="gallery-overlay"><strong>Décoration de porte animaux</strong><span class="price">25 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="3d" data-title="Gypaète imprimé en 3D — 2,90 €" data-image="assets/gallery-17.webp">
+      <img src="assets/gallery-17.webp" alt="Gypaète imprimé en 3D" loading="lazy">
+      <span class="gallery-overlay"><strong>Gypaète imprimé en 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="3d" data-title="Série de vautours en impression 3D — 2,90 €" data-image="assets/gallery-18.webp">
+      <img src="assets/gallery-18.webp" alt="Série de vautours en impression 3D" loading="lazy">
+      <span class="gallery-overlay"><strong>Série de vautours en impression 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="3d" data-title="Collection de vautours 3D — 2,90 €" data-image="assets/gallery-19.webp">
+      <img src="assets/gallery-19.webp" alt="Collection de vautours 3D" loading="lazy">
+      <span class="gallery-overlay"><strong>Collection de vautours 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="3d" data-title="Porte-clé Rue du Buraliste — 60 × 30 mm — 4,90 €" data-image="assets/porte-cle-rue-buraliste.jpg">
+      <img src="assets/porte-cle-rue-buraliste.jpg" alt="Porte-clé Rue du Buraliste — 60 × 30 mm" loading="lazy">
+      <span class="gallery-overlay"><strong>Porte-clé Rue du Buraliste — 60 × 30 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="3d" data-title="Porte-clés Cœur — 30 mm et 50 mm — 4,90 €" data-image="assets/porte-cle-coeurs.jpg">
+      <img src="assets/porte-cle-coeurs.jpg" alt="Porte-clés Cœur — 30 mm et 50 mm" loading="lazy">
+      <span class="gallery-overlay"><strong>Porte-clés Cœur — 30 mm et 50 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+<button class="gallery-card reveal" data-category="3d" data-title="Porte-clés Animaux — 30 à 60 mm — 4,90 €" data-image="assets/porte-cles-animaux-3d.jpg">
+      <img src="assets/porte-cles-animaux-3d.jpg" alt="Porte-clés Animaux — 30 à 60 mm" loading="lazy">
+      <span class="gallery-overlay"><strong>Porte-clés Animaux — 30 à 60 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
+    </button>
+  </div>
+</section>
+
+<section class="quote-section"><div class="quote-inner reveal"><p>« Du bois brut… et quelques minutes plus tard, une création unique. »</p></div></section>
+
+<section class="social-section section" id="reseaux">
+  <div class="social-wrap reveal"><div><div class="section-kicker">Suivez mon travail</div><h2>Retrouvez mes nouveautés sur les réseaux</h2><p>Découvrez les créations en cours, les nouveautés et les coulisses de l’atelier.</p></div>
+  <div class="social-buttons">
+    <a href="https://www.instagram.com/duval.gravure.laser" target="_blank" rel="noopener"><span class="social-icon">◎</span><strong>Instagram</strong><small>@duval.gravure.laser</small></a>
+    <a href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="social-icon">f</span><strong>Facebook</strong><small>Duval Gravure & Découpe Laser</small></a>
+    <a href="https://www.tiktok.com/@duval.gravure.laser" target="_blank" rel="noopener"><span class="social-icon">♪</span><strong>TikTok</strong><small>@duval.gravure.laser</small></a>
+  </div></div>
+</section>
+
+<section class="contact section" id="contact">
+  <div class="contact-card reveal">
+    <div><div class="section-kicker">Une idée en tête ?</div><h2>Parlons de votre projet</h2><p>Pour une création, un cadeau, une commande en quantité ou une demande professionnelle, contactez-moi directement pour un devis.</p></div>
+    <div class="contact-actions">
+      <a class="contact-link primary" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20un%20devis%20pour..." target="_blank" rel="noopener"><span>WhatsApp</span><strong>Écrire maintenant</strong></a>
+      <a class="contact-link" href="tel:+33788518623"><span>Téléphone</span><strong>07 88 51 86 23</strong></a>
+      <a class="contact-link" href="mailto:anthonyduval4812@outlook.fr"><span>E-mail</span><strong>Envoyer un message</strong></a>
+      <a class="contact-link" href="https://www.instagram.com/duval.gravure.laser/" target="_blank" rel="noopener"><span>Instagram</span><strong>@duval.gravure.laser</strong></a>
+      <a class="contact-link" href="https://www.tiktok.com/@duval.gravure.laser" target="_blank" rel="noopener"><span>TikTok</span><strong>@duval.gravure.laser</strong></a>
+      <a class="contact-link" href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" target="_blank" rel="noopener"><span>Facebook</span><strong>Duval Gravure & Découpe Laser</strong></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="assets/logo.png" alt=""><p>Duval Gravure & Découpe Laser</p>
+  <small>Créations artisanales en bois & impression 3D, fabriquées en Aveyron.</small>
+  <div class="footer-socials"><a href="https://www.instagram.com/duval.gravure.laser" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@duval.gravure.laser" target="_blank" rel="noopener">TikTok</a></div>
+  <small>© <span id="year"></span> Anthony Duval — Tous droits réservés.</small>
+</footer>
+<dialog class="lightbox"><button class="lightbox-close" aria-label="Fermer">×</button><img src="" alt=""><p></p></dialog>
+<script src="script.js"></script>
+</body></html>
