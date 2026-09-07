@@ -1,0 +1,17 @@
+MISE À JOUR SITE DUVAL - V7 CARDABELLE - 07/09/2026
+
+1. Remplacer l'ancien index.html par ce nouveau index.html.
+2. Dans le dossier assets du site, ajouter les 4 nouvelles images :
+   - cardabelle-3d-01.webp
+   - cardabelle-3d-02.webp
+   - cardabelle-bois-recto.webp
+   - cardabelle-bois-verso.webp
+3. Conserver tous les anciens fichiers du dossier assets, ainsi que style.css et script.js.
+
+Nouveautés ajoutées :
+- Porte-clé Cardabelle Lozère – Impression 3D : 4,90 €
+- Porte-clé Cardabelle Lozère – Bois gravé recto-verso : 4,90 €
+- Les 4 photos sont intégrées dans la galerie.
+- Tarifs professionnels et quantités : sur devis.
+
+Tous les tarifs de la V6 sont conservés.
