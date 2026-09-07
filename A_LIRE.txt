@@ -1,17 +1,16 @@
-MISE À JOUR SITE DUVAL - V7 CARDABELLE - 07/09/2026
+MISE À JOUR V8 — CATÉGORIES CLIQUABLES
 
-1. Remplacer l'ancien index.html par ce nouveau index.html.
-2. Dans le dossier assets du site, ajouter les 4 nouvelles images :
-   - cardabelle-3d-01.webp
-   - cardabelle-3d-02.webp
-   - cardabelle-bois-recto.webp
-   - cardabelle-bois-verso.webp
-3. Conserver tous les anciens fichiers du dossier assets, ainsi que style.css et script.js.
+À envoyer à la RACINE du dépôt GitHub :
+- index.html
 
-Nouveautés ajoutées :
-- Porte-clé Cardabelle Lozère – Impression 3D : 4,90 €
-- Porte-clé Cardabelle Lozère – Bois gravé recto-verso : 4,90 €
-- Les 4 photos sont intégrées dans la galerie.
-- Tarifs professionnels et quantités : sur devis.
+Cette version remplace les 4 carrés par 5 catégories :
+- Toutes les créations
+- Décoration & tableaux
+- Bijoux
+- Porte-clés bois
+- Porte-clés 3D
 
-Tous les tarifs de la V6 sont conservés.
+Les carrés sont cliquables et filtrent directement la galerie.
+Les filtres de la galerie ont aussi été harmonisés avec ces 5 catégories.
+
+Les photos Cardabelle déjà présentes dans assets ne sont pas à renvoyer.

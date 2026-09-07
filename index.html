@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Version V7 : ajout porte-clés Cardabelle Lozère - 07/09/2026 -->
+<!-- Version V8 : catégories cliquables - 07/09/2026 -->
 <html lang="fr">
 <head>
   <meta charset="utf-8">
@@ -17,6 +17,10 @@
     .gallery-overlay small.product-detail{display:block;margin-top:4px;font-size:.70rem;line-height:1.25;opacity:.95}
     .pricing-note{max-width:850px;margin:18px auto 28px;padding:16px 20px;border:1px solid rgba(181,139,73,.35);border-radius:16px;background:rgba(181,139,73,.08);text-align:center}
     .pricing-note strong{display:block;margin-bottom:3px}
+    .category-card.category-link{cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}
+    .category-card.category-link:hover{transform:translateY(-4px)}
+    .category-card.category-link:focus-visible{outline:3px solid #b58b49;outline-offset:4px}
+    .category-card.category-link .category-action{display:inline-block;margin-top:10px;font-size:.78rem;font-weight:700;opacity:.72}
   </style>
 </head>
 <body>
@@ -46,10 +50,11 @@
   <h2>Une fabrication locale, soignée et originale</h2>
   <p class="lead">Je conçois et fabrique des objets décoratifs, souvenirs locaux, bijoux en bois et pièces imprimées en 3D. Chaque création est préparée dans mon atelier avec une attention particulière portée aux détails.</p>
   <div class="categories">
-    <article class="category-card reveal"><span class="icon">◆</span><h3>Souvenirs locaux</h3><p>Porte-clés, magnets et marque-pages inspirés des Gorges du Tarn et de la Jonte.</p></article>
-    <article class="category-card reveal"><span class="icon">✦</span><h3>Décoration</h3><p>Tableaux multicouches, silhouettes murales, prénoms et enseignes.</p></article>
-    <article class="category-card reveal"><span class="icon">◌</span><h3>Bijoux en bois</h3><p>Boucles d’oreilles originales, naturelles ou colorées, découpées avec précision.</p></article>
-    <article class="category-card reveal"><span class="icon">⬡</span><h3>Impression 3D</h3><p>Figurines, porte-clés et petites séries réalisées avec soin.</p></article>
+    <article class="category-card category-link reveal" data-smart-filter="all" role="button" tabindex="0"><span class="icon">◆</span><h3>Toutes les créations</h3><p>Retrouvez l’ensemble de mes réalisations en bois et en impression 3D.</p><span class="category-action">Voir toutes les créations →</span></article>
+    <article class="category-card category-link reveal" data-smart-filter="decor" role="button" tabindex="0"><span class="icon">✦</span><h3>Décoration &amp; tableaux</h3><p>Tableaux multicouches, silhouettes murales, prénoms et décorations personnalisées.</p><span class="category-action">Voir la catégorie →</span></article>
+    <article class="category-card category-link reveal" data-smart-filter="bijoux" role="button" tabindex="0"><span class="icon">◌</span><h3>Bijoux</h3><p>Boucles d’oreilles originales en bois, naturelles ou colorées.</p><span class="category-action">Voir la catégorie →</span></article>
+    <article class="category-card category-link reveal" data-smart-filter="bois" role="button" tabindex="0"><span class="icon">⌁</span><h3>Porte-clés bois</h3><p>Porte-clés découpés et gravés au laser, inspirés notamment de la Lozère et des Gorges.</p><span class="category-action">Voir la catégorie →</span></article>
+    <article class="category-card category-link reveal" data-smart-filter="3dkey" role="button" tabindex="0"><span class="icon">⬡</span><h3>Porte-clés 3D</h3><p>Porte-clés en PLA, multicolores ou personnalisés, réalisés en impression 3D.</p><span class="category-action">Voir la catégorie →</span></article>
   </div>
 </section>
 
@@ -70,7 +75,7 @@
   <p class="lead">Cliquez sur une photo pour l’agrandir.</p>
   <div class="pricing-note"><strong>Commandes en quantité : tarif dégressif sur devis.</strong><span>Tarifs professionnels : sur devis.</span></div>
   <div class="filters">
-    <button class="filter active" data-filter="all">Tout</button><button class="filter" data-filter="tableaux">Tableaux</button><button class="filter" data-filter="bijoux">Bijoux</button><button class="filter" data-filter="souvenirs">Souvenirs</button><button class="filter" data-filter="decoration">Décoration</button><button class="filter" data-filter="3d">Impression 3D</button>
+    <button class="filter active" data-smart-filter="all">Tout</button><button class="filter" data-smart-filter="decor">Décoration &amp; tableaux</button><button class="filter" data-smart-filter="bijoux">Bijoux</button><button class="filter" data-smart-filter="bois">Porte-clés bois</button><button class="filter" data-smart-filter="3dkey">Porte-clés 3D</button>
   </div>
   <div class="gallery-grid">
 <button class="gallery-card reveal" data-category="tableaux" data-title="Collection artisanale — 19,90 €" data-image="assets/gallery-01.webp">
@@ -109,11 +114,11 @@
       <img src="assets/gallery-09.webp" alt="Présentoir de porte-clés" loading="lazy">
       <span class="gallery-overlay"><strong>Présentoir de porte-clés</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Porte-clé Les Douzes — 4,90 €" data-image="assets/gallery-10.webp">
+<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-title="Porte-clé Les Douzes — 4,90 €" data-image="assets/gallery-10.webp">
       <img src="assets/gallery-10.webp" alt="Porte-clé Les Douzes" loading="lazy">
       <span class="gallery-overlay"><strong>Porte-clé Les Douzes</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Porte-clé Gorges de la Jonte — 4,90 €" data-image="assets/gallery-11.webp">
+<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-title="Porte-clé Gorges de la Jonte — 4,90 €" data-image="assets/gallery-11.webp">
       <img src="assets/gallery-11.webp" alt="Porte-clé Gorges de la Jonte" loading="lazy">
       <span class="gallery-overlay"><strong>Porte-clé Gorges de la Jonte</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
@@ -149,31 +154,31 @@
       <img src="assets/gallery-19.webp" alt="Collection de vautours 3D" loading="lazy">
       <span class="gallery-overlay"><strong>Collection de vautours 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Porte-clé Rue du Buraliste — 60 × 30 mm — 4,90 €" data-image="assets/porte-cle-rue-buraliste.jpg">
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clé Rue du Buraliste — 60 × 30 mm — 4,90 €" data-image="assets/porte-cle-rue-buraliste.jpg">
       <img src="assets/porte-cle-rue-buraliste.jpg" alt="Porte-clé Rue du Buraliste — 60 × 30 mm" loading="lazy">
       <span class="gallery-overlay"><strong>Porte-clé Rue du Buraliste — 60 × 30 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Porte-clés Cœur — 30 mm et 50 mm — 4,90 €" data-image="assets/porte-cle-coeurs.jpg">
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clés Cœur — 30 mm et 50 mm — 4,90 €" data-image="assets/porte-cle-coeurs.jpg">
       <img src="assets/porte-cle-coeurs.jpg" alt="Porte-clés Cœur — 30 mm et 50 mm" loading="lazy">
       <span class="gallery-overlay"><strong>Porte-clés Cœur — 30 mm et 50 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Porte-clés Animaux — 30 à 60 mm — 4,90 €" data-image="assets/porte-cles-animaux-3d.jpg">
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clés Animaux — 30 à 60 mm — 4,90 €" data-image="assets/porte-cles-animaux-3d.jpg">
       <img src="assets/porte-cles-animaux-3d.jpg" alt="Porte-clés Animaux — 30 à 60 mm" loading="lazy">
       <span class="gallery-overlay"><strong>Porte-clés Animaux — 30 à 60 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Porte-clé Cardabelle Lozère – Impression 3D — 4,90 € — Fabrication artisanale en PLA multicolore, avec relief Cardabelle et inscription Lozère." data-image="assets/cardabelle-3d-01.webp">
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clé Cardabelle Lozère – Impression 3D — 4,90 € — Fabrication artisanale en PLA multicolore, avec relief Cardabelle et inscription Lozère." data-image="assets/cardabelle-3d-01.webp">
       <img src="assets/cardabelle-3d-01.webp" alt="Porte-clé Cardabelle Lozère en impression 3D multicolore" loading="lazy">
       <span class="gallery-overlay"><strong>Cardabelle Lozère – Impression 3D</strong><span class="price">4,90 €</span><small class="product-detail">PLA multicolore • relief Cardabelle & Lozère</small><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Porte-clé Cardabelle Lozère – Impression 3D — 4,90 € — Deuxième coloris." data-image="assets/cardabelle-3d-02.webp">
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clé Cardabelle Lozère – Impression 3D — 4,90 € — Deuxième coloris." data-image="assets/cardabelle-3d-02.webp">
       <img src="assets/cardabelle-3d-02.webp" alt="Porte-clé Cardabelle Lozère impression 3D autre coloris" loading="lazy">
       <span class="gallery-overlay"><strong>Cardabelle Lozère – Impression 3D</strong><span class="price">4,90 €</span><small class="product-detail">Autre coloris disponible</small><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Porte-clé Cardabelle Lozère – Bois gravé recto-verso — 4,90 € — Découpe et gravure laser, fabrication artisanale." data-image="assets/cardabelle-bois-recto.webp">
+<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-title="Porte-clé Cardabelle Lozère – Bois gravé recto-verso — 4,90 € — Découpe et gravure laser, fabrication artisanale." data-image="assets/cardabelle-bois-recto.webp">
       <img src="assets/cardabelle-bois-recto.webp" alt="Porte-clé Cardabelle Lozère en bois gravé recto" loading="lazy">
       <span class="gallery-overlay"><strong>Cardabelle Lozère – Bois recto-verso</strong><span class="price">4,90 €</span><small class="product-detail">Découpe & gravure laser • recto-verso</small><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Porte-clé Cardabelle Lozère – Bois gravé recto-verso — 4,90 € — Vue verso." data-image="assets/cardabelle-bois-verso.webp">
+<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-title="Porte-clé Cardabelle Lozère – Bois gravé recto-verso — 4,90 € — Vue verso." data-image="assets/cardabelle-bois-verso.webp">
       <img src="assets/cardabelle-bois-verso.webp" alt="Porte-clé Cardabelle Lozère en bois gravé verso" loading="lazy">
       <span class="gallery-overlay"><strong>Cardabelle Lozère – Bois recto-verso</strong><span class="price">4,90 €</span><small class="product-detail">Vue verso</small><small class="price-note">Quantités & pros : devis sur demande</small></span>
     </button>
@@ -213,5 +218,36 @@
   <small>© <span id="year"></span> Anthony Duval — Tous droits réservés.</small>
 </footer>
 <dialog class="lightbox"><button class="lightbox-close" aria-label="Fermer">×</button><img src="" alt=""><p></p></dialog>
+<script>
+(function(){
+  const cards=[...document.querySelectorAll('.gallery-card')];
+  const smartButtons=[...document.querySelectorAll('[data-smart-filter]')];
+  const filterButtons=[...document.querySelectorAll('.filters [data-smart-filter]')];
+  function matches(card, key){
+    if(key==='all') return true;
+    if(key==='decor') return card.dataset.category==='tableaux' || card.dataset.category==='decoration';
+    if(key==='bijoux') return card.dataset.category==='bijoux';
+    if(key==='bois') return card.dataset.family==='bois';
+    if(key==='3dkey') return card.dataset.family==='3dkey';
+    return false;
+  }
+  function applyFilter(key, doScroll){
+    cards.forEach(card=>{card.style.display=matches(card,key)?'':'none';});
+    filterButtons.forEach(btn=>btn.classList.toggle('active',btn.dataset.smartFilter===key));
+    if(doScroll) document.querySelector('#galerie').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  smartButtons.forEach(el=>{
+    el.addEventListener('click',function(e){
+      e.stopImmediatePropagation();
+      applyFilter(el.dataset.smartFilter, el.classList.contains('category-link'));
+    });
+    if(el.classList.contains('category-link')){
+      el.addEventListener('keydown',function(e){
+        if(e.key==='Enter' || e.key===' '){e.preventDefault(); applyFilter(el.dataset.smartFilter,true);}
+      });
+    }
+  });
+})();
+</script>
 <script src="script.js"></script>
 </body></html>
