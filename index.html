@@ -1,4 +1,7 @@
+
+&lt;!-- Version V11 : vraies créations + fond réel Gorges de la Jonte, 08/09/2026 --&gt;
 <!DOCTYPE html>
+
 
  Version V10 : accueil allégé + produits phares + galerie complète - 08/09/2026 
 <html lang="fr">
@@ -57,33 +60,161 @@
   .value-strip{grid-template-columns:1fr 1fr;padding:16px}
   .featured-card img{aspect-ratio:16/10}
 }
+</style><style>
+/* ===== V11 : hero Gorges de la Jonte + vraies créations de l'atelier ===== */
+.hero{
+  min-height:680px;
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  align-items:center;
+}
+.hero-bg{
+  position:absolute; inset:0;
+  background-size:cover !important;
+  background-position:center 48% !important;
+  transform:scale(1.02);
+}
+.hero-shade{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(90deg,rgba(10,10,9,.88) 0%,rgba(10,10,9,.72) 38%,rgba(10,10,9,.18) 68%,rgba(10,10,9,.08) 100%),
+    linear-gradient(0deg,rgba(8,8,7,.22),rgba(8,8,7,.06));
+}
+.hero-content{
+  position:relative;
+  z-index:3;
+  max-width:620px;
+  margin-left:max(5vw,48px);
+  padding:90px 0 100px;
+}
+.hero-content h1{
+  font-size:clamp(3rem,5vw,5.1rem);
+  line-height:.94;
+  letter-spacing:-.025em;
+  text-shadow:0 4px 28px rgba(0,0,0,.32);
+}
+.gold-text{color:#d3a34f}
+.hero-location{
+  display:inline-block;
+  margin-top:14px;
+  font-size:.53em;
+  line-height:1.15;
+  color:#fff;
+  font-weight:600;
+}
+.hero-subtitle{
+  max-width:520px;
+  font-size:1.08rem;
+  line-height:1.6;
+}
+.hero-real-products{
+  position:absolute;
+  z-index:4;
+  right:4vw;
+  bottom:58px;
+  width:min(47vw,720px);
+  height:510px;
+  pointer-events:none;
+}
+.hero-product{
+  position:absolute;
+  margin:0;
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(255,255,255,.75);
+  border-radius:20px;
+  padding:10px;
+  box-shadow:0 22px 50px rgba(0,0,0,.33);
+  overflow:hidden;
+}
+.hero-product img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:13px;
+}
+.hero-product figcaption{
+  position:absolute;
+  left:16px; bottom:15px;
+  padding:7px 11px;
+  border-radius:999px;
+  background:rgba(17,16,14,.84);
+  color:#fff;
+  font-size:.76rem;
+  font-weight:700;
+  backdrop-filter:blur(5px);
+}
+.hp-wood{width:230px;height:300px;left:0;bottom:8px;transform:rotate(-4deg)}
+.hp-pla{width:250px;height:330px;left:205px;bottom:38px;transform:rotate(1deg)}
+.hp-card{width:225px;height:300px;right:0;bottom:0;transform:rotate(4deg)}
+.value-strip{margin-top:0}
+.featured-products{grid-template-columns:repeat(3,minmax(0,1fr));}
+.featured-card img{object-position:center}
+.photo-credit{display:block;margin-top:12px;opacity:.62;font-size:.7rem}
+
+@media (max-width:1000px){
+  .hero{min-height:860px;align-items:start}
+  .hero-content{margin:0 auto;padding:74px 24px 370px;max-width:760px;text-align:left}
+  .hero-real-products{
+    left:50%;right:auto;bottom:36px;transform:translateX(-50%);
+    width:min(94vw,720px);height:330px;
+  }
+  .hp-wood{width:30%;height:260px;left:2%;bottom:6px}
+  .hp-pla{width:34%;height:290px;left:33%;bottom:24px}
+  .hp-card{width:30%;height:260px;right:2%;bottom:0}
+}
+@media (max-width:650px){
+  .hero{min-height:920px}
+  .hero-content{padding:62px 20px 490px}
+  .hero-content h1{font-size:clamp(2.65rem,12vw,4rem)}
+  .hero-real-products{height:430px;bottom:26px}
+  .hero-product{padding:7px;border-radius:15px}
+  .hp-wood{width:48%;height:235px;left:1%;bottom:178px}
+  .hp-pla{width:48%;height:255px;left:51%;bottom:168px}
+  .hp-card{width:52%;height:225px;left:24%;right:auto;bottom:0}
+  .featured-products{grid-template-columns:1fr}
+}
 </style></head>
 <body>
 <header class="topbar">
-<a class="brand" href="#accueil"><img alt="Logo Duval Gravure &amp; Découpe Laser" src="assets/logo.png"/></a>
+<a class="brand" href="#accueil"><img alt="Logo Duval Gravure &amp; Découpe Laser" src="logo.png"/></a>
 <button aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle">☰</button>
 <nav><a href="#accueil">Accueil</a><a href="#savoir-faire">Savoir-faire</a><a href="#produits-phares">Nos créations</a><a href="#reseaux">Réseaux</a><a href="#contact">Contact</a></nav>
 </header>
 <main>
 <section class="hero" id="accueil">
-<div class="hero-bg"></div><div class="hero-shade"></div>
+<div class="hero-bg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Gorges_de_la_Jonte_01.jpg/1280px-Gorges_de_la_Jonte_01.jpg');"></div><div class="hero-shade"></div>
 <div class="hero-content">
-<p class="eyebrow">Duval Gravure &amp; Découpe Laser • Lozère &amp; Aveyron</p>
-<h1>Gravure laser &amp; impression 3D en Lozère et Aveyron</h1>
-<p class="hero-subtitle">Duval Gravure &amp; Découpe Laser réalise des créations artisanales en bois, porte-clés personnalisés, décoration et impression 3D en Lozère et Aveyron.</p>
+<p class="eyebrow">Gravure laser • découpe laser • impression 3D</p>
+<h1>Gravure laser, <br/>découpe laser <br/><span class="gold-text">et impression 3D</span><br/><span class="hero-location">en Lozère et Aveyron</span></h1>
+<p class="hero-subtitle">Des créations uniques et personnalisées pour vos cadeaux, votre déco, vos projets professionnels ou vos souvenirs locaux.</p>
 <div class="hero-actions">
-<a class="btn btn-primary" href="#produits-phares">Découvrir mes créations</a>
+<a class="btn btn-primary" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20un%20devis." rel="noopener" target="_blank">Demander un devis →</a>
 <a class="btn btn-ghost" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet." rel="noopener" target="_blank">Parler de mon projet</a>
 </div>
 </div>
+<div aria-label="Exemples de créations" class="hero-real-products">
+<figure class="hero-product hp-wood">
+<img alt="Porte-clé Gorges de la Jonte en bois, création Duval" src="hero-gorges-bois.webp"/>
+<figcaption>Bois gravé</figcaption>
+</figure>
+<figure class="hero-product hp-pla">
+<img alt="Porte-clé Lozère en PLA rouge jaune et noir, création Duval" src="hero-lozere-pla.webp"/>
+<figcaption>Impression 3D</figcaption>
+</figure>
+<figure class="hero-product hp-card">
+<img alt="Porte-clé Cardabelle Lozère en PLA, création Duval" src="hero-cardabelle.webp"/>
+<figcaption>Cardabelle Lozère</figcaption>
+</figure>
+</div>
+
 <a aria-label="Découvrir la suite" class="scroll-hint" href="#creations">↓</a>
 </section>
 <section class="intro section" id="creations">
 <div class="section-kicker">Créations locales &amp; personnalisées</div>
 <h2>Une fabrication artisanale, soignée et originale</h2>
 <p class="lead">Je crée des objets en bois et en impression 3D : porte-clés, décoration, bijoux, souvenirs locaux et créations personnalisées pour particuliers et professionnels.</p>
-
-
 <div class="value-strip">
 <div class="value-item"><span class="value-icon">✦</span><div><strong>Artisan local</strong><small>Lozère &amp; Aveyron</small></div></div>
 <div class="value-item"><span class="value-icon">◇</span><div><strong>Qualité</strong><small>et savoir-faire</small></div></div>
@@ -94,14 +225,7 @@
 <div class="section-kicker">Un aperçu de mon travail</div>
 <h2>Quelques réalisations</h2>
 <p class="lead">Quelques créations phares. Pour découvrir tout le catalogue, ouvrez la galerie complète.</p>
-<div class="featured-products">
-<a class="featured-card" data-open-gallery="bijoux" href="#galerie"><img alt="Boucles lotus en bois" src="assets/gallery-07.webp"/><span class="featured-info"><strong>Boucles lotus en bois</strong><span class="featured-price">9,90 €</span></span></a>
-<a class="featured-card" data-open-gallery="bois" href="#galerie"><img alt="Porte-clé Gorges de la Jonte" src="assets/gallery-11.webp"/><span class="featured-info"><strong>Porte-clé Gorges de la Jonte</strong><span class="featured-price">4,90 €</span></span></a>
-<a class="featured-card" data-open-gallery="decor" href="#galerie"><img alt="Collection artisanale" src="assets/gallery-01.webp"/><span class="featured-info"><strong>Collection artisanale</strong><span class="featured-price">19,90 €</span></span></a>
-<a class="featured-card" data-open-gallery="bijoux" href="#galerie"><img alt="Boucles papillons gravées" src="assets/gallery-06.webp"/><span class="featured-info"><strong>Boucles papillons gravées</strong><span class="featured-price">9,90 €</span></span></a>
-<a class="featured-card" data-open-gallery="decor" href="#galerie"><img alt="Tableau famille personnalisé" src="assets/gallery-04.webp"/><span class="featured-info"><strong>Tableau famille personnalisé</strong><span class="featured-price">19,90 €</span></span></a>
-<a class="featured-card" data-open-gallery="3dkey" href="#galerie"><img alt="Porte-clé Cardabelle Lozère en impression 3D" src="assets/cardabelle-3d-01.webp"/><span class="featured-info"><strong>Cardabelle Lozère 3D</strong><span class="featured-price">4,90 €</span></span></a>
-</div>
+<div class="featured-products"><a class="featured-card" data-open-gallery="bijoux" href="#galerie"><img alt="Boucles lotus en bois" src="assets/gallery-07.webp"/><span class="featured-info"><strong>Boucles lotus en bois</strong><span class="featured-price">9,90 €</span></span></a><a class="featured-card" data-open-gallery="bois" href="#galerie"><img alt="Porte-clé Gorges de la Jonte" src="hero-gorges-bois.webp"/><span class="featured-info"><strong>Porte-clé Gorges de la Jonte</strong><span class="featured-price">4,90 €</span></span></a><a class="featured-card" data-open-gallery="3dkey" href="#galerie"><img alt="Porte-clé Lozère 3D" src="hero-lozere-pla.webp"/><span class="featured-info"><strong>Porte-clé Lozère 3D</strong><span class="featured-price">4,90 €</span></span></a><a class="featured-card" data-open-gallery="3dkey" href="#galerie"><img alt="Cardabelle Lozère 3D" src="hero-cardabelle.webp"/><span class="featured-info"><strong>Cardabelle Lozère 3D</strong><span class="featured-price">4,90 €</span></span></a><a class="featured-card" data-open-gallery="decor" href="#galerie"><img alt="Tableau famille personnalisé" src="assets/gallery-04.webp"/><span class="featured-info"><strong>Tableau famille personnalisé</strong><span class="featured-price">19,90 €</span></span></a><a class="featured-card" data-open-gallery="bijoux" href="#galerie"><img alt="Boucles papillons gravées" src="assets/gallery-06.webp"/><span class="featured-info"><strong>Boucles papillons gravées</strong><span class="featured-price">9,90 €</span></span></a></div>
 <div class="featured-cta"><button class="btn btn-primary" id="open-gallery-btn" type="button">Voir toutes les réalisations →</button></div>
 </section>
 <section class="craft section dark-section" id="savoir-faire">
@@ -253,11 +377,11 @@
 </section>
 </main>
 <footer>
-<img alt="" src="assets/logo.png"/><p>Duval Gravure &amp; Découpe Laser</p>
+<img alt="" src="logo.png"/><p>Duval Gravure &amp; Découpe Laser</p>
 <small>Créations artisanales en bois &amp; impression 3D, fabriquées en Aveyron.</small>
 <div class="footer-socials"><a href="https://www.instagram.com/duval.gravure.laser" rel="noopener" target="_blank">Instagram</a><a href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" rel="noopener" target="_blank">Facebook</a><a href="https://www.tiktok.com/@duval.gravure.laser" rel="noopener" target="_blank">TikTok</a></div>
 <small>© <span id="year"></span> Anthony Duval — Tous droits réservés.</small>
-</footer>
+<small class="photo-credit">Photo des Gorges de la Jonte : Versailles39 / Wikimedia Commons — domaine public.</small></footer>
 <dialog class="lightbox"><button aria-label="Fermer" class="lightbox-close">×</button><img alt="" src=""/><p></p></dialog>
 <script>
 (function(){
