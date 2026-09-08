@@ -6,6 +6,7 @@
 
 
 
+
  Version V10 : accueil allégé + produits phares + galerie complète - 08/09/2026 
 <html lang="fr">
 <head>
@@ -310,9 +311,28 @@
   }
 }
 </style>
-</head>
+<style>
+@media(min-width:801px){.v14-topbar{display:none!important}}
+.hero{position:relative!important;width:100%!important;height:100vh!important;min-height:650px!important;aspect-ratio:auto!important;overflow:hidden!important;background:#111!important}
+.hero-bg{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;background-image:url('hero-v13.webp')!important;background-size:cover!important;background-position:center center!important;background-repeat:no-repeat!important;transform:none!important}
+.hero-shade,.hero-content,.hero .scroll-hint{display:none!important}
+.hero-hotspots{position:absolute;inset:0;z-index:30;pointer-events:none}
+.hero-hotspots .hs{position:absolute;display:block;pointer-events:auto;background:transparent;border-radius:10px}
+.devis{left:4.7%;top:51.5%;width:16.8%;height:7.3%}
+.projet{left:22.4%;top:51.5%;width:16.3%;height:7.3%}
+.accueil{left:59%;top:2.5%;width:6%;height:7%}
+.savoir{left:65.5%;top:2.5%;width:8%;height:7%}
+.creations{left:73.5%;top:2.5%;width:10%;height:7%}
+.reseaux{left:83.6%;top:2.5%;width:7%;height:7%}
+.contact{left:90.5%;top:2.5%;width:7%;height:7%}
+@media(max-width:800px){
+ .v14-topbar{display:flex!important}
+ .hero{height:calc(100vh - 70px)!important;min-height:620px!important}
+ .accueil,.savoir,.creations,.reseaux,.contact{display:none!important}
+}
+</style></head>
 <body>
-<header class="topbar">
+<header class="topbar v14-topbar">
 <a class="brand" href="#accueil"><img alt="Logo Duval Gravure &amp; Découpe Laser" src="logo.png"/></a>
 <button aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle">☰</button>
 <nav><a href="#accueil">Accueil</a><a href="#savoir-faire">Savoir-faire</a><a href="#produits-phares">Nos créations</a><a href="#reseaux">Réseaux</a><a href="#contact">Contact</a></nav>
@@ -329,8 +349,17 @@
 <a class="btn btn-ghost" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet." rel="noopener" target="_blank">Parler de mon projet</a>
 </div>
 </div>
-
 <a aria-label="Découvrir la suite" class="scroll-hint" href="#creations">↓</a>
+
+<div class="hero-hotspots">
+<a aria-label="Demander un devis" class="hs devis" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20un%20devis." rel="noopener" target="_blank"></a>
+<a aria-label="Parler de mon projet" class="hs projet" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet." rel="noopener" target="_blank"></a>
+<a aria-label="Accueil" class="hs accueil" href="#accueil"></a>
+<a aria-label="Savoir-faire" class="hs savoir" href="#savoir-faire"></a>
+<a aria-label="Nos créations" class="hs creations" href="#produits-phares"></a>
+<a aria-label="Réseaux" class="hs reseaux" href="#reseaux"></a>
+<a aria-label="Contact" class="hs contact" href="#contact"></a>
+</div>
 </section>
 <section class="intro section" id="creations">
 <div class="section-kicker">Créations locales &amp; personnalisées</div>
