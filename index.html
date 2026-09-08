@@ -1,17 +1,18 @@
-<!doctype html>
-<!-- Version V9 : référencement Google Lozère + Aveyron - 07/09/2026 -->
+<!DOCTYPE html>
+
+ Version V10 : accueil allégé + produits phares + galerie complète - 08/09/2026 
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Duval Gravure & Découpe Laser : gravure et découpe laser, impression 3D, porte-clés, décoration et créations artisanales en Lozère et Aveyron.">
-  <meta name="theme-color" content="#11100e">
-  <title>Duval Gravure & Découpe Laser | Lozère & Aveyron</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Duval Gravure &amp; Découpe Laser : gravure et découpe laser, impression 3D, porte-clés, décoration et créations artisanales en Lozère et Aveyron." name="description"/>
+<meta content="#11100e" name="theme-color"/>
+<title>Duval Gravure &amp; Découpe Laser | Lozère &amp; Aveyron</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<style>
     .price{display:block;margin-top:7px;font-size:1.05rem;font-weight:800;color:#d8b875}
     .gallery-overlay small.price-note{display:block;margin-top:3px;font-size:.72rem;opacity:.9}
     .gallery-overlay small.product-detail{display:block;margin-top:4px;font-size:.70rem;line-height:1.25;opacity:.95}
@@ -22,202 +23,242 @@
     .category-card.category-link:focus-visible{outline:3px solid #b58b49;outline-offset:4px}
     .category-card.category-link .category-action{display:inline-block;margin-top:10px;font-size:.78rem;font-weight:700;opacity:.72}
   </style>
-</head>
+<link href="https://duvalgravurelaser.fr/" rel="canonical"/><meta content="Duval Gravure &amp; Découpe Laser | Lozère &amp; Aveyron" property="og:title"/><meta content="Gravure laser, découpe laser et impression 3D. Créations artisanales en Lozère et Aveyron." property="og:description"/><meta content="https://duvalgravurelaser.fr/" property="og:url"/><meta content="website" property="og:type"/><style>
+/* ===== V10 - Accueil plus clair et orienté vente ===== */
+:root{--v10-gold:#b98b43;--v10-ink:#171614;--v10-cream:#f7f3eb}
+.featured-section{background:#fff;padding-top:72px;padding-bottom:72px}
+.featured-section .section-kicker,.featured-section h2,.featured-section .lead{text-align:center}
+.featured-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1120px;margin:34px auto 28px}
+.featured-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.08);transition:transform .2s ease,box-shadow .2s ease}
+.featured-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(0,0,0,.13)}
+.featured-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.featured-info{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:15px 16px 17px}
+.featured-info strong{font-family:"Cormorant Garamond",serif;font-size:1.18rem;line-height:1.05}
+.featured-price{font-size:1.05rem;font-weight:800;color:var(--v10-gold);white-space:nowrap}
+.featured-cta{text-align:center;margin-top:30px}
+.featured-cta .btn{min-width:260px}
+.value-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1120px;margin:0 auto 8px;padding:20px 28px;border-radius:18px;background:var(--v10-cream)}
+.value-item{display:flex;gap:11px;align-items:center;justify-content:center}
+.value-icon{font-size:1.65rem}
+.value-item strong{display:block;font-size:.92rem}
+.value-item small{display:block;opacity:.72;font-size:.76rem}
+#creations{padding-bottom:42px}
+#creations .categories{display:none}
+#galerie{display:none}
+#galerie.gallery-open{display:block}
+.gallery-close-wrap{text-align:center;margin:28px 0 4px}
+#savoir-faire{scroll-margin-top:80px}
+@media(max-width:850px){
+  .featured-products{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .value-strip{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .featured-products{grid-template-columns:1fr}
+  .value-strip{grid-template-columns:1fr 1fr;padding:16px}
+  .featured-card img{aspect-ratio:16/10}
+}
+</style></head>
 <body>
 <header class="topbar">
-  <a class="brand" href="#accueil"><img src="assets/logo.png" alt="Logo Duval Gravure & Découpe Laser"></a>
-  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-  <nav><a href="#creations">Créations</a><a href="#savoir-faire">Savoir-faire</a><a href="#galerie">Galerie</a><a href="#reseaux">Réseaux</a><a href="#contact">Contact</a></nav>
+<a class="brand" href="#accueil"><img alt="Logo Duval Gravure &amp; Découpe Laser" src="assets/logo.png"/></a>
+<button aria-expanded="false" aria-label="Ouvrir le menu" class="menu-toggle">☰</button>
+<nav><a href="#accueil">Accueil</a><a href="#savoir-faire">Savoir-faire</a><a href="#produits-phares">Nos créations</a><a href="#reseaux">Réseaux</a><a href="#contact">Contact</a></nav>
 </header>
-
 <main>
 <section class="hero" id="accueil">
-  <div class="hero-bg"></div><div class="hero-shade"></div>
-  <div class="hero-content">
-    <p class="eyebrow">Duval Gravure &amp; Découpe Laser • Lozère &amp; Aveyron</p>
-    <h1>Gravure laser &amp; impression 3D en Lozère et Aveyron</h1>
-    <p class="hero-subtitle">Duval Gravure &amp; Découpe Laser réalise des créations artisanales en bois, porte-clés personnalisés, décoration et impression 3D en Lozère et Aveyron.</p>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="#galerie">Découvrir mes créations</a>
-      <a class="btn btn-ghost" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet." target="_blank" rel="noopener">Parler de mon projet</a>
-    </div>
-  </div>
-  <a class="scroll-hint" href="#creations" aria-label="Découvrir la suite">↓</a>
+<div class="hero-bg"></div><div class="hero-shade"></div>
+<div class="hero-content">
+<p class="eyebrow">Duval Gravure &amp; Découpe Laser • Lozère &amp; Aveyron</p>
+<h1>Gravure laser &amp; impression 3D en Lozère et Aveyron</h1>
+<p class="hero-subtitle">Duval Gravure &amp; Découpe Laser réalise des créations artisanales en bois, porte-clés personnalisés, décoration et impression 3D en Lozère et Aveyron.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#produits-phares">Découvrir mes créations</a>
+<a class="btn btn-ghost" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet." rel="noopener" target="_blank">Parler de mon projet</a>
+</div>
+</div>
+<a aria-label="Découvrir la suite" class="scroll-hint" href="#creations">↓</a>
 </section>
-
 <section class="intro section" id="creations">
-  <div class="section-kicker">Du bois brut à l’objet fini</div>
-  <h2>Créations artisanales, gravure laser et impression 3D</h2>
-  <p class="lead">Je conçois et fabrique des objets décoratifs, porte-clés, souvenirs locaux, bijoux en bois et pièces imprimées en 3D pour la Lozère et l’Aveyron. Chaque création Duval Gravure & Découpe Laser est préparée dans mon atelier avec une attention particulière portée aux détails.</p>
-  <div class="categories">
-    <article class="category-card category-link reveal" data-smart-filter="all" role="button" tabindex="0"><span class="icon">◆</span><h3>Toutes les créations</h3><p>Retrouvez l’ensemble de mes réalisations en bois et en impression 3D.</p><span class="category-action">Voir toutes les créations →</span></article>
-    <article class="category-card category-link reveal" data-smart-filter="decor" role="button" tabindex="0"><span class="icon">✦</span><h3>Décoration &amp; tableaux</h3><p>Tableaux multicouches, silhouettes murales, prénoms et décorations personnalisées.</p><span class="category-action">Voir la catégorie →</span></article>
-    <article class="category-card category-link reveal" data-smart-filter="bijoux" role="button" tabindex="0"><span class="icon">◌</span><h3>Bijoux</h3><p>Boucles d’oreilles originales en bois, naturelles ou colorées.</p><span class="category-action">Voir la catégorie →</span></article>
-    <article class="category-card category-link reveal" data-smart-filter="bois" role="button" tabindex="0"><span class="icon">⌁</span><h3>Porte-clés bois</h3><p>Porte-clés découpés et gravés au laser, inspirés notamment de la Lozère et des Gorges.</p><span class="category-action">Voir la catégorie →</span></article>
-    <article class="category-card category-link reveal" data-smart-filter="3dkey" role="button" tabindex="0"><span class="icon">⬡</span><h3>Porte-clés 3D</h3><p>Porte-clés en PLA, multicolores ou personnalisés, réalisés en impression 3D.</p><span class="category-action">Voir la catégorie →</span></article>
-  </div>
-</section>
+<div class="section-kicker">Créations locales &amp; personnalisées</div>
+<h2>Une fabrication artisanale, soignée et originale</h2>
+<p class="lead">Je crée des objets en bois et en impression 3D : porte-clés, décoration, bijoux, souvenirs locaux et créations personnalisées pour particuliers et professionnels.</p>
 
+
+<div class="value-strip">
+<div class="value-item"><span class="value-icon">✦</span><div><strong>Artisan local</strong><small>Lozère &amp; Aveyron</small></div></div>
+<div class="value-item"><span class="value-icon">◇</span><div><strong>Qualité</strong><small>et savoir-faire</small></div></div>
+<div class="value-item"><span class="value-icon">♡</span><div><strong>Pièces uniques</strong><small>et personnalisées</small></div></div>
+<div class="value-item"><span class="value-icon">⌁</span><div><strong>Petites séries</strong><small>particuliers &amp; pros</small></div></div>
+</div>
+</section><section class="featured-section section" id="produits-phares">
+<div class="section-kicker">Un aperçu de mon travail</div>
+<h2>Quelques réalisations</h2>
+<p class="lead">Quelques créations phares. Pour découvrir tout le catalogue, ouvrez la galerie complète.</p>
+<div class="featured-products">
+<a class="featured-card" data-open-gallery="bijoux" href="#galerie"><img alt="Boucles lotus en bois" src="assets/gallery-07.webp"/><span class="featured-info"><strong>Boucles lotus en bois</strong><span class="featured-price">9,90 €</span></span></a>
+<a class="featured-card" data-open-gallery="bois" href="#galerie"><img alt="Porte-clé Gorges de la Jonte" src="assets/gallery-11.webp"/><span class="featured-info"><strong>Porte-clé Gorges de la Jonte</strong><span class="featured-price">4,90 €</span></span></a>
+<a class="featured-card" data-open-gallery="decor" href="#galerie"><img alt="Collection artisanale" src="assets/gallery-01.webp"/><span class="featured-info"><strong>Collection artisanale</strong><span class="featured-price">19,90 €</span></span></a>
+<a class="featured-card" data-open-gallery="bijoux" href="#galerie"><img alt="Boucles papillons gravées" src="assets/gallery-06.webp"/><span class="featured-info"><strong>Boucles papillons gravées</strong><span class="featured-price">9,90 €</span></span></a>
+<a class="featured-card" data-open-gallery="decor" href="#galerie"><img alt="Tableau famille personnalisé" src="assets/gallery-04.webp"/><span class="featured-info"><strong>Tableau famille personnalisé</strong><span class="featured-price">19,90 €</span></span></a>
+<a class="featured-card" data-open-gallery="3dkey" href="#galerie"><img alt="Porte-clé Cardabelle Lozère en impression 3D" src="assets/cardabelle-3d-01.webp"/><span class="featured-info"><strong>Cardabelle Lozère 3D</strong><span class="featured-price">4,90 €</span></span></a>
+</div>
+<div class="featured-cta"><button class="btn btn-primary" id="open-gallery-btn" type="button">Voir toutes les réalisations →</button></div>
+</section>
 <section class="craft section dark-section" id="savoir-faire">
-  <div class="craft-grid">
-    <div class="craft-copy reveal">
-      <div class="section-kicker">Mon savoir-faire</div><h2>Une idée, un dessin, une création.</h2>
-      <p>Chez Duval Gravure &amp; Découpe Laser, je travaille principalement le bois par gravure et découpe laser, puis j’assemble, colore et termine chaque pièce à la main. Je réalise également des créations et porte-clés en impression 3D pour particuliers et professionnels en Lozère et Aveyron.</p>
-      <ul class="check-list"><li>Fabrication artisanale en Aveyron</li><li>Créations originales et petites séries</li><li>Projets pour particuliers et professionnels</li><li>Travail sur mesure selon la faisabilité</li></ul>
-    </div>
-    <div class="craft-visual reveal"><img src="assets/hero.webp" alt="Stand de créations artisanales Duval"><div class="stamp">Fabriqué<br>en Aveyron</div></div>
-  </div>
+<div class="craft-grid">
+<div class="craft-copy reveal">
+<div class="section-kicker">Mon savoir-faire</div><h2>Une idée, un dessin, une création.</h2>
+<p>Chez Duval Gravure &amp; Découpe Laser, je travaille principalement le bois par gravure et découpe laser, puis j’assemble, colore et termine chaque pièce à la main. Je réalise également des créations et porte-clés en impression 3D pour particuliers et professionnels en Lozère et Aveyron.</p>
+<ul class="check-list"><li>Fabrication artisanale en Aveyron</li><li>Créations originales et petites séries</li><li>Projets pour particuliers et professionnels</li><li>Travail sur mesure selon la faisabilité</li></ul>
+</div>
+<div class="craft-visual reveal"><img alt="Stand de créations artisanales Duval" src="assets/hero.webp"/><div class="stamp">Fabriqué<br/>en Aveyron</div></div>
+</div>
 </section>
-
 <section class="gallery-section section" id="galerie">
-  <div class="section-kicker">Portfolio & tarifs</div>
-  <h2>Quelques réalisations</h2>
-  <p class="lead">Cliquez sur une photo pour l’agrandir.</p>
-  <div class="pricing-note"><strong>Commandes en quantité : tarif dégressif sur devis.</strong><span>Tarifs professionnels : sur devis.</span></div>
-  <div class="filters">
-    <button class="filter active" data-smart-filter="all">Tout</button><button class="filter" data-smart-filter="decor">Décoration &amp; tableaux</button><button class="filter" data-smart-filter="bijoux">Bijoux</button><button class="filter" data-smart-filter="bois">Porte-clés bois</button><button class="filter" data-smart-filter="3dkey">Porte-clés 3D</button>
-  </div>
-  <div class="gallery-grid">
-<button class="gallery-card reveal" data-category="tableaux" data-title="Collection artisanale — 19,90 €" data-image="assets/gallery-01.webp">
-      <img src="assets/gallery-01.webp" alt="Collection artisanale" loading="lazy">
-      <span class="gallery-overlay"><strong>Collection artisanale</strong><span class="price">19,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="tableaux" data-title="Les Gorges en bois multicouche — 19,90 €" data-image="assets/gallery-02.webp">
-      <img src="assets/gallery-02.webp" alt="Les Gorges en bois multicouche" loading="lazy">
-      <span class="gallery-overlay"><strong>Les Gorges en bois multicouche</strong><span class="price">19,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="tableaux" data-title="Tableau vautours des Gorges — 19,90 €" data-image="assets/gallery-03.webp">
-      <img src="assets/gallery-03.webp" alt="Tableau vautours des Gorges" loading="lazy">
-      <span class="gallery-overlay"><strong>Tableau vautours des Gorges</strong><span class="price">19,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="tableaux" data-title="Tableau famille personnalisé — 19,90 €" data-image="assets/gallery-04.webp">
-      <img src="assets/gallery-04.webp" alt="Tableau famille personnalisé" loading="lazy">
-      <span class="gallery-overlay"><strong>Tableau famille personnalisé</strong><span class="price">19,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles paysage des Gorges — 9,90 €" data-image="assets/gallery-05.webp">
-      <img src="assets/gallery-05.webp" alt="Boucles paysage des Gorges" loading="lazy">
-      <span class="gallery-overlay"><strong>Boucles paysage des Gorges</strong><span class="price">9,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles papillons gravées — 9,90 €" data-image="assets/gallery-06.webp">
-      <img src="assets/gallery-06.webp" alt="Boucles papillons gravées" loading="lazy">
-      <span class="gallery-overlay"><strong>Boucles papillons gravées</strong><span class="price">9,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles lotus en bois — 9,90 €" data-image="assets/gallery-07.webp">
-      <img src="assets/gallery-07.webp" alt="Boucles lotus en bois" loading="lazy">
-      <span class="gallery-overlay"><strong>Boucles lotus en bois</strong><span class="price">9,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="bijoux" data-title="Boucles chats personnalisées — 9,90 €" data-image="assets/gallery-08.webp">
-      <img src="assets/gallery-08.webp" alt="Boucles chats personnalisées" loading="lazy">
-      <span class="gallery-overlay"><strong>Boucles chats personnalisées</strong><span class="price">9,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Présentoir de porte-clés — 4,90 €" data-image="assets/gallery-09.webp">
-      <img src="assets/gallery-09.webp" alt="Présentoir de porte-clés" loading="lazy">
-      <span class="gallery-overlay"><strong>Présentoir de porte-clés</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-title="Porte-clé Les Douzes — 4,90 €" data-image="assets/gallery-10.webp">
-      <img src="assets/gallery-10.webp" alt="Porte-clé Les Douzes" loading="lazy">
-      <span class="gallery-overlay"><strong>Porte-clé Les Douzes</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-title="Porte-clé Gorges de la Jonte — 4,90 €" data-image="assets/gallery-11.webp">
-      <img src="assets/gallery-11.webp" alt="Porte-clé Gorges de la Jonte" loading="lazy">
-      <span class="gallery-overlay"><strong>Porte-clé Gorges de la Jonte</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="decoration" data-title="Prénoms personnalisés — 15 €" data-image="assets/gallery-12.webp">
-      <img src="assets/gallery-12.webp" alt="Prénoms personnalisés" loading="lazy">
-      <span class="gallery-overlay"><strong>Prénoms personnalisés</strong><span class="price">15 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="decoration" data-title="Prénoms décoratifs multicouches — 15 €" data-image="assets/gallery-13.webp">
-      <img src="assets/gallery-13.webp" alt="Prénoms décoratifs multicouches" loading="lazy">
-      <span class="gallery-overlay"><strong>Prénoms décoratifs multicouches</strong><span class="price">15 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-title="Marque-page vautour Jonte — 4 €" data-image="assets/gallery-14.webp">
-      <img src="assets/gallery-14.webp" alt="Marque-page vautour Jonte" loading="lazy">
-      <span class="gallery-overlay"><strong>Marque-page vautour Jonte</strong><span class="price">4 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="decoration" data-title="Silhouette murale personnalisée — 15 €" data-image="assets/gallery-15.webp">
-      <img src="assets/gallery-15.webp" alt="Silhouette murale personnalisée" loading="lazy">
-      <span class="gallery-overlay"><strong>Silhouette murale personnalisée</strong><span class="price">15 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="decoration" data-title="Décoration de porte animaux — 25 €" data-image="assets/gallery-16.webp">
-      <img src="assets/gallery-16.webp" alt="Décoration de porte animaux" loading="lazy">
-      <span class="gallery-overlay"><strong>Décoration de porte animaux</strong><span class="price">25 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Gypaète imprimé en 3D — 2,90 €" data-image="assets/gallery-17.webp">
-      <img src="assets/gallery-17.webp" alt="Gypaète imprimé en 3D" loading="lazy">
-      <span class="gallery-overlay"><strong>Gypaète imprimé en 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Série de vautours en impression 3D — 2,90 €" data-image="assets/gallery-18.webp">
-      <img src="assets/gallery-18.webp" alt="Série de vautours en impression 3D" loading="lazy">
-      <span class="gallery-overlay"><strong>Série de vautours en impression 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-title="Collection de vautours 3D — 2,90 €" data-image="assets/gallery-19.webp">
-      <img src="assets/gallery-19.webp" alt="Collection de vautours 3D" loading="lazy">
-      <span class="gallery-overlay"><strong>Collection de vautours 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clé Rue du Buraliste — 60 × 30 mm — 4,90 €" data-image="assets/porte-cle-rue-buraliste.jpg">
-      <img src="assets/porte-cle-rue-buraliste.jpg" alt="Porte-clé Rue du Buraliste — 60 × 30 mm" loading="lazy">
-      <span class="gallery-overlay"><strong>Porte-clé Rue du Buraliste — 60 × 30 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clés Cœur — 30 mm et 50 mm — 4,90 €" data-image="assets/porte-cle-coeurs.jpg">
-      <img src="assets/porte-cle-coeurs.jpg" alt="Porte-clés Cœur — 30 mm et 50 mm" loading="lazy">
-      <span class="gallery-overlay"><strong>Porte-clés Cœur — 30 mm et 50 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clés Animaux — 30 à 60 mm — 4,90 €" data-image="assets/porte-cles-animaux-3d.jpg">
-      <img src="assets/porte-cles-animaux-3d.jpg" alt="Porte-clés Animaux — 30 à 60 mm" loading="lazy">
-      <span class="gallery-overlay"><strong>Porte-clés Animaux — 30 à 60 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clé Cardabelle Lozère – Impression 3D — 4,90 € — Fabrication artisanale en PLA multicolore, avec relief Cardabelle et inscription Lozère." data-image="assets/cardabelle-3d-01.webp">
-      <img src="assets/cardabelle-3d-01.webp" alt="Porte-clé Cardabelle Lozère en impression 3D multicolore" loading="lazy">
-      <span class="gallery-overlay"><strong>Cardabelle Lozère – Impression 3D</strong><span class="price">4,90 €</span><small class="product-detail">PLA multicolore • relief Cardabelle & Lozère</small><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-title="Porte-clé Cardabelle Lozère – Impression 3D — 4,90 € — Deuxième coloris." data-image="assets/cardabelle-3d-02.webp">
-      <img src="assets/cardabelle-3d-02.webp" alt="Porte-clé Cardabelle Lozère impression 3D autre coloris" loading="lazy">
-      <span class="gallery-overlay"><strong>Cardabelle Lozère – Impression 3D</strong><span class="price">4,90 €</span><small class="product-detail">Autre coloris disponible</small><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-title="Porte-clé Cardabelle Lozère – Bois gravé recto-verso — 4,90 € — Découpe et gravure laser, fabrication artisanale." data-image="assets/cardabelle-bois-recto.webp">
-      <img src="assets/cardabelle-bois-recto.webp" alt="Porte-clé Cardabelle Lozère en bois gravé recto" loading="lazy">
-      <span class="gallery-overlay"><strong>Cardabelle Lozère – Bois recto-verso</strong><span class="price">4,90 €</span><small class="product-detail">Découpe & gravure laser • recto-verso</small><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-title="Porte-clé Cardabelle Lozère – Bois gravé recto-verso — 4,90 € — Vue verso." data-image="assets/cardabelle-bois-verso.webp">
-      <img src="assets/cardabelle-bois-verso.webp" alt="Porte-clé Cardabelle Lozère en bois gravé verso" loading="lazy">
-      <span class="gallery-overlay"><strong>Cardabelle Lozère – Bois recto-verso</strong><span class="price">4,90 €</span><small class="product-detail">Vue verso</small><small class="price-note">Quantités & pros : devis sur demande</small></span>
-    </button>
-  </div>
-</section>
-
+<div class="section-kicker">Portfolio &amp; tarifs</div>
+<h2>Toutes les réalisations</h2>
+<p class="lead">Choisissez une catégorie puis cliquez sur une création pour l’agrandir.</p>
+<div class="pricing-note"><strong>Commandes en quantité : tarif dégressif sur devis.</strong><span>Tarifs professionnels : sur devis.</span></div>
+<div class="filters">
+<button class="filter active" data-smart-filter="all">Tout</button><button class="filter" data-smart-filter="decor">Décoration &amp; tableaux</button><button class="filter" data-smart-filter="bijoux">Bijoux</button><button class="filter" data-smart-filter="bois">Porte-clés bois</button><button class="filter" data-smart-filter="3dkey">Porte-clés 3D</button>
+</div>
+<div class="gallery-grid">
+<button class="gallery-card reveal" data-category="tableaux" data-image="assets/gallery-01.webp" data-title="Collection artisanale — 19,90 €">
+<img alt="Collection artisanale" loading="lazy" src="assets/gallery-01.webp"/>
+<span class="gallery-overlay"><strong>Collection artisanale</strong><span class="price">19,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="tableaux" data-image="assets/gallery-02.webp" data-title="Les Gorges en bois multicouche — 19,90 €">
+<img alt="Les Gorges en bois multicouche" loading="lazy" src="assets/gallery-02.webp"/>
+<span class="gallery-overlay"><strong>Les Gorges en bois multicouche</strong><span class="price">19,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="tableaux" data-image="assets/gallery-03.webp" data-title="Tableau vautours des Gorges — 19,90 €">
+<img alt="Tableau vautours des Gorges" loading="lazy" src="assets/gallery-03.webp"/>
+<span class="gallery-overlay"><strong>Tableau vautours des Gorges</strong><span class="price">19,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="tableaux" data-image="assets/gallery-04.webp" data-title="Tableau famille personnalisé — 19,90 €">
+<img alt="Tableau famille personnalisé" loading="lazy" src="assets/gallery-04.webp"/>
+<span class="gallery-overlay"><strong>Tableau famille personnalisé</strong><span class="price">19,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="bijoux" data-image="assets/gallery-05.webp" data-title="Boucles paysage des Gorges — 9,90 €">
+<img alt="Boucles paysage des Gorges" loading="lazy" src="assets/gallery-05.webp"/>
+<span class="gallery-overlay"><strong>Boucles paysage des Gorges</strong><span class="price">9,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="bijoux" data-image="assets/gallery-06.webp" data-title="Boucles papillons gravées — 9,90 €">
+<img alt="Boucles papillons gravées" loading="lazy" src="assets/gallery-06.webp"/>
+<span class="gallery-overlay"><strong>Boucles papillons gravées</strong><span class="price">9,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="bijoux" data-image="assets/gallery-07.webp" data-title="Boucles lotus en bois — 9,90 €">
+<img alt="Boucles lotus en bois" loading="lazy" src="assets/gallery-07.webp"/>
+<span class="gallery-overlay"><strong>Boucles lotus en bois</strong><span class="price">9,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="bijoux" data-image="assets/gallery-08.webp" data-title="Boucles chats personnalisées — 9,90 €">
+<img alt="Boucles chats personnalisées" loading="lazy" src="assets/gallery-08.webp"/>
+<span class="gallery-overlay"><strong>Boucles chats personnalisées</strong><span class="price">9,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="souvenirs" data-image="assets/gallery-09.webp" data-title="Présentoir de porte-clés — 4,90 €">
+<img alt="Présentoir de porte-clés" loading="lazy" src="assets/gallery-09.webp"/>
+<span class="gallery-overlay"><strong>Présentoir de porte-clés</strong><span class="price">4,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-image="assets/gallery-10.webp" data-title="Porte-clé Les Douzes — 4,90 €">
+<img alt="Porte-clé Les Douzes" loading="lazy" src="assets/gallery-10.webp"/>
+<span class="gallery-overlay"><strong>Porte-clé Les Douzes</strong><span class="price">4,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-image="assets/gallery-11.webp" data-title="Porte-clé Gorges de la Jonte — 4,90 €">
+<img alt="Porte-clé Gorges de la Jonte" loading="lazy" src="assets/gallery-11.webp"/>
+<span class="gallery-overlay"><strong>Porte-clé Gorges de la Jonte</strong><span class="price">4,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="decoration" data-image="assets/gallery-12.webp" data-title="Prénoms personnalisés — 15 €">
+<img alt="Prénoms personnalisés" loading="lazy" src="assets/gallery-12.webp"/>
+<span class="gallery-overlay"><strong>Prénoms personnalisés</strong><span class="price">15 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="decoration" data-image="assets/gallery-13.webp" data-title="Prénoms décoratifs multicouches — 15 €">
+<img alt="Prénoms décoratifs multicouches" loading="lazy" src="assets/gallery-13.webp"/>
+<span class="gallery-overlay"><strong>Prénoms décoratifs multicouches</strong><span class="price">15 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="souvenirs" data-image="assets/gallery-14.webp" data-title="Marque-page vautour Jonte — 4 €">
+<img alt="Marque-page vautour Jonte" loading="lazy" src="assets/gallery-14.webp"/>
+<span class="gallery-overlay"><strong>Marque-page vautour Jonte</strong><span class="price">4 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="decoration" data-image="assets/gallery-15.webp" data-title="Silhouette murale personnalisée — 15 €">
+<img alt="Silhouette murale personnalisée" loading="lazy" src="assets/gallery-15.webp"/>
+<span class="gallery-overlay"><strong>Silhouette murale personnalisée</strong><span class="price">15 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="decoration" data-image="assets/gallery-16.webp" data-title="Décoration de porte animaux — 25 €">
+<img alt="Décoration de porte animaux" loading="lazy" src="assets/gallery-16.webp"/>
+<span class="gallery-overlay"><strong>Décoration de porte animaux</strong><span class="price">25 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="3d" data-image="assets/gallery-17.webp" data-title="Gypaète imprimé en 3D — 2,90 €">
+<img alt="Gypaète imprimé en 3D" loading="lazy" src="assets/gallery-17.webp"/>
+<span class="gallery-overlay"><strong>Gypaète imprimé en 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="3d" data-image="assets/gallery-18.webp" data-title="Série de vautours en impression 3D — 2,90 €">
+<img alt="Série de vautours en impression 3D" loading="lazy" src="assets/gallery-18.webp"/>
+<span class="gallery-overlay"><strong>Série de vautours en impression 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="3d" data-image="assets/gallery-19.webp" data-title="Collection de vautours 3D — 2,90 €">
+<img alt="Collection de vautours 3D" loading="lazy" src="assets/gallery-19.webp"/>
+<span class="gallery-overlay"><strong>Collection de vautours 3D</strong><span class="price">2,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-image="assets/porte-cle-rue-buraliste.jpg" data-title="Porte-clé Rue du Buraliste — 60 × 30 mm — 4,90 €">
+<img alt="Porte-clé Rue du Buraliste — 60 × 30 mm" loading="lazy" src="assets/porte-cle-rue-buraliste.jpg"/>
+<span class="gallery-overlay"><strong>Porte-clé Rue du Buraliste — 60 × 30 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-image="assets/porte-cle-coeurs.jpg" data-title="Porte-clés Cœur — 30 mm et 50 mm — 4,90 €">
+<img alt="Porte-clés Cœur — 30 mm et 50 mm" loading="lazy" src="assets/porte-cle-coeurs.jpg"/>
+<span class="gallery-overlay"><strong>Porte-clés Cœur — 30 mm et 50 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-image="assets/porte-cles-animaux-3d.jpg" data-title="Porte-clés Animaux — 30 à 60 mm — 4,90 €">
+<img alt="Porte-clés Animaux — 30 à 60 mm" loading="lazy" src="assets/porte-cles-animaux-3d.jpg"/>
+<span class="gallery-overlay"><strong>Porte-clés Animaux — 30 à 60 mm</strong><span class="price">4,90 €</span><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-image="assets/cardabelle-3d-01.webp" data-title="Porte-clé Cardabelle Lozère – Impression 3D — 4,90 € — Fabrication artisanale en PLA multicolore, avec relief Cardabelle et inscription Lozère.">
+<img alt="Porte-clé Cardabelle Lozère en impression 3D multicolore" loading="lazy" src="assets/cardabelle-3d-01.webp"/>
+<span class="gallery-overlay"><strong>Cardabelle Lozère – Impression 3D</strong><span class="price">4,90 €</span><small class="product-detail">PLA multicolore • relief Cardabelle &amp; Lozère</small><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="3d" data-family="3dkey" data-image="assets/cardabelle-3d-02.webp" data-title="Porte-clé Cardabelle Lozère – Impression 3D — 4,90 € — Deuxième coloris.">
+<img alt="Porte-clé Cardabelle Lozère impression 3D autre coloris" loading="lazy" src="assets/cardabelle-3d-02.webp"/>
+<span class="gallery-overlay"><strong>Cardabelle Lozère – Impression 3D</strong><span class="price">4,90 €</span><small class="product-detail">Autre coloris disponible</small><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-image="assets/cardabelle-bois-recto.webp" data-title="Porte-clé Cardabelle Lozère – Bois gravé recto-verso — 4,90 € — Découpe et gravure laser, fabrication artisanale.">
+<img alt="Porte-clé Cardabelle Lozère en bois gravé recto" loading="lazy" src="assets/cardabelle-bois-recto.webp"/>
+<span class="gallery-overlay"><strong>Cardabelle Lozère – Bois recto-verso</strong><span class="price">4,90 €</span><small class="product-detail">Découpe &amp; gravure laser • recto-verso</small><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+<button class="gallery-card reveal" data-category="souvenirs" data-family="bois" data-image="assets/cardabelle-bois-verso.webp" data-title="Porte-clé Cardabelle Lozère – Bois gravé recto-verso — 4,90 € — Vue verso.">
+<img alt="Porte-clé Cardabelle Lozère en bois gravé verso" loading="lazy" src="assets/cardabelle-bois-verso.webp"/>
+<span class="gallery-overlay"><strong>Cardabelle Lozère – Bois recto-verso</strong><span class="price">4,90 €</span><small class="product-detail">Vue verso</small><small class="price-note">Quantités &amp; pros : devis sur demande</small></span>
+</button>
+</div>
+<div class="gallery-close-wrap"><button class="btn btn-ghost" id="close-gallery-btn" type="button">Réduire la galerie ↑</button></div></section>
 <section class="quote-section"><div class="quote-inner reveal"><p>« Du bois brut… et quelques minutes plus tard, une création unique. »</p></div></section>
-
 <section class="social-section section" id="reseaux">
-  <div class="social-wrap reveal"><div><div class="section-kicker">Suivez mon travail</div><h2>Retrouvez mes nouveautés sur les réseaux</h2><p>Découvrez les créations en cours, les nouveautés et les coulisses de l’atelier.</p></div>
-  <div class="social-buttons">
-    <a href="https://www.instagram.com/duval.gravure.laser" target="_blank" rel="noopener"><span class="social-icon">◎</span><strong>Instagram</strong><small>@duval.gravure.laser</small></a>
-    <a href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" target="_blank" rel="noopener"><span class="social-icon">f</span><strong>Facebook</strong><small>Duval Gravure & Découpe Laser</small></a>
-    <a href="https://www.tiktok.com/@duval.gravure.laser" target="_blank" rel="noopener"><span class="social-icon">♪</span><strong>TikTok</strong><small>@duval.gravure.laser</small></a>
-  </div></div>
+<div class="social-wrap reveal"><div><div class="section-kicker">Suivez mon travail</div><h2>Retrouvez mes nouveautés sur les réseaux</h2><p>Découvrez les créations en cours, les nouveautés et les coulisses de l’atelier.</p></div>
+<div class="social-buttons">
+<a href="https://www.instagram.com/duval.gravure.laser" rel="noopener" target="_blank"><span class="social-icon">◎</span><strong>Instagram</strong><small>@duval.gravure.laser</small></a>
+<a href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" rel="noopener" target="_blank"><span class="social-icon">f</span><strong>Facebook</strong><small>Duval Gravure &amp; Découpe Laser</small></a>
+<a href="https://www.tiktok.com/@duval.gravure.laser" rel="noopener" target="_blank"><span class="social-icon">♪</span><strong>TikTok</strong><small>@duval.gravure.laser</small></a>
+</div></div>
 </section>
-
 <section class="contact section" id="contact">
-  <div class="contact-card reveal">
-    <div><div class="section-kicker">Une idée en tête ?</div><h2>Parlons de votre projet</h2><p>Pour une création, un cadeau, une commande en quantité ou une demande professionnelle, contactez-moi directement pour un devis.</p></div>
-    <div class="contact-actions">
-      <a class="contact-link primary" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20un%20devis%20pour..." target="_blank" rel="noopener"><span>WhatsApp</span><strong>Écrire maintenant</strong></a>
-      <a class="contact-link" href="tel:+33788518623"><span>Téléphone</span><strong>07 88 51 86 23</strong></a>
-      <a class="contact-link" href="mailto:anthonyduval4812@outlook.fr"><span>E-mail</span><strong>Envoyer un message</strong></a>
-      <a class="contact-link" href="https://www.instagram.com/duval.gravure.laser/" target="_blank" rel="noopener"><span>Instagram</span><strong>@duval.gravure.laser</strong></a>
-      <a class="contact-link" href="https://www.tiktok.com/@duval.gravure.laser" target="_blank" rel="noopener"><span>TikTok</span><strong>@duval.gravure.laser</strong></a>
-      <a class="contact-link" href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" target="_blank" rel="noopener"><span>Facebook</span><strong>Duval Gravure & Découpe Laser</strong></a>
-    </div>
-  </div>
+<div class="contact-card reveal">
+<div><div class="section-kicker">Une idée en tête ?</div><h2>Parlons de votre projet</h2><p>Pour une création, un cadeau, une commande en quantité ou une demande professionnelle, contactez-moi directement pour un devis.</p></div>
+<div class="contact-actions">
+<a class="contact-link primary" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20un%20devis%20pour..." rel="noopener" target="_blank"><span>WhatsApp</span><strong>Écrire maintenant</strong></a>
+<a class="contact-link" href="tel:+33788518623"><span>Téléphone</span><strong>07 88 51 86 23</strong></a>
+<a class="contact-link" href="mailto:anthonyduval4812@outlook.fr"><span>E-mail</span><strong>Envoyer un message</strong></a>
+<a class="contact-link" href="https://www.instagram.com/duval.gravure.laser/" rel="noopener" target="_blank"><span>Instagram</span><strong>@duval.gravure.laser</strong></a>
+<a class="contact-link" href="https://www.tiktok.com/@duval.gravure.laser" rel="noopener" target="_blank"><span>TikTok</span><strong>@duval.gravure.laser</strong></a>
+<a class="contact-link" href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" rel="noopener" target="_blank"><span>Facebook</span><strong>Duval Gravure &amp; Découpe Laser</strong></a>
+</div>
+</div>
 </section>
 </main>
-
 <footer>
-  <img src="assets/logo.png" alt=""><p>Duval Gravure & Découpe Laser</p>
-  <small>Créations artisanales en bois & impression 3D, fabriquées en Aveyron.</small>
-  <div class="footer-socials"><a href="https://www.instagram.com/duval.gravure.laser" target="_blank" rel="noopener">Instagram</a><a href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a><a href="https://www.tiktok.com/@duval.gravure.laser" target="_blank" rel="noopener">TikTok</a></div>
-  <small>© <span id="year"></span> Anthony Duval — Tous droits réservés.</small>
+<img alt="" src="assets/logo.png"/><p>Duval Gravure &amp; Découpe Laser</p>
+<small>Créations artisanales en bois &amp; impression 3D, fabriquées en Aveyron.</small>
+<div class="footer-socials"><a href="https://www.instagram.com/duval.gravure.laser" rel="noopener" target="_blank">Instagram</a><a href="https://www.facebook.com/share/18xcwjus1D/?mibextid=wwXIfr" rel="noopener" target="_blank">Facebook</a><a href="https://www.tiktok.com/@duval.gravure.laser" rel="noopener" target="_blank">TikTok</a></div>
+<small>© <span id="year"></span> Anthony Duval — Tous droits réservés.</small>
 </footer>
-<dialog class="lightbox"><button class="lightbox-close" aria-label="Fermer">×</button><img src="" alt=""><p></p></dialog>
+<dialog class="lightbox"><button aria-label="Fermer" class="lightbox-close">×</button><img alt="" src=""/><p></p></dialog>
 <script>
 (function(){
   const cards=[...document.querySelectorAll('.gallery-card')];
@@ -250,4 +291,43 @@
 })();
 </script>
 <script src="script.js"></script>
-</body></html>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const gallery=document.getElementById('galerie');
+  const openBtn=document.getElementById('open-gallery-btn');
+  const closeBtn=document.getElementById('close-gallery-btn');
+
+  function filterGallery(key){
+    const cards=[...document.querySelectorAll('#galerie .gallery-card')];
+    const filters=[...document.querySelectorAll('#galerie .filter')];
+    function matches(card){
+      if(key==='all') return true;
+      if(key==='decor') return card.dataset.category==='tableaux' || card.dataset.category==='decoration';
+      if(key==='bijoux') return card.dataset.category==='bijoux';
+      if(key==='bois') return card.dataset.family==='bois';
+      if(key==='3dkey') return card.dataset.family==='3dkey';
+      return true;
+    }
+    cards.forEach(card=>card.style.display=matches(card)?'':'none');
+    filters.forEach(btn=>btn.classList.toggle('active',btn.dataset.smartFilter===key));
+  }
+
+  function openGallery(key='all'){
+    gallery.classList.add('gallery-open');
+    filterGallery(key);
+    setTimeout(()=>gallery.scrollIntoView({behavior:'smooth',block:'start'}),30);
+  }
+
+  if(openBtn) openBtn.addEventListener('click',()=>openGallery('all'));
+  document.querySelectorAll('[data-open-gallery]').forEach(card=>{
+    card.addEventListener('click',function(e){
+      e.preventDefault();
+      openGallery(card.dataset.openGallery || 'all');
+    });
+  });
+  if(closeBtn) closeBtn.addEventListener('click',function(){
+    gallery.classList.remove('gallery-open');
+    document.getElementById('produits-phares').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+</script></body></html>
