@@ -276,7 +276,41 @@
     line-height:1.42;
   }
 }
-</style></head>
+</style>
+<style>
+/* ===== V13 : visuel d'accueil validé ===== */
+.hero{
+  min-height:0 !important;
+  aspect-ratio:1536 / 864;
+  position:relative;
+  overflow:hidden;
+  background:#111;
+}
+.hero-bg{
+  position:absolute !important;
+  inset:0 !important;
+  background-image:url('hero-v13.webp') !important;
+  background-size:cover !important;
+  background-position:center center !important;
+  transform:none !important;
+}
+.hero-shade,
+.hero-content,
+.hero .scroll-hint{
+  display:none !important;
+}
+@media (max-width:900px){
+  .hero{
+    aspect-ratio:1536 / 864;
+    min-height:0 !important;
+  }
+  .hero-bg{
+    background-size:cover !important;
+    background-position:center center !important;
+  }
+}
+</style>
+</head>
 <body>
 <header class="topbar">
 <a class="brand" href="#accueil"><img alt="Logo Duval Gravure &amp; Découpe Laser" src="logo.png"/></a>
@@ -285,7 +319,7 @@
 </header>
 <main>
 <section class="hero" id="accueil">
-<div class="hero-bg" style="background-image:url('hero-montage-jontes.webp');"></div><div class="hero-shade"></div>
+<div class="hero-bg" style="background-image:url('hero-v13.webp');"></div><div class="hero-shade"></div>
 <div class="hero-content">
 <p class="eyebrow">DUVAL GRAVURE &amp; DÉCOUPE LASER</p>
 <h1>Gravure laser,<br/>découpe laser<br/><span class="gold-text">&amp; impression 3D</span><br/><span class="hero-location">Lozère &amp; Aveyron</span></h1>
