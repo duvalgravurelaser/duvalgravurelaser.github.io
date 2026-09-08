@@ -1,6 +1,9 @@
 
+&lt;!-- Version V12 : montage Gorges validé + texte en haut à gauche --&gt;
+
 &lt;!-- Version V11 : vraies créations + fond réel Gorges de la Jonte, 08/09/2026 --&gt;
 <!DOCTYPE html>
+
 
 
  Version V10 : accueil allégé + produits phares + galerie complète - 08/09/2026 
@@ -175,6 +178,104 @@
   .hp-card{width:52%;height:225px;left:24%;right:auto;bottom:0}
   .featured-products{grid-template-columns:1fr}
 }
+</style><style>
+/* ===== V12 : hero montage validé, texte compact en haut à gauche ===== */
+.hero{
+  min-height:720px;
+  position:relative;
+  overflow:hidden;
+  display:block;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover !important;
+  background-position:center center !important;
+  transform:none !important;
+}
+.hero-shade{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(8,8,8,.72) 0%,rgba(8,8,8,.48) 24%,rgba(8,8,8,.10) 48%,rgba(8,8,8,0) 70%),
+    linear-gradient(180deg,rgba(0,0,0,.20) 0%,rgba(0,0,0,0) 38%);
+}
+.hero-content{
+  position:relative;
+  z-index:3;
+  width:min(460px,42vw);
+  max-width:460px;
+  margin:0;
+  padding:58px 0 0 5.5vw;
+  text-align:left;
+}
+.hero-content .eyebrow{
+  margin-bottom:14px;
+  font-size:.78rem;
+  letter-spacing:.12em;
+  font-weight:800;
+  color:#f2d28d;
+  text-shadow:0 2px 12px rgba(0,0,0,.45);
+}
+.hero-content h1{
+  margin:0;
+  font-size:clamp(2.7rem,4.6vw,4.7rem);
+  line-height:.94;
+  letter-spacing:-.025em;
+  text-shadow:0 4px 26px rgba(0,0,0,.55);
+}
+.hero-location{
+  display:inline-block;
+  margin-top:10px;
+  font-size:.50em;
+  color:#fff;
+  font-weight:700;
+}
+.hero-subtitle{
+  max-width:430px;
+  margin-top:18px;
+  font-size:1rem;
+  line-height:1.5;
+  color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.55);
+}
+.hero-actions{
+  margin-top:18px;
+}
+.hero-actions .btn-primary{
+  padding:14px 22px;
+}
+.scroll-hint{display:none}
+
+@media (max-width:900px){
+  .hero{min-height:700px}
+  .hero-bg{background-position:58% center !important}
+  .hero-content{
+    width:min(500px,78vw);
+    max-width:500px;
+    padding:46px 0 0 24px;
+  }
+  .hero-shade{
+    background:
+      linear-gradient(90deg,rgba(8,8,8,.78) 0%,rgba(8,8,8,.54) 40%,rgba(8,8,8,.12) 72%,rgba(8,8,8,0) 100%);
+  }
+}
+@media (max-width:620px){
+  .hero{min-height:760px}
+  .hero-bg{background-position:61% center !important}
+  .hero-content{
+    width:74vw;
+    max-width:74vw;
+    padding:34px 0 0 18px;
+  }
+  .hero-content h1{
+    font-size:clamp(2.2rem,10.5vw,3.4rem);
+  }
+  .hero-subtitle{
+    font-size:.9rem;
+    line-height:1.42;
+  }
+}
 </style></head>
 <body>
 <header class="topbar">
@@ -184,29 +285,15 @@
 </header>
 <main>
 <section class="hero" id="accueil">
-<div class="hero-bg" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Gorges_de_la_Jonte_01.jpg/1280px-Gorges_de_la_Jonte_01.jpg');"></div><div class="hero-shade"></div>
+<div class="hero-bg" style="background-image:url('hero-montage-jontes.webp');"></div><div class="hero-shade"></div>
 <div class="hero-content">
-<p class="eyebrow">Gravure laser • découpe laser • impression 3D</p>
-<h1>Gravure laser, <br/>découpe laser <br/><span class="gold-text">et impression 3D</span><br/><span class="hero-location">en Lozère et Aveyron</span></h1>
-<p class="hero-subtitle">Des créations uniques et personnalisées pour vos cadeaux, votre déco, vos projets professionnels ou vos souvenirs locaux.</p>
+<p class="eyebrow">DUVAL GRAVURE &amp; DÉCOUPE LASER</p>
+<h1>Gravure laser,<br/>découpe laser<br/><span class="gold-text">&amp; impression 3D</span><br/><span class="hero-location">Lozère &amp; Aveyron</span></h1>
+<p class="hero-subtitle">Créations artisanales en bois et impression 3D • Personnalisation pour particuliers et professionnels.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20un%20devis." rel="noopener" target="_blank">Demander un devis →</a>
 <a class="btn btn-ghost" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet." rel="noopener" target="_blank">Parler de mon projet</a>
 </div>
-</div>
-<div aria-label="Exemples de créations" class="hero-real-products">
-<figure class="hero-product hp-wood">
-<img alt="Porte-clé Gorges de la Jonte en bois, création Duval" src="hero-gorges-bois.webp"/>
-<figcaption>Bois gravé</figcaption>
-</figure>
-<figure class="hero-product hp-pla">
-<img alt="Porte-clé Lozère en PLA rouge jaune et noir, création Duval" src="hero-lozere-pla.webp"/>
-<figcaption>Impression 3D</figcaption>
-</figure>
-<figure class="hero-product hp-card">
-<img alt="Porte-clé Cardabelle Lozère en PLA, création Duval" src="hero-cardabelle.webp"/>
-<figcaption>Cardabelle Lozère</figcaption>
-</figure>
 </div>
 
 <a aria-label="Découvrir la suite" class="scroll-hint" href="#creations">↓</a>
