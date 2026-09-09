@@ -270,6 +270,38 @@ h1 span{color:#e7c263}
 <style>
 .photo{position:relative}.product-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}.product-ref{font-size:12px;font-weight:800;color:#59635b}.add-cart,.cart-fab,.cart-whatsapp{background:#234d37;color:white;border:0;border-radius:999px;font-weight:800;cursor:pointer}.add-cart{padding:9px 12px}.cart-fab{position:fixed;right:18px;bottom:18px;z-index:70;padding:13px 17px;box-shadow:0 8px 25px #0004}.cart-count{background:white;color:#234d37;border-radius:50%;padding:3px 7px;margin-left:5px}.cart-panel{position:fixed;inset:0;z-index:80;background:#0007;display:none;align-items:flex-end;justify-content:center}.cart-panel.open{display:flex}.cart-box{width:min(680px,100%);max-height:86vh;overflow:auto;background:white;border-radius:22px 22px 0 0;padding:22px}.cart-head{display:flex;justify-content:space-between;align-items:center}.cart-close{border:0;border-radius:50%;width:38px;height:38px;font-size:22px}.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px 0;border-bottom:1px solid #ddd}.cart-item small{display:block;color:#667}.qty{display:flex;gap:8px;align-items:center;margin-top:8px}.qty button{width:30px;height:30px}.remove{border:0;background:none;color:#a33}.cart-total{text-align:right;font-size:20px;font-weight:900;margin:18px 0}.cart-whatsapp{display:block;text-align:center;text-decoration:none;padding:14px;border-radius:12px}.cart-note{text-align:center;font-size:12px;color:#667;margin-top:10px}@media(max-width:520px){.product-actions{flex-direction:column;align-items:stretch}.add-cart{width:100%}}
 </style>
+
+<style>
+.product-card{min-width:0}
+.product-card .photo{width:100%;display:block}
+.product-card .product-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-top:8px;
+}
+.product-card .product-ref{
+  font-size:12px;
+  font-weight:800;
+  color:#59635b;
+  white-space:nowrap;
+}
+.product-card .add-cart{
+  border:0;
+  border-radius:999px;
+  background:#234d37;
+  color:#fff;
+  padding:9px 12px;
+  font-weight:800;
+  cursor:pointer;
+  font-size:12px;
+}
+@media(max-width:520px){
+  .product-card .product-actions{flex-direction:column;align-items:stretch}
+  .product-card .add-cart{width:100%}
+}
+</style>
 </head>
 <body>
 <section class="hero" id="accueil">
@@ -398,31 +430,93 @@ h1 span{color:#e7c263}
 <div class="cart-note">Le paiement n'est pas effectué sur le site. Anthony vous confirme ensuite la commande.</div>
 </div></div>
 
+
+
 <script>
 (()=>{
 const prefixes=[["porte-clés bois","PCB"],["porte-clés pla","PLA"],["prénoms","PRE"],["tableaux","TAB"],["décorations de porte","DPO"],["silhouettes","SMU"],["boucles","BO"],["marque-pages","MP"],["figurines","V3D"]];
-const cart=JSON.parse(localStorage.getItem("duvalCart")||"{}"),panel=document.getElementById("cartPanel");
-const price=t=>{let m=(t||"").replace(",",".").match(/\d+(?:\.\d+)?/);return m?+m[0]:0},money=n=>n.toFixed(2).replace(".",",")+" €";
+const cart=JSON.parse(localStorage.getItem("duvalCart")||"{}");
+const panel=document.getElementById("cartPanel");
+const price=t=>{let m=(t||"").replace(",",".").match(/\d+(?:\.\d+)?/);return m?+m[0]:0};
+const money=n=>n.toFixed(2).replace(".",",")+" €";
+
 document.querySelectorAll(".product-category").forEach(cat=>{
- let title=(cat.querySelector("h3")?.textContent||"Produit").trim(), low=title.toLowerCase(), pref=(prefixes.find(x=>low.includes(x[0]))||["","PROD"])[1], pr=price(cat.querySelector(".price")?.textContent);
- cat.querySelectorAll(".photo").forEach((ph,i)=>{
-  let ref=pref+"-"+String(i+1).padStart(2,"0"), name=(ph.querySelector("img")?.alt||title).trim(), a=document.createElement("div");
-  a.className="product-actions";a.innerHTML='<span class="product-ref">Réf. '+ref+'</span><button class="add-cart">Ajouter au panier</button>';
-  a.querySelector("button").onclick=()=>{cart[ref]?cart[ref].qty++:cart[ref]={ref,name,price:pr,qty:1};save();render();panel.classList.add("open")};ph.appendChild(a);
- });
+  const title=(cat.querySelector("h3")?.textContent||"Produit").trim();
+  const low=title.toLowerCase();
+  const pref=(prefixes.find(x=>low.includes(x[0]))||["","PROD"])[1];
+  const pr=price(cat.querySelector(".price")?.textContent);
+
+  cat.querySelectorAll(".gallery").forEach(gallery=>{
+    [...gallery.children].forEach((ph,i)=>{
+      if(!ph.classList.contains("photo")) return;
+
+      const allPhotos=[...cat.querySelectorAll(".photo")];
+      const globalIndex=allPhotos.indexOf(ph);
+      const ref=pref+"-"+String(globalIndex+1).padStart(2,"0");
+      const name=(ph.querySelector("img")?.alt||title).trim();
+
+      const wrap=document.createElement("div");
+      wrap.className="product-card";
+
+      ph.parentNode.insertBefore(wrap,ph);
+      wrap.appendChild(ph);
+
+      const actions=document.createElement("div");
+      actions.className="product-actions";
+      actions.innerHTML='<span class="product-ref">Réf. '+ref+'</span><button class="add-cart" type="button">Ajouter au panier</button>';
+      wrap.appendChild(actions);
+
+      actions.querySelector(".add-cart").addEventListener("click",(e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        if(cart[ref]) cart[ref].qty++;
+        else cart[ref]={ref,name,price:pr,qty:1};
+        save();
+        render();
+        panel.classList.add("open");
+      });
+    });
+  });
 });
+
 function save(){localStorage.setItem("duvalCart",JSON.stringify(cart))}
 function esc(x){let d=document.createElement("div");d.textContent=x;return d.innerHTML}
 function render(){
- let ar=Object.values(cart), total=0;document.getElementById("cartCount").textContent=ar.reduce((a,x)=>a+x.qty,0);
- let box=document.getElementById("cartItems");box.innerHTML="";
- if(!ar.length){box.innerHTML="<p>Votre panier est vide.</p>";document.getElementById("cartTotal").textContent="Total : 0,00 €";document.getElementById("cartWhatsapp").style.display="none";return}
- ar.forEach(x=>{total+=x.price*x.qty;let r=document.createElement("div");r.className="cart-item";r.innerHTML='<div><strong>'+esc(x.name)+'</strong><small>Réf. '+x.ref+' · '+money(x.price)+'</small><div class="qty"><button class="minus">−</button><b>'+x.qty+'</b><button class="plus">+</button></div></div><button class="remove">Retirer</button>';r.querySelector(".minus").onclick=()=>{if(--x.qty<=0)delete cart[x.ref];save();render()};r.querySelector(".plus").onclick=()=>{x.qty++;save();render()};r.querySelector(".remove").onclick=()=>{delete cart[x.ref];save();render()};box.appendChild(r)});
- document.getElementById("cartTotal").textContent="Total : "+money(total);let wa=document.getElementById("cartWhatsapp");wa.style.display="block";
- let lines=ar.map(x=>"• "+x.ref+" — "+x.name+" — "+x.qty+" × "+money(x.price)),msg="Bonjour Anthony, je souhaite commander :\n\n"+lines.join("\n")+"\n\nTotal indicatif : "+money(total)+"\n\nPouvez-vous me confirmer la disponibilité et la commande ?";
- wa.href="https://wa.me/33788518623?text="+encodeURIComponent(msg);
+  let ar=Object.values(cart), total=0;
+  document.getElementById("cartCount").textContent=ar.reduce((a,x)=>a+x.qty,0);
+  let box=document.getElementById("cartItems");
+  box.innerHTML="";
+
+  if(!ar.length){
+    box.innerHTML="<p>Votre panier est vide.</p>";
+    document.getElementById("cartTotal").textContent="Total : 0,00 €";
+    document.getElementById("cartWhatsapp").style.display="none";
+    return;
+  }
+
+  ar.forEach(x=>{
+    total+=x.price*x.qty;
+    let r=document.createElement("div");
+    r.className="cart-item";
+    r.innerHTML='<div><strong>'+esc(x.name)+'</strong><small>Réf. '+x.ref+' · '+money(x.price)+'</small><div class="qty"><button class="minus">−</button><b>'+x.qty+'</b><button class="plus">+</button></div></div><button class="remove">Retirer</button>';
+    r.querySelector(".minus").onclick=()=>{if(--x.qty<=0)delete cart[x.ref];save();render()};
+    r.querySelector(".plus").onclick=()=>{x.qty++;save();render()};
+    r.querySelector(".remove").onclick=()=>{delete cart[x.ref];save();render()};
+    box.appendChild(r);
+  });
+
+  document.getElementById("cartTotal").textContent="Total : "+money(total);
+  let wa=document.getElementById("cartWhatsapp");
+  wa.style.display="block";
+  let lines=ar.map(x=>"• "+x.ref+" — "+x.name+" — "+x.qty+" × "+money(x.price));
+  let msg="Bonjour Anthony, je souhaite commander :\n\n"+lines.join("\n")+"\n\nTotal indicatif : "+money(total)+"\n\nPouvez-vous me confirmer la disponibilité et la commande ?";
+  wa.href="https://wa.me/33788518623?text="+encodeURIComponent(msg);
 }
-document.getElementById("cartFab").onclick=()=>panel.classList.add("open");document.getElementById("cartClose").onclick=()=>panel.classList.remove("open");panel.onclick=e=>{if(e.target===panel)panel.classList.remove("open")};render();
+
+document.getElementById("cartFab").onclick=()=>panel.classList.add("open");
+document.getElementById("cartClose").onclick=()=>panel.classList.remove("open");
+panel.onclick=e=>{if(e.target===panel)panel.classList.remove("open")};
+render();
 })();
 </script>
 </body>
