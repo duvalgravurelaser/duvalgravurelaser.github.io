@@ -47,6 +47,36 @@ h1 span{color:#e7c263}
   .top{top:12px;left:3%;right:3%}.logo{min-width:170px;padding:9px 12px}.logo .duval{font-size:23px}.logo .sub{font-size:12px}
   h1{font-size:44px}.hero p{font-size:14px}.cards{grid-template-columns:1fr}.section{padding:54px 6%}
 }
+
+/* Galerie créations — étape 3 */
+.category-nav{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 38px}
+.category-nav a{display:inline-block;text-decoration:none;color:#28313a;background:#f4efe4;border:1px solid #e5dccb;border-radius:999px;padding:10px 14px;font-weight:700;font-size:14px}
+.category-nav a:hover{background:#ead9a6}
+.products-wrap{display:grid;gap:26px}
+.product-category{scroll-margin-top:20px;border:1px solid #e8e0d2;border-radius:18px;padding:24px;background:#fff;box-shadow:0 8px 26px rgba(0,0,0,.055)}
+.cat-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:18px}
+.cat-number{display:inline-block;font-weight:900;color:#b1811b;letter-spacing:1px;margin-bottom:5px}
+.product-category h3{font-family:Georgia,serif;font-size:30px;margin:0 0 7px;color:#1d2630}
+.product-category p{margin:0;color:#65707b;line-height:1.45}
+.price{white-space:nowrap;background:#1d2630;color:#fff;font-weight:900;font-size:20px;padding:11px 15px;border-radius:10px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.photo{appearance:none;border:0;padding:0;background:#eee;border-radius:12px;overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;box-shadow:inset 0 0 0 1px rgba(0,0,0,.04)}
+.photo img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .2s ease}
+.photo:hover img{transform:scale(1.025)}
+.more{margin-top:14px;border-top:1px solid #eee4d4;padding-top:14px}
+.more summary{cursor:pointer;display:inline-block;font-weight:800;color:#8d6718;list-style:none}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:" +"}
+.more[open] summary::after{content:" −"}
+.all-gallery{margin-top:14px}
+.price-note{margin-top:28px;padding:18px 20px;border-radius:12px;background:#f6f2e9;color:#4d5660;line-height:1.5}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;padding:28px;align-items:center;justify-content:center}
+.lightbox.open{display:flex}
+.lightbox img{max-width:min(1200px,96vw);max-height:90vh;object-fit:contain;border-radius:6px;background:white}
+.lightbox button{position:absolute;right:22px;top:16px;border:0;background:rgba(255,255,255,.94);width:42px;height:42px;border-radius:50%;font-size:28px;line-height:1;cursor:pointer}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}.cat-head{gap:14px}.product-category h3{font-size:26px}.price{font-size:17px}}
+@media(max-width:600px){.product-category{padding:16px}.gallery{gap:8px}.cat-head{display:block}.price{display:inline-block;margin-top:12px}.photo{aspect-ratio:1/1}.category-nav{margin-bottom:26px}.product-category h3{font-size:24px}}
+
 </style>
 </head>
 <body>
@@ -89,8 +119,64 @@ h1 span{color:#e7c263}
 
 <section class="section white" id="creations">
   <div class="kicker">Nos créations</div>
-  <h2>Produits personnalisés & créations locales</h2>
-  <p class="intro">Cette partie accueillera les photos et les prix validés ensemble, produit par produit, pour éviter toute erreur. On la remplira à l’étape suivante.</p>
+  <h2>Produits personnalisés &amp; créations locales</h2>
+  <p class="intro">Découvrez les créations réalisées en bois, au laser ou en impression 3D. Les modèles présentés sont des exemples : la personnalisation et les commandes en quantité sont possibles sur demande.</p>
+  <div class="category-nav" aria-label="Catégories de créations"><a href="#porte-cles-bois">Porte-clés bois</a><a href="#porte-cles-pla">Porte-clés PLA / impression 3D</a><a href="#prenoms">Prénoms personnalisés</a><a href="#tableaux">Tableaux</a><a href="#decorations-porte">Décorations de porte</a><a href="#silhouettes">Silhouettes murales</a><a href="#boucles">Boucles d’oreilles en bois</a><a href="#marque-pages">Marque-pages</a><a href="#vautours">Figurines vautours en impression 3D</a></div>
+  <div class="products-wrap">
+    <article class="product-category" id="porte-cles-bois">
+      <div class="cat-head"><div><span class="cat-number">01</span><h3>Porte-clés bois</h3><p>Créations en bois gravées et découpées au laser.</p></div><div class="price">4,90 €</div></div>
+      <div class="gallery"><button class="photo" type="button" data-full="bois-les-douzes.webp" aria-label="Agrandir : Porte-clé bois Les Douzes"><img src="bois-les-douzes.webp" alt="Porte-clé bois Les Douzes" loading="lazy"></button><button class="photo" type="button" data-full="bois-gorges-jonte.webp" aria-label="Agrandir : Porte-clé bois Gorges de la Jonte"><img src="bois-gorges-jonte.webp" alt="Porte-clé bois Gorges de la Jonte" loading="lazy"></button><button class="photo" type="button" data-full="bois-cardabelle-recto.webp" aria-label="Agrandir : Porte-clé Cardabelle en bois recto"><img src="bois-cardabelle-recto.webp" alt="Porte-clé Cardabelle en bois recto" loading="lazy"></button><button class="photo" type="button" data-full="bois-cardabelle-verso.webp" aria-label="Agrandir : Porte-clé Cardabelle en bois verso"><img src="bois-cardabelle-verso.webp" alt="Porte-clé Cardabelle en bois verso" loading="lazy"></button></div>
+      
+    </article>
+
+    <article class="product-category" id="porte-cles-pla">
+      <div class="cat-head"><div><span class="cat-number">02</span><h3>Porte-clés PLA / impression 3D</h3><p>Porte-clés imprimés en 3D, disponibles en plusieurs formes et couleurs.</p></div><div class="price">4,90 €</div></div>
+      <div class="gallery"><button class="photo" type="button" data-full="pla-cardabelle.png" aria-label="Agrandir : Porte-clé Cardabelle Lozère en PLA"><img src="pla-cardabelle.png" alt="Porte-clé Cardabelle Lozère en PLA" loading="lazy"></button><button class="photo" type="button" data-full="pla-animaux-3d.jpg" aria-label="Agrandir : Porte-clés animaux imprimés en 3D"><img src="pla-animaux-3d.jpg" alt="Porte-clés animaux imprimés en 3D" loading="lazy"></button><button class="photo" type="button" data-full="pla-coeurs.jpeg" aria-label="Agrandir : Porte-clés cœur en PLA"><img src="pla-coeurs.jpeg" alt="Porte-clés cœur en PLA" loading="lazy"></button><button class="photo" type="button" data-full="pla-rue-buraliste.jpeg" aria-label="Agrandir : Porte-clés Rue du Buraliste"><img src="pla-rue-buraliste.jpeg" alt="Porte-clés Rue du Buraliste" loading="lazy"></button></div>
+      <details class="more"><summary>Voir tous les modèles (7)</summary><div class="gallery all-gallery"><button class="photo" type="button" data-full="pla-rue-soif-rose.jpeg" aria-label="Agrandir : Porte-clé Rue de la Soif rose"><img src="pla-rue-soif-rose.jpeg" alt="Porte-clé Rue de la Soif rose" loading="lazy"></button><button class="photo" type="button" data-full="pla-rue-soif-gris.jpeg" aria-label="Agrandir : Porte-clé Rue de la Soif gris"><img src="pla-rue-soif-gris.jpeg" alt="Porte-clé Rue de la Soif gris" loading="lazy"></button><button class="photo" type="button" data-full="pla-rue-soif-orange.jpeg" aria-label="Agrandir : Porte-clé Rue de la Soif orange"><img src="pla-rue-soif-orange.jpeg" alt="Porte-clé Rue de la Soif orange" loading="lazy"></button></div></details>
+    </article>
+
+    <article class="product-category" id="prenoms">
+      <div class="cat-head"><div><span class="cat-number">03</span><h3>Prénoms personnalisés</h3><p>Prénoms, noms de lieux ou mots décoratifs personnalisés en bois multicouche.</p></div><div class="price">15 €</div></div>
+      <div class="gallery"><button class="photo" type="button" data-full="prenom-ancien-collection.webp" aria-label="Agrandir : Prénoms décoratifs multicouches"><img src="prenom-ancien-collection.webp" alt="Prénoms décoratifs multicouches" loading="lazy"></button><button class="photo" type="button" data-full="prenom-anthony-ancien.webp" aria-label="Agrandir : Prénom Anthony multicouche"><img src="prenom-anthony-ancien.webp" alt="Prénom Anthony multicouche" loading="lazy"></button><button class="photo" type="button" data-full="prenom-les-douzes.jpeg" aria-label="Agrandir : Décoration Les Douzes"><img src="prenom-les-douzes.jpeg" alt="Décoration Les Douzes" loading="lazy"></button><button class="photo" type="button" data-full="prenom-aigoual.jpeg" aria-label="Agrandir : Décoration De l’Aigoual"><img src="prenom-aigoual.jpeg" alt="Décoration De l’Aigoual" loading="lazy"></button></div>
+      <details class="more"><summary>Voir tous les modèles (8)</summary><div class="gallery all-gallery"><button class="photo" type="button" data-full="prenom-aveyron.jpeg" aria-label="Agrandir : Décoration Aveyron"><img src="prenom-aveyron.jpeg" alt="Décoration Aveyron" loading="lazy"></button><button class="photo" type="button" data-full="prenom-mende.jpeg" aria-label="Agrandir : Décoration Mende"><img src="prenom-mende.jpeg" alt="Décoration Mende" loading="lazy"></button><button class="photo" type="button" data-full="prenom-macarel.jpeg" aria-label="Agrandir : Décoration Macarel"><img src="prenom-macarel.jpeg" alt="Décoration Macarel" loading="lazy"></button><button class="photo" type="button" data-full="prenom-aubrac.jpeg" aria-label="Agrandir : Décoration Aubrac"><img src="prenom-aubrac.jpeg" alt="Décoration Aubrac" loading="lazy"></button></div></details>
+    </article>
+
+    <article class="product-category" id="tableaux">
+      <div class="cat-head"><div><span class="cat-number">04</span><h3>Tableaux</h3><p>Tableaux et compositions en bois, gravés ou multicouches.</p></div><div class="price">19,90 €</div></div>
+      <div class="gallery"><button class="photo" type="button" data-full="tableau-collection.webp" aria-label="Agrandir : Collection artisanale en bois"><img src="tableau-collection.webp" alt="Collection artisanale en bois" loading="lazy"></button><button class="photo" type="button" data-full="tableau-gorges.webp" aria-label="Agrandir : Les Gorges en bois multicouche"><img src="tableau-gorges.webp" alt="Les Gorges en bois multicouche" loading="lazy"></button><button class="photo" type="button" data-full="tableau-vautours.webp" aria-label="Agrandir : Tableau vautours des Gorges"><img src="tableau-vautours.webp" alt="Tableau vautours des Gorges" loading="lazy"></button><button class="photo" type="button" data-full="tableau-famille.webp" aria-label="Agrandir : Tableau famille personnalisé"><img src="tableau-famille.webp" alt="Tableau famille personnalisé" loading="lazy"></button></div>
+      
+    </article>
+
+    <article class="product-category" id="decorations-porte">
+      <div class="cat-head"><div><span class="cat-number">05</span><h3>Décorations de porte</h3><p>Décorations de porte en bois, personnalisables selon le modèle.</p></div><div class="price">25 €</div></div>
+      <div class="gallery"><button class="photo" type="button" data-full="decoration-porte-animaux.webp" aria-label="Agrandir : Décoration de porte animaux"><img src="decoration-porte-animaux.webp" alt="Décoration de porte animaux" loading="lazy"></button></div>
+      
+    </article>
+
+    <article class="product-category" id="silhouettes">
+      <div class="cat-head"><div><span class="cat-number">06</span><h3>Silhouettes murales</h3><p>Silhouettes décoratives en bois, avec possibilité de personnalisation.</p></div><div class="price">15 €</div></div>
+      <div class="gallery"><button class="photo" type="button" data-full="silhouette-ancienne.webp" aria-label="Agrandir : Silhouette murale personnalisée"><img src="silhouette-ancienne.webp" alt="Silhouette murale personnalisée" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-femme-profil-1.jpeg" aria-label="Agrandir : Silhouette murale femme profil"><img src="silhouette-femme-profil-1.jpeg" alt="Silhouette murale femme profil" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-couple.jpeg" aria-label="Agrandir : Silhouette murale couple"><img src="silhouette-couple.jpeg" alt="Silhouette murale couple" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-femme-profil-2.jpeg" aria-label="Agrandir : Silhouette murale femme"><img src="silhouette-femme-profil-2.jpeg" alt="Silhouette murale femme" loading="lazy"></button></div>
+      <details class="more"><summary>Voir tous les modèles (10)</summary><div class="gallery all-gallery"><button class="photo" type="button" data-full="silhouette-femme-lunettes.jpeg" aria-label="Agrandir : Silhouette murale femme lunettes"><img src="silhouette-femme-lunettes.jpeg" alt="Silhouette murale femme lunettes" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-homme.jpeg" aria-label="Agrandir : Silhouette murale homme"><img src="silhouette-homme.jpeg" alt="Silhouette murale homme" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-ema.jpeg" aria-label="Agrandir : Silhouette personnalisée Ema"><img src="silhouette-ema.jpeg" alt="Silhouette personnalisée Ema" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-lola.jpeg" aria-label="Agrandir : Silhouette personnalisée Lola"><img src="silhouette-lola.jpeg" alt="Silhouette personnalisée Lola" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-adeline.jpeg" aria-label="Agrandir : Silhouette personnalisée Adeline"><img src="silhouette-adeline.jpeg" alt="Silhouette personnalisée Adeline" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-anthony.jpeg" aria-label="Agrandir : Silhouette personnalisée Anthony"><img src="silhouette-anthony.jpeg" alt="Silhouette personnalisée Anthony" loading="lazy"></button></div></details>
+    </article>
+
+    <article class="product-category" id="boucles">
+      <div class="cat-head"><div><span class="cat-number">07</span><h3>Boucles d’oreilles en bois</h3><p>Boucles d’oreilles découpées et gravées au laser, dans de nombreux styles.</p></div><div class="price">9,90 € la paire</div></div>
+      <div class="gallery"><button class="photo" type="button" data-full="boucles-01.jpeg" aria-label="Agrandir : Boucles d’oreilles paysage"><img src="boucles-01.jpeg" alt="Boucles d’oreilles paysage" loading="lazy"></button><button class="photo" type="button" data-full="boucles-02.jpeg" aria-label="Agrandir : Boucles d’oreilles roses"><img src="boucles-02.jpeg" alt="Boucles d’oreilles roses" loading="lazy"></button><button class="photo" type="button" data-full="boucles-03.jpeg" aria-label="Agrandir : Boucles d’oreilles fleur colorée"><img src="boucles-03.jpeg" alt="Boucles d’oreilles fleur colorée" loading="lazy"></button><button class="photo" type="button" data-full="boucles-04.jpeg" aria-label="Agrandir : Boucles d’oreilles arbre"><img src="boucles-04.jpeg" alt="Boucles d’oreilles arbre" loading="lazy"></button></div>
+      <details class="more"><summary>Voir tous les modèles (20)</summary><div class="gallery all-gallery"><button class="photo" type="button" data-full="boucles-05.jpeg" aria-label="Agrandir : Boucles d’oreilles chats"><img src="boucles-05.jpeg" alt="Boucles d’oreilles chats" loading="lazy"></button><button class="photo" type="button" data-full="boucles-06.jpeg" aria-label="Agrandir : Boucles d’oreilles papillons"><img src="boucles-06.jpeg" alt="Boucles d’oreilles papillons" loading="lazy"></button><button class="photo" type="button" data-full="boucles-07.jpeg" aria-label="Agrandir : Boucles d’oreilles lotus"><img src="boucles-07.jpeg" alt="Boucles d’oreilles lotus" loading="lazy"></button><button class="photo" type="button" data-full="boucles-08.jpeg" aria-label="Agrandir : Boucles d’oreilles géométriques"><img src="boucles-08.jpeg" alt="Boucles d’oreilles géométriques" loading="lazy"></button><button class="photo" type="button" data-full="boucles-09.jpeg" aria-label="Agrandir : Boucles d’oreilles triangles"><img src="boucles-09.jpeg" alt="Boucles d’oreilles triangles" loading="lazy"></button><button class="photo" type="button" data-full="boucles-10.jpeg" aria-label="Agrandir : Boucles d’oreilles géométriques carrées"><img src="boucles-10.jpeg" alt="Boucles d’oreilles géométriques carrées" loading="lazy"></button><button class="photo" type="button" data-full="boucles-11.jpeg" aria-label="Agrandir : Boucles d’oreilles lotus bois"><img src="boucles-11.jpeg" alt="Boucles d’oreilles lotus bois" loading="lazy"></button><button class="photo" type="button" data-full="boucles-12.jpeg" aria-label="Agrandir : Boucles d’oreilles hiboux"><img src="boucles-12.jpeg" alt="Boucles d’oreilles hiboux" loading="lazy"></button><button class="photo" type="button" data-full="boucles-13.jpeg" aria-label="Agrandir : Boucles d’oreilles roses noires"><img src="boucles-13.jpeg" alt="Boucles d’oreilles roses noires" loading="lazy"></button><button class="photo" type="button" data-full="boucles-14.jpeg" aria-label="Agrandir : Boucles d’oreilles fleurs bois"><img src="boucles-14.jpeg" alt="Boucles d’oreilles fleurs bois" loading="lazy"></button><button class="photo" type="button" data-full="boucles-15.jpeg" aria-label="Agrandir : Boucles d’oreilles roses bois"><img src="boucles-15.jpeg" alt="Boucles d’oreilles roses bois" loading="lazy"></button><button class="photo" type="button" data-full="boucles-16.jpeg" aria-label="Agrandir : Boucles d’oreilles renards"><img src="boucles-16.jpeg" alt="Boucles d’oreilles renards" loading="lazy"></button><button class="photo" type="button" data-full="boucles-17.jpeg" aria-label="Agrandir : Boucles d’oreilles roses colorées"><img src="boucles-17.jpeg" alt="Boucles d’oreilles roses colorées" loading="lazy"></button><button class="photo" type="button" data-full="boucles-18.jpeg" aria-label="Agrandir : Boucles d’oreilles fleurs colorées"><img src="boucles-18.jpeg" alt="Boucles d’oreilles fleurs colorées" loading="lazy"></button><button class="photo" type="button" data-full="boucles-19.jpeg" aria-label="Agrandir : Boucles d’oreilles chats cœur"><img src="boucles-19.jpeg" alt="Boucles d’oreilles chats cœur" loading="lazy"></button><button class="photo" type="button" data-full="boucles-20.jpeg" aria-label="Agrandir : Boucles d’oreilles motif abstrait"><img src="boucles-20.jpeg" alt="Boucles d’oreilles motif abstrait" loading="lazy"></button></div></details>
+    </article>
+
+    <article class="product-category" id="marque-pages">
+      <div class="cat-head"><div><span class="cat-number">08</span><h3>Marque-pages</h3><p>Marque-pages en bois découpés au laser, avec pompon.</p></div><div class="price">4 €</div></div>
+      <div class="gallery"><button class="photo" type="button" data-full="marque-page-jonte.jpeg" aria-label="Agrandir : Marque-page Jonte"><img src="marque-page-jonte.jpeg" alt="Marque-page Jonte" loading="lazy"></button><button class="photo" type="button" data-full="marque-page-tarn.jpeg" aria-label="Agrandir : Marque-page Tarn"><img src="marque-page-tarn.jpeg" alt="Marque-page Tarn" loading="lazy"></button></div>
+      
+    </article>
+
+    <article class="product-category" id="vautours">
+      <div class="cat-head"><div><span class="cat-number">09</span><h3>Figurines vautours en impression 3D</h3><p>Figurines de vautours imprimées en 3D.</p></div><div class="price">2,90 € pièce</div></div>
+      <div class="gallery"><button class="photo" type="button" data-full="vautour-01.jpeg" aria-label="Agrandir : Figurine vautour fauve"><img src="vautour-01.jpeg" alt="Figurine vautour fauve" loading="lazy"></button><button class="photo" type="button" data-full="vautour-02.jpeg" aria-label="Agrandir : Figurine vautour moine"><img src="vautour-02.jpeg" alt="Figurine vautour moine" loading="lazy"></button><button class="photo" type="button" data-full="vautour-03.jpeg" aria-label="Agrandir : Figurine vautour percnoptère"><img src="vautour-03.jpeg" alt="Figurine vautour percnoptère" loading="lazy"></button><button class="photo" type="button" data-full="vautour-04.jpeg" aria-label="Agrandir : Figurine gypaète"><img src="vautour-04.jpeg" alt="Figurine gypaète" loading="lazy"></button></div>
+      
+    </article></div>
+  <div class="price-note"><strong>Quantités &amp; professionnels :</strong> devis personnalisé sur demande. Pour un modèle, une couleur ou une personnalisation particulière, contactez-moi directement.</div>
 </section>
 
 <section class="section light" id="contact">
@@ -101,5 +187,15 @@ h1 span{color:#e7c263}
     <a class="btn primary" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet.">Parler de mon projet</a>
   </div>
 </section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie"><button type="button" aria-label="Fermer">×</button><img alt=""></div>
+<script>
+(function(){
+  const box=document.getElementById('lightbox'), big=box.querySelector('img'), close=box.querySelector('button');
+  document.querySelectorAll('.photo').forEach(b=>b.addEventListener('click',()=>{big.src=b.dataset.full;big.alt=b.querySelector('img').alt;box.classList.add('open');document.body.style.overflow='hidden';}));
+  function shut(){box.classList.remove('open');big.src='';document.body.style.overflow='';}
+  close.addEventListener('click',shut); box.addEventListener('click',e=>{if(e.target===box)shut()}); document.addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
+})();
+</script>
 </body>
 </html>
