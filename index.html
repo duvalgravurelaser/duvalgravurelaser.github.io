@@ -4,180 +4,68 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Duval Gravure & Découpe Laser | Lozère & Aveyron</title>
-<meta name="description" content="Duval Gravure & Découpe Laser : gravure, découpe laser, impression 3D et créations personnalisées en Lozère et Aveyron.">
-<link rel="canonical" href="https://duvalgravurelaser.fr/">
+<meta name="description" content="Gravure et découpe laser, impression 3D et créations personnalisées en Lozère et Aveyron.">
 <style>
-:root{--gold:#d0a04b;--ink:#171714;--cream:#f6f2e9;--green:#163d32}
-*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream)} a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
-header{position:absolute;z-index:20;top:0;left:0;right:0;height:104px;display:flex;align-items:center;justify-content:space-between;padding:16px 5vw;background:linear-gradient(rgba(0,0,0,.55),transparent)}
-.brand{width:315px;max-width:42vw;background:rgba(255,255,255,.94);border-radius:10px;padding:7px 10px;box-shadow:0 8px 30px #0003}.brand img{width:100%}
-nav{display:flex;gap:28px;color:white;font-weight:800;text-shadow:0 2px 8px #0008}nav a:hover{color:#f3d18d}.menu{display:none}
-.hero{position:relative;min-height:100vh;background-image:url('fond-gorges.jpeg');background-size:cover;background-position:center;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.74) 0%,rgba(0,0,0,.46) 37%,rgba(0,0,0,.10) 66%,rgba(0,0,0,.02) 100%)}
-.hero-copy{position:relative;z-index:4;width:min(610px,46vw);padding:150px 0 80px 6vw;color:white}.kicker{font-size:.79rem;letter-spacing:.2em;font-weight:900;color:#f0ca77;margin:0 0 14px}
-h1{font-family:Georgia,serif;font-size:clamp(3rem,5vw,5.4rem);line-height:.94;margin:0 0 22px;text-shadow:0 4px 24px #0006}h1 span{color:#f0ca77}.hero-copy>p{font-size:1.08rem;line-height:1.58;max-width:580px;text-shadow:0 2px 12px #0008}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border-radius:8px;font-weight:900}.primary{background:var(--gold);color:#111}.ghost{border:1px solid #fff9;color:white;background:#0003}
-.stage{position:absolute;z-index:3;right:1.5vw;bottom:1.5vh;width:54vw;height:34vh;pointer-events:none}.obj{position:absolute;object-fit:contain;filter:drop-shadow(0 12px 10px #0007)}.lozere{width:44%;right:1%;bottom:0}.jonte{width:22%;right:43%;bottom:1%;transform:rotate(-3deg)}.cardabelle{width:18%;right:26%;bottom:7%;transform:rotate(2deg)}
-.section{padding:78px 6vw}.section h2{font-family:Georgia,serif;font-size:clamp(2.2rem,3.4vw,3.8rem);margin:0 0 14px}.lead{max-width:800px;color:#555;line-height:1.65}.values{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}.value{background:white;padding:22px;border-radius:16px;box-shadow:0 8px 26px #00000010}
-.catalogue{background:white}.catalog-head{text-align:center;max-width:850px;margin:0 auto 34px}.catalog-head .lead{margin:auto}.filters{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin:0 auto 30px}.filter{border:1px solid #d8d2c5;background:#fff;padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer}.filter.active{background:#171714;color:white}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;max-width:1350px;margin:auto}.product-card{background:#f7f4ee;border-radius:16px;overflow:hidden;box-shadow:0 8px 28px #00000012}.product-card img{width:100%;aspect-ratio:4/3;object-fit:cover;background:white}.pc-body{padding:16px}.pc-cat{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;color:#816436;font-weight:800}.pc-body h3{font-size:1rem;margin:7px 0 12px;line-height:1.25}.pc-body strong{color:#a9792e;font-size:1.1rem}.price-note{text-align:center;margin:28px auto 0;max-width:800px;padding:16px;border-radius:12px;background:#f5ead6}
-.skills{background:#171714;color:white}.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}.skills-grid article{background:#ffffff0c;border:1px solid #ffffff1c;padding:25px;border-radius:16px}.skills-grid p{color:#ddd;line-height:1.55}
-.contact{background:var(--green);color:white;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}.contact p{color:#e0e8e4;line-height:1.6}.contact-links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.light{background:white;color:#111}
-footer{background:#0f1211;color:#dce2df;padding:30px 6vw;display:flex;justify-content:space-between;align-items:center;gap:25px}footer img{width:230px;background:white;padding:6px;border-radius:7px}
-@media(max-width:1050px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:850px){
-header{height:86px;padding:12px 18px}.brand{width:235px;max-width:68vw}.menu{display:block;border:0;border-radius:8px;background:white;font-size:25px;padding:7px 11px}nav{display:none;position:absolute;right:18px;top:76px;flex-direction:column;background:#171714f5;padding:14px;border-radius:10px;gap:3px}nav.open{display:flex}nav a{padding:10px 12px}
-.hero{min-height:930px;background-position:56% center}.hero-copy{width:100%;padding:120px 23px 0}.stage{right:0;width:100%;height:330px;bottom:10px}.lozere{width:48%;right:2%;bottom:0}.jonte{width:24%;right:48%;bottom:1%;transform:rotate(-3deg)}.cardabelle{width:20%;right:28%;bottom:9%;transform:rotate(2deg)}
-.values{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:repeat(2,1fr)}.skills-grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}.contact-links{justify-content:flex-start}footer{flex-direction:column;align-items:flex-start}
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif}
+.hero{
+  min-height:100vh;
+  position:relative;
+  background-image:linear-gradient(90deg,rgba(0,0,0,.60) 0%,rgba(0,0,0,.24) 39%,rgba(0,0,0,0) 67%),url("fond-avec-objet.jpg");
+  background-size:cover;
+  background-position:center;
+  color:white;
+  overflow:hidden;
 }
-@media(max-width:560px){.hero{min-height:880px}h1{font-size:2.7rem}.stage{height:285px;bottom:8px}.lozere{width:55%;right:1%;bottom:0}.jonte{width:26%;right:50%;bottom:1%;transform:rotate(-3deg)}.cardabelle{width:22%;right:27%;bottom:10%;transform:rotate(2deg)}.section{padding:64px 20px}.grid{grid-template-columns:1fr}.values{grid-template-columns:1fr 1fr}}
+.top{position:absolute;left:4%;right:4%;top:24px;display:flex;justify-content:space-between;align-items:flex-start;z-index:2}
+.logo{
+  background:rgba(255,255,255,.94);color:#111;padding:12px 18px;border-radius:4px;
+  box-shadow:0 4px 18px rgba(0,0,0,.18);line-height:1.05;min-width:220px
+}
+.logo .duval{font-family:Georgia,serif;font-size:30px;letter-spacing:2px}
+.logo .sub{font-family:Georgia,serif;font-size:15px;margin-top:4px}
+nav{display:flex;gap:30px;padding-top:14px}
+nav a{color:#fff;text-decoration:none;font-weight:700;text-shadow:0 1px 4px #000}
+.content{position:absolute;left:6%;top:50%;transform:translateY(-43%);width:min(500px,42vw);z-index:2}
+.eyebrow{color:#e7c263;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+h1{font-family:Georgia,serif;font-size:clamp(43px,5vw,76px);line-height:.95;margin:0 0 20px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+h1 span{color:#e7c263}
+p{font-size:17px;line-height:1.45;max-width:490px;text-shadow:0 1px 5px #000}
+.buttons{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 22px;border-radius:5px;text-decoration:none;font-weight:800}
+.primary{background:#e7b83f;color:#171717}
+.secondary{border:2px solid rgba(255,255,255,.85);color:white;background:rgba(0,0,0,.18)}
+@media(max-width:800px){
+ .hero{background-position:62% center}
+ .top{top:12px;left:3%;right:3%}.logo{min-width:170px;padding:9px 12px}.logo .duval{font-size:23px}.logo .sub{font-size:12px}
+ nav{display:none}.content{left:6%;top:46%;width:72vw}h1{font-size:44px}p{font-size:14px}
+}
 </style>
 </head>
 <body>
-<header>
-<a class="brand" href="#accueil"><img src="logo.png" alt="Duval gravure & découpe laser"></a>
-<button class="menu" aria-label="Ouvrir le menu">☰</button>
-<nav><a href="#accueil">Accueil</a><a href="#savoir-faire">Savoir-faire</a><a href="#creations">Nos créations</a><a href="#contact">Contact</a></nav>
-</header>
-<main>
 <section class="hero" id="accueil">
-<div class="hero-copy">
-<p class="kicker">LOZÈRE & AVEYRON</p>
-<h1>Gravure laser,<br>découpe laser &<br><span>impression 3D</span></h1>
-<p>Créations artisanales et personnalisées pour particuliers, professionnels, boutiques et événements.</p>
-<div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20un%20devis.">Demander un devis</a><a class="btn ghost" href="#creations">Voir les créations</a></div>
-</div>
-<div class="stage"><img class="obj lozere" src="lozere.png" alt="Création Lozère"><img class="obj cardabelle" src="porte-cle-cardabelle.png" alt="Porte-clé Cardabelle Lozère"><img class="obj jonte" src="porte-cle-jonte.png" alt="Porte-clé Gorges de la Jonte"></div>
+  <header class="top">
+    <div class="logo" aria-label="Duval Gravure et Découpe Laser">
+      <div class="duval">DUVAL</div>
+      <div class="sub">gravure &amp; découpe laser</div>
+    </div>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#savoir-faire">Savoir-faire</a>
+      <a href="#creations">Nos créations</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="content">
+    <div class="eyebrow">Lozère &amp; Aveyron</div>
+    <h1>Gravure laser,<br>découpe laser &amp;<br><span>impression 3D</span></h1>
+    <p>Créations artisanales et personnalisées, réalisées avec soin pour particuliers, professionnels, boutiques et événements.</p>
+    <div class="buttons">
+      <a class="btn primary" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20un%20devis.">Demander un devis</a>
+      <a class="btn secondary" href="#creations">Voir les créations</a>
+    </div>
+  </div>
 </section>
-<section class="section" id="savoir-faire">
-<p class="kicker" style="color:#8a6428">CRÉATIONS LOCALES</p><h2>Du bois, du laser et de l’impression 3D</h2>
-<p class="lead">Porte-clés, tableaux, bijoux, prénoms, marque-pages, silhouettes murales, décorations de porte et figurines 3D : chaque création peut être personnalisée selon votre projet.</p>
-<div class="values"><div class="value"><strong>Fabrication artisanale</strong><br><small>Lozère & Aveyron</small></div><div class="value"><strong>Personnalisation</strong><br><small>À l’unité ou en série</small></div><div class="value"><strong>Particuliers & pros</strong><br><small>Boutiques et événements</small></div><div class="value"><strong>Tarifs quantité</strong><br><small>Sur devis</small></div></div>
-</section>
-<section class="section catalogue" id="creations">
-<div class="catalog-head"><p class="kicker" style="color:#8a6428">NOS CRÉATIONS</p><h2>Les créations disponibles</h2><p class="lead">Les autres objets à vendre sont bien revenus sur le site. Les commandes en quantité et les tarifs professionnels sont sur devis.</p></div>
-<div class="filters"><button class="filter active" data-filter="Tous">Tout</button><button class="filter" data-filter="Porte-clés">Porte-clés</button><button class="filter" data-filter="Porte-clés bois">Bois</button><button class="filter" data-filter="Porte-clés 3D">3D</button><button class="filter" data-filter="Bijoux">Bijoux</button><button class="filter" data-filter="Tableaux">Tableaux</button><button class="filter" data-filter="Décoration">Décoration</button></div>
-<div class="grid"><article class="product-card" data-cat="Créations">
-<img src="galerie-01.webp" alt="Stand de créations artisanales Duval" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Créations</span><h3>Stand de créations artisanales Duval</h3><strong>Sur devis</strong></div>
-</article>
-<article class="product-card" data-cat="Tableaux">
-<img src="galerie-02.webp" alt="Collection artisanale" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Tableaux</span><h3>Collection artisanale</h3><strong>19,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Tableaux">
-<img src="galerie-03.webp" alt="Les Gorges en bois multicouche" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Tableaux</span><h3>Les Gorges en bois multicouche</h3><strong>19,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Impression 3D">
-<img src="galerie-04.webp" alt="Tableau vautours des Gorges" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Impression 3D</span><h3>Tableau vautours des Gorges</h3><strong>2,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Tableaux">
-<img src="galerie-05.webp" alt="Tableau famille personnalisé" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Tableaux</span><h3>Tableau famille personnalisé</h3><strong>19,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Bijoux">
-<img src="galerie-06.webp" alt="Boucles paysage des Gorges" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Bijoux</span><h3>Boucles paysage des Gorges</h3><strong>9,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Bijoux">
-<img src="galerie-07.webp" alt="Boucles papillons gravées" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Bijoux</span><h3>Boucles papillons gravées</h3><strong>9,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Bijoux">
-<img src="galerie-08.webp" alt="Boucles lotus en bois" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Bijoux</span><h3>Boucles lotus en bois</h3><strong>9,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Bijoux">
-<img src="galerie-09.webp" alt="Boucles chats personnalisées" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Bijoux</span><h3>Boucles chats personnalisées</h3><strong>9,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Porte-clés">
-<img src="galerie-10.webp" alt="Présentoir de porte-clés" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Porte-clés</span><h3>Présentoir de porte-clés</h3><strong>4,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Porte-clés">
-<img src="galerie-11.webp" alt="Porte-clé Les Douzes" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Porte-clés</span><h3>Porte-clé Les Douzes</h3><strong>4,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Porte-clés">
-<img src="galerie-12.webp" alt="Porte-clé Gorges de la Jonte" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Porte-clés</span><h3>Porte-clé Gorges de la Jonte</h3><strong>4,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Marque-pages">
-<img src="galerie-13.webp" alt="Marque-page vautour Jonte" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Marque-pages</span><h3>Marque-page vautour Jonte</h3><strong>4,00 €</strong></div>
-</article>
-<article class="product-card" data-cat="Prénoms">
-<img src="galerie-14.webp" alt="Prénoms décoratifs multicouches" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Prénoms</span><h3>Prénoms décoratifs multicouches</h3><strong>15,00 €</strong></div>
-</article>
-<article class="product-card" data-cat="Prénoms">
-<img src="galerie-15.webp" alt="Prénom Anthony multicouche" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Prénoms</span><h3>Prénom Anthony multicouche</h3><strong>15,00 €</strong></div>
-</article>
-<article class="product-card" data-cat="Décoration">
-<img src="galerie-16.webp" alt="Silhouette murale personnalisée" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Décoration</span><h3>Silhouette murale personnalisée</h3><strong>15,00 €</strong></div>
-</article>
-<article class="product-card" data-cat="Décoration">
-<img src="galerie-17.webp" alt="Décoration de porte animaux" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Décoration</span><h3>Décoration de porte animaux</h3><strong>25,00 €</strong></div>
-</article>
-<article class="product-card" data-cat="Impression 3D">
-<img src="galerie-18.webp" alt="Gypaète imprimé en 3D" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Impression 3D</span><h3>Gypaète imprimé en 3D</h3><strong>2,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Impression 3D">
-<img src="galerie-19.webp" alt="Série de vautours en impression 3D" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Impression 3D</span><h3>Série de vautours en impression 3D</h3><strong>2,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Impression 3D">
-<img src="galerie-20.webp" alt="Collection de vautours 3D" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Impression 3D</span><h3>Collection de vautours 3D</h3><strong>2,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Porte-clés 3D">
-<img src="porte-cle-cardabelle.png" alt="Porte-clé Cardabelle Lozère" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Porte-clés 3D</span><h3>Porte-clé Cardabelle Lozère</h3><strong>4,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Porte-clés bois">
-<img src="cardabelle-bois-recto.webp" alt="Porte-clé Cardabelle en bois — recto" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Porte-clés bois</span><h3>Porte-clé Cardabelle en bois — recto</h3><strong>4,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Porte-clés bois">
-<img src="cardabelle-bois-verso.webp" alt="Porte-clé Cardabelle en bois — verso" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Porte-clés bois</span><h3>Porte-clé Cardabelle en bois — verso</h3><strong>4,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Porte-clés">
-<img src="porte-cle-coeurs.jpg" alt="Porte-clés cœurs" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Porte-clés</span><h3>Porte-clés cœurs</h3><strong>4,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Porte-clés">
-<img src="porte-cle-rue-buraliste.jpg" alt="Porte-clé personnalisé" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Porte-clés</span><h3>Porte-clé personnalisé</h3><strong>4,90 €</strong></div>
-</article>
-<article class="product-card" data-cat="Porte-clés 3D">
-<img src="porte-cles-animaux-3d.jpg" alt="Porte-clés animaux 3D" loading="lazy">
-<div class="pc-body"><span class="pc-cat">Porte-clés 3D</span><h3>Porte-clés animaux 3D</h3><strong>4,90 €</strong></div>
-</article></div>
-<div class="price-note"><strong>Quantités & professionnels :</strong> devis personnalisé sur demande.</div>
-</section>
-<section class="section skills"><p class="kicker">SAVOIR-FAIRE</p><h2>Une idée, un dessin, une création.</h2><div class="skills-grid"><article><h3>Gravure laser</h3><p>Personnalisation précise de porte-clés, plaques, cadeaux, souvenirs locaux et petites séries.</p></article><article><h3>Découpe laser</h3><p>Tableaux multicouches, silhouettes, prénoms, décorations murales et créations en bois.</p></article><article><h3>Impression 3D</h3><p>Porte-clés, figurines, objets personnalisés et petites séries en PLA ou PETG.</p></article></div></section>
-<section class="section contact" id="contact"><div><p class="kicker">UN PROJET ?</p><h2>Parlons de votre création</h2><p>Pour une personnalisation, une commande en quantité, un projet professionnel ou un cadeau, contactez-moi directement.</p></div><div class="contact-links"><a class="btn light" href="tel:+33788518623">07 88 51 86 23</a><a class="btn primary" href="mailto:anthonyduval4812@outlook.fr">E-mail</a><a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/33788518623?text=Bonjour%20Anthony%2C%20je%20souhaite%20vous%20parler%20d%27un%20projet.">WhatsApp</a></div></section>
-</main>
-<footer><img src="logo.png" alt="Duval gravure & découpe laser"><p>Créations personnalisées sur bois et impression 3D • Lozère & Aveyron</p></footer>
-<script>
-const menu=document.querySelector('.menu'), nav=document.querySelector('nav');
-menu.addEventListener('click',()=>nav.classList.toggle('open'));
-document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));
-  b.classList.add('active');
-  const f=b.dataset.filter;
-  document.querySelectorAll('.product-card').forEach(c=>{
-    const cat=c.dataset.cat;
-    c.style.display=(f==='Tous'||cat===f||(f==='Porte-clés'&&cat.startsWith('Porte-clés'))) ? '' : 'none';
-  });
-}));
-</script>
-</body></html>
+<div id="savoir-faire"></div><div id="creations"></div><div id="contact"></div>
+</body>
+</html>
