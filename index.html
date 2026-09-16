@@ -300,10 +300,42 @@ h1 span{color:#e7c263}
   }
 }
 
+
+.pro-wrap{max-width:1050px;margin:34px auto 0;display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.pro-info,.pro-form{background:#fff;border:1px solid #e3ddd2;border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.pro-info h3,.pro-form h3{margin:0 0 12px;font-family:Georgia,serif;font-size:27px}
+.pro-info p{color:#4d5660;line-height:1.6}
+.pro-info ul{padding-left:20px;line-height:1.8;color:#4d5660}
+.pro-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pro-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.pro-field.full{grid-column:1/-1}
+.pro-field label{font-weight:800;font-size:14px}
+.pro-field input,.pro-field textarea{width:100%;box-sizing:border-box;border:1px solid #cfc8bc;border-radius:10px;padding:12px 13px;font:inherit;background:#fff;color:#1f2529}
+.pro-field textarea{min-height:150px;resize:vertical}
+.pro-help{font-size:13px;color:#687078;line-height:1.45;margin:8px 0 16px}
+.pro-submit{border:0;cursor:pointer;width:100%;font:inherit}
+@media(max-width:760px){.pro-wrap{grid-template-columns:1fr}.pro-grid{grid-template-columns:1fr}.pro-field.full{grid-column:auto}}
+
 </style>
 
 <style>
-.photo{position:relative}.product-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}.product-ref{font-size:12px;font-weight:800;color:#59635b}.add-cart,.cart-fab,.cart-whatsapp{background:#234d37;color:white;border:0;border-radius:999px;font-weight:800;cursor:pointer}.add-cart{padding:9px 12px}.cart-fab{position:fixed;right:18px;bottom:18px;z-index:70;padding:13px 17px;box-shadow:0 8px 25px #0004}.cart-count{background:white;color:#234d37;border-radius:50%;padding:3px 7px;margin-left:5px}.cart-panel{position:fixed;inset:0;z-index:80;background:#0007;display:none;align-items:flex-end;justify-content:center}.cart-panel.open{display:flex}.cart-box{width:min(680px,100%);max-height:86vh;overflow:auto;background:white;border-radius:22px 22px 0 0;padding:22px}.cart-head{display:flex;justify-content:space-between;align-items:center}.cart-close{border:0;border-radius:50%;width:38px;height:38px;font-size:22px}.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px 0;border-bottom:1px solid #ddd}.cart-item small{display:block;color:#667}.qty{display:flex;gap:8px;align-items:center;margin-top:8px}.qty button{width:30px;height:30px}.remove{border:0;background:none;color:#a33}.cart-total{text-align:right;font-size:20px;font-weight:900;margin:18px 0}.cart-whatsapp{display:block;text-align:center;text-decoration:none;padding:14px;border-radius:12px}.cart-note{text-align:center;font-size:12px;color:#667;margin-top:10px}@media(max-width:520px){.product-actions{flex-direction:column;align-items:stretch}.add-cart{width:100%}}
+.photo{position:relative}.product-actions{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:8px}.product-ref{font-size:12px;font-weight:800;color:#59635b}.add-cart,.cart-fab,.cart-send{background:#234d37;color:white;border:0;border-radius:999px;font-weight:800;cursor:pointer}.add-cart{padding:9px 12px}.cart-fab{position:fixed;right:18px;bottom:18px;z-index:70;padding:13px 17px;box-shadow:0 8px 25px #0004}.cart-count{background:white;color:#234d37;border-radius:50%;padding:3px 7px;margin-left:5px}.cart-panel{position:fixed;inset:0;z-index:80;background:#0007;display:none;align-items:flex-end;justify-content:center}.cart-panel.open{display:flex}.cart-box{width:min(680px,100%);max-height:86vh;overflow:auto;background:white;border-radius:22px 22px 0 0;padding:22px}.cart-head{display:flex;justify-content:space-between;align-items:center}.cart-close{border:0;border-radius:50%;width:38px;height:38px;font-size:22px}.cart-item{display:grid;grid-template-columns:1fr auto;gap:10px;padding:14px 0;border-bottom:1px solid #ddd}.cart-item small{display:block;color:#667}.qty{display:flex;gap:8px;align-items:center;margin-top:8px}.qty button{width:30px;height:30px}.remove{border:0;background:none;color:#a33}.cart-total{text-align:right;font-size:20px;font-weight:900;margin:18px 0}.cart-send{display:block;text-align:center;text-decoration:none;padding:14px;border-radius:12px;margin-top:9px}.cart-message{width:100%;min-height:90px;box-sizing:border-box;border:1px solid #ccd3ce;border-radius:12px;padding:12px;font:inherit;resize:vertical;margin-top:10px}.cart-note{text-align:center;font-size:12px;color:#667;margin-top:10px}@media(max-width:520px){.product-actions{flex-direction:column;align-items:stretch}.add-cart{width:100%}}
+
+.pro-wrap{max-width:1050px;margin:34px auto 0;display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.pro-info,.pro-form{background:#fff;border:1px solid #e3ddd2;border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.pro-info h3,.pro-form h3{margin:0 0 12px;font-family:Georgia,serif;font-size:27px}
+.pro-info p{color:#4d5660;line-height:1.6}
+.pro-info ul{padding-left:20px;line-height:1.8;color:#4d5660}
+.pro-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pro-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.pro-field.full{grid-column:1/-1}
+.pro-field label{font-weight:800;font-size:14px}
+.pro-field input,.pro-field textarea{width:100%;box-sizing:border-box;border:1px solid #cfc8bc;border-radius:10px;padding:12px 13px;font:inherit;background:#fff;color:#1f2529}
+.pro-field textarea{min-height:150px;resize:vertical}
+.pro-help{font-size:13px;color:#687078;line-height:1.45;margin:8px 0 16px}
+.pro-submit{border:0;cursor:pointer;width:100%;font:inherit}
+@media(max-width:760px){.pro-wrap{grid-template-columns:1fr}.pro-grid{grid-template-columns:1fr}.pro-field.full{grid-column:auto}}
+
 </style>
 
 <style>
@@ -336,6 +368,22 @@ h1 span{color:#e7c263}
   .product-card .product-actions{flex-direction:column;align-items:stretch}
   .product-card .add-cart{width:100%}
 }
+
+.pro-wrap{max-width:1050px;margin:34px auto 0;display:grid;grid-template-columns:.9fr 1.1fr;gap:28px;align-items:start}
+.pro-info,.pro-form{background:#fff;border:1px solid #e3ddd2;border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+.pro-info h3,.pro-form h3{margin:0 0 12px;font-family:Georgia,serif;font-size:27px}
+.pro-info p{color:#4d5660;line-height:1.6}
+.pro-info ul{padding-left:20px;line-height:1.8;color:#4d5660}
+.pro-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pro-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.pro-field.full{grid-column:1/-1}
+.pro-field label{font-weight:800;font-size:14px}
+.pro-field input,.pro-field textarea{width:100%;box-sizing:border-box;border:1px solid #cfc8bc;border-radius:10px;padding:12px 13px;font:inherit;background:#fff;color:#1f2529}
+.pro-field textarea{min-height:150px;resize:vertical}
+.pro-help{font-size:13px;color:#687078;line-height:1.45;margin:8px 0 16px}
+.pro-submit{border:0;cursor:pointer;width:100%;font:inherit}
+@media(max-width:760px){.pro-wrap{grid-template-columns:1fr}.pro-grid{grid-template-columns:1fr}.pro-field.full{grid-column:auto}}
+
 </style>
 </head>
 <body>
@@ -349,6 +397,7 @@ h1 span{color:#e7c263}
       <a href="#accueil">Accueil</a>
       <a href="#savoir-faire">Savoir-faire</a>
       <a href="#creations">Nos créations</a>
+      <a href="#professionnels">Pros &amp; associations</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -455,6 +504,38 @@ h1 span{color:#e7c263}
   <div class="price-note"><strong>Quantités &amp; professionnels :</strong> devis personnalisé sur demande. Pour un modèle, une couleur ou une personnalisation particulière, contactez-moi directement.</div>
 </section>
 
+
+<section class="section light" id="professionnels">
+  <div class="kicker">Professionnels &amp; associations</div>
+  <h2>Un projet pour votre entreprise ou votre association ?</h2>
+  <p class="intro">Boutiques, associations, clubs, hébergements, événements et entreprises : décrivez-moi votre besoin et je vous préparerai un devis personnalisé. Les tarifs professionnels ne sont pas affichés sur le site : ils sont calculés selon votre projet, les quantités et la personnalisation souhaitée.</p>
+  <div class="pro-wrap">
+    <div class="pro-info">
+      <h3>Votre projet sur mesure</h3>
+      <p>Vous pouvez me contacter pour une petite série, une commande en quantité ou une création spécialement conçue pour votre activité.</p>
+      <ul>
+        <li>Gravure et découpe laser sur bois</li>
+        <li>Porte-clés, plaques, marque-pages et objets personnalisés</li>
+        <li>Impression 3D et petites séries</li>
+        <li>Personnalisation avec votre texte ou votre visuel</li>
+      </ul>
+      <p><strong>Après réception de votre demande, je vous recontacte pour préciser le projet et établir votre devis.</strong></p>
+    </div>
+    <form class="pro-form" id="proForm">
+      <h3>Demande de devis</h3>
+      <div class="pro-grid">
+        <div class="pro-field"><label for="proName">Nom / contact *</label><input id="proName" name="name" required autocomplete="name"></div>
+        <div class="pro-field"><label for="proOrg">Entreprise / association *</label><input id="proOrg" name="org" required autocomplete="organization"></div>
+        <div class="pro-field"><label for="proEmail">Adresse e-mail *</label><input id="proEmail" name="email" type="email" required autocomplete="email"></div>
+        <div class="pro-field"><label for="proPhone">Numéro de téléphone *</label><input id="proPhone" name="phone" type="tel" required autocomplete="tel"></div>
+        <div class="pro-field full"><label for="proProject">Décrivez votre projet *</label><textarea id="proProject" name="project" required placeholder="Ex. : type de produit, quantité souhaitée, dimensions, personnalisation, délai souhaité..."></textarea></div>
+      </div>
+      <p class="pro-help">Les informations saisies servent uniquement à répondre à votre demande de devis. Aucun paiement n’est effectué sur le site.</p>
+      <button class="btn primary pro-submit" type="submit">Préparer ma demande de devis par e-mail</button>
+    </form>
+  </div>
+</section>
+
 <section class="section light" id="contact">
   <div class="kicker">Contact</div>
   <h2>Un projet ou une commande ?</h2>
@@ -479,8 +560,12 @@ h1 span{color:#e7c263}
 <div class="cart-panel" id="cartPanel"><div class="cart-box">
 <div class="cart-head"><div><h2>Votre panier</h2><p>Références et quantités de votre demande.</p></div><button class="cart-close" id="cartClose">×</button></div>
 <div id="cartItems"></div><div class="cart-total" id="cartTotal">Total : 0,00 €</div>
-<a class="cart-whatsapp" id="cartWhatsapp" href="#" target="_blank">Envoyer ma demande sur WhatsApp</a>
-<div class="cart-note">Le paiement n'est pas effectué sur le site. Anthony vous confirme ensuite la commande.</div>
+<label for="cartMessage"><strong>Votre message ou demande de personnalisation</strong></label>
+<textarea class="cart-message" id="cartMessage" placeholder="Ex. : Je voudrais ajouter un prénom, une date, une couleur particulière..."></textarea>
+<a class="cart-send" id="cartEmail" href="#">Envoyer par e-mail</a>
+<a class="cart-send" id="cartWhatsapp" href="#" target="_blank">Envoyer par WhatsApp</a>
+<a class="cart-send" id="cartSms" href="#">Envoyer par SMS</a>
+<div class="cart-note">Choisissez le moyen d’envoi qui vous convient. Le paiement n’est pas effectué sur le site. Anthony vous confirme ensuite la commande.</div>
 </div></div>
 
 
@@ -543,7 +628,9 @@ function render(){
   if(!ar.length){
     box.innerHTML="<p>Votre panier est vide.</p>";
     document.getElementById("cartTotal").textContent="Total : 0,00 €";
-    document.getElementById("cartWhatsapp").style.display="none";
+    ["cartEmail","cartWhatsapp","cartSms"].forEach(id=>document.getElementById(id).style.display="none");
+    document.getElementById("cartMessage").style.display="none";
+    document.querySelector('label[for="cartMessage"]').style.display="none";
     return;
   }
 
@@ -559,11 +646,21 @@ function render(){
   });
 
   document.getElementById("cartTotal").textContent="Total : "+money(total);
-  let wa=document.getElementById("cartWhatsapp");
-  wa.style.display="block";
-  let lines=ar.map(x=>"• "+x.ref+" — "+x.name+" — "+x.qty+" × "+money(x.price));
-  let msg="Bonjour Anthony, je souhaite commander :\n\n"+lines.join("\n")+"\n\nTotal indicatif : "+money(total)+"\n\nPouvez-vous me confirmer la disponibilité et la commande ?";
-  wa.href="https://wa.me/33788518623?text="+encodeURIComponent(msg);
+  const email=document.getElementById("cartEmail"), wa=document.getElementById("cartWhatsapp"), sms=document.getElementById("cartSms"), note=document.getElementById("cartMessage"), label=document.querySelector('label[for="cartMessage"]');
+  [email,wa,sms].forEach(el=>el.style.display="block"); note.style.display="block"; label.style.display="block";
+  let lines=ar.map(x=>"• Réf. "+x.ref+" — "+x.name+" — Quantité : "+x.qty+" — "+money(x.price)+" / unité");
+  function message(){
+    let extra=note.value.trim();
+    return "Bonjour Anthony,\n\nJe souhaite commander :\n"+lines.join("\n")+"\n\nTotal : "+money(total)+(extra?"\n\nMa demande / personnalisation :\n"+extra:"")+"\n\nMerci de me confirmer la disponibilité.";
+  }
+  function updateLinks(){
+    const msg=message();
+    email.href="mailto:contact@duvalgravurelaser.fr?subject="+encodeURIComponent("Commande – Duval Gravure & Découpe Laser")+"&body="+encodeURIComponent(msg);
+    wa.href="https://wa.me/33788518623?text="+encodeURIComponent(msg);
+    sms.href="sms:+33788518623?body="+encodeURIComponent(msg);
+  }
+  note.oninput=updateLinks;
+  updateLinks();
 }
 
 document.getElementById("cartFab").onclick=()=>panel.classList.add("open");
@@ -572,5 +669,25 @@ panel.onclick=e=>{if(e.target===panel)panel.classList.remove("open")};
 render();
 })();
 </script>
+
+<script>
+(()=>{
+  const form=document.getElementById('proForm');
+  if(!form) return;
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!form.reportValidity()) return;
+    const name=document.getElementById('proName').value.trim();
+    const org=document.getElementById('proOrg').value.trim();
+    const email=document.getElementById('proEmail').value.trim();
+    const phone=document.getElementById('proPhone').value.trim();
+    const project=document.getElementById('proProject').value.trim();
+    const subject='Demande de devis professionnel / association – '+org;
+    const body='Bonjour Anthony,\n\nJe souhaite recevoir un devis pour le projet suivant :\n\nNom / contact : '+name+'\nEntreprise / association : '+org+'\nE-mail : '+email+'\nTéléphone : '+phone+'\n\nDescription du projet :\n'+project+'\n\nMerci.';
+    window.location.href='mailto:contact@duvalgravurelaser.fr?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+  });
+})();
+</script>
+
 </body>
 </html>
