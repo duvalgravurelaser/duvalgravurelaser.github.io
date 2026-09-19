@@ -316,6 +316,22 @@ h1 span{color:#e7c263}
 .pro-submit{border:0;cursor:pointer;width:100%;font:inherit}
 @media(max-width:760px){.pro-wrap{grid-template-columns:1fr}.pro-grid{grid-template-columns:1fr}.pro-field.full{grid-column:auto}}
 
+
+/* Demande de silhouette personnalisée */
+.custom-silhouette-card{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:18px;padding:22px;border:2px dashed #d0a33b;border-radius:14px;background:#fff8e6}
+.custom-silhouette-card strong{font-family:Georgia,serif;font-size:24px}.custom-silhouette-card p{margin:8px 0 0;line-height:1.5}
+.custom-silhouette-button{border:0;border-radius:7px;background:#e7b83f;color:#171717;padding:14px 20px;font:inherit;font-weight:800;cursor:pointer}
+.silhouette-dialog{border:0;border-radius:16px;padding:0;width:min(94vw,590px);max-height:90vh;box-shadow:0 18px 60px #0005}
+.silhouette-dialog::backdrop{background:#0009}
+.silhouette-dialog-inner{padding:26px;overflow-y:auto;max-height:90vh}
+.silhouette-dialog h3{font-family:Georgia,serif;font-size:28px;margin:0 35px 8px 0}
+.silhouette-dialog p{line-height:1.5}
+.silhouette-dialog label{display:block;font-weight:700;margin:14px 0 5px}
+.silhouette-dialog input,.silhouette-dialog textarea{width:100%;border:1px solid #b9b9b9;border-radius:6px;padding:11px;font:inherit;background:white}
+.silhouette-dialog textarea{min-height:115px;resize:vertical}
+.silhouette-dialog .small-note{font-size:13px;color:#535b64}
+.silhouette-close{float:right;background:none;border:0;font-size:28px;cursor:pointer}
+.silhouette-actions{display:flex;justify-content:flex-end;margin-top:18px}
 </style>
 
 <style>
@@ -479,9 +495,13 @@ h1 span{color:#e7c263}
     </article>
 
     <article class="product-category" id="silhouettes">
-      <div class="cat-head"><div><span class="cat-number">06</span><h3>Silhouettes murales</h3><p>Silhouettes décoratives en bois, avec possibilité de personnalisation.</p></div><div class="price">15 €</div></div>
+      <div class="cat-head"><div><span class="cat-number">06</span><h3>Silhouettes murales</h3><p>Silhouettes décoratives en bois. Modèles simples à 15 € ; création sur mesure à partir de 24,90 €.</p></div><div class="price">15 €</div></div>
       <div class="gallery"><button class="photo" type="button" data-full="silhouette-ancienne.webp" aria-label="Agrandir : Silhouette murale personnalisée"><img src="silhouette-ancienne.webp" alt="Silhouette murale personnalisée" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-femme-profil-1.jpeg" aria-label="Agrandir : Silhouette murale femme profil"><img src="silhouette-femme-profil-1.jpeg" alt="Silhouette murale femme profil" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-couple.jpeg" aria-label="Agrandir : Silhouette murale couple"><img src="silhouette-couple.jpeg" alt="Silhouette murale couple" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-femme-profil-2.jpeg" aria-label="Agrandir : Silhouette murale femme"><img src="silhouette-femme-profil-2.jpeg" alt="Silhouette murale femme" loading="lazy"></button></div>
       <details class="more"><summary>Voir tous les modèles (10)</summary><div class="gallery all-gallery"><button class="photo" type="button" data-full="silhouette-femme-lunettes.jpeg" aria-label="Agrandir : Silhouette murale femme lunettes"><img src="silhouette-femme-lunettes.jpeg" alt="Silhouette murale femme lunettes" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-homme.jpeg" aria-label="Agrandir : Silhouette murale homme"><img src="silhouette-homme.jpeg" alt="Silhouette murale homme" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-ema.jpeg" aria-label="Agrandir : Silhouette personnalisée Ema"><img src="silhouette-ema.jpeg" alt="Silhouette personnalisée Ema" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-lola.jpeg" aria-label="Agrandir : Silhouette personnalisée Lola"><img src="silhouette-lola.jpeg" alt="Silhouette personnalisée Lola" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-adeline.jpeg" aria-label="Agrandir : Silhouette personnalisée Adeline"><img src="silhouette-adeline.jpeg" alt="Silhouette personnalisée Adeline" loading="lazy"></button><button class="photo" type="button" data-full="silhouette-anthony.jpeg" aria-label="Agrandir : Silhouette personnalisée Anthony"><img src="silhouette-anthony.jpeg" alt="Silhouette personnalisée Anthony" loading="lazy"></button></div></details>
+      <div class="custom-silhouette-card">
+        <div><strong>Votre silhouette sur mesure</strong><p>À partir de <b>24,90 €</b> · À partir de votre photo, racontez-moi votre projet !</p></div>
+        <button type="button" class="custom-silhouette-button" id="openSilhouetteForm">Demander ma silhouette →</button>
+      </div>
     </article>
 
     <article class="product-category" id="boucles">
@@ -689,5 +709,43 @@ render();
 })();
 </script>
 
+
+<dialog id="silhouetteDialog" class="silhouette-dialog" aria-labelledby="silhouetteTitle">
+  <div class="silhouette-dialog-inner">
+    <button class="silhouette-close" type="button" id="closeSilhouetteForm" aria-label="Fermer">×</button>
+    <h3 id="silhouetteTitle">Ma silhouette sur mesure</h3>
+    <p>À partir de <strong>24,90 €</strong>. Décrivez votre idée et choisissez votre photo de référence.</p>
+    <form id="silhouetteForm" action="https://formsubmit.co/contact@duvalgravurelaser.fr" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="_subject" value="Nouvelle demande de silhouette sur mesure – Duval Gravure Laser">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label for="silhouetteName">Votre nom *</label><input id="silhouetteName" name="Nom" required autocomplete="name">
+      <label for="silhouetteEmail">Votre e-mail *</label><input id="silhouetteEmail" name="email" type="email" required autocomplete="email">
+      <label for="silhouettePhone">Téléphone (facultatif)</label><input id="silhouettePhone" name="Telephone" type="tel" autocomplete="tel">
+      <label for="silhouettePhoto">Votre photo de référence</label><input id="silhouettePhoto" name="attachment" type="file" accept="image/jpeg,image/png,image/webp" required>
+      <p class="small-note">Votre photo et votre description seront transmises ensemble, directement depuis ce formulaire. Formats acceptés : JPG, PNG ou WebP. Ne partagez que les photos que vous êtes autorisé à envoyer.</p>
+      <label for="silhouetteProject">Décrivez votre projet *</label><textarea id="silhouetteProject" name="Description du projet" required placeholder="Personne, animal, dimensions souhaitées, prénom ou texte à ajouter…"></textarea>
+      <div class="silhouette-actions"><button type="submit" class="custom-silhouette-button">Envoyer ma demande et ma photo →</button></div>
+    </form>
+  </div>
+</dialog>
+<script>
+(()=>{
+  const dialog=document.getElementById('silhouetteDialog');
+  document.getElementById('openSilhouetteForm').addEventListener('click',()=>dialog.showModal());
+  document.getElementById('closeSilhouetteForm').addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+  /* Envoi natif du formulaire vers FormSubmit : fichier inclus en multipart/form-data. */
+  /*
+    e.preventDefault();if(!e.currentTarget.reportValidity())return;
+    const val=id=>document.getElementById(id).value.trim();
+    const photo=document.getElementById('silhouettePhoto').files[0];
+    const body='Bonjour Anthony,\n\nJe souhaite une silhouette sur mesure (à partir de 24,90 €).\n\nNom : '+val('silhouetteName')+'\nE-mail : '+val('silhouetteEmail')+'\nTéléphone : '+val('silhouettePhone')+'\n\nMon projet :\n'+val('silhouetteProject')+'\n\nPhoto de référence : '+(photo?photo.name+' — À AJOUTER EN PIÈCE JOINTE AVANT ENVOI':'Aucune photo sélectionnée')+'\n\nMerci !';
+    window.location.href='mailto:contact@duvalgravurelaser.fr?subject='+encodeURIComponent('Demande de silhouette personnalisée – Duval Gravure Laser')+'&body='+encodeURIComponent(body);
+  });
+  */
+})();
+</script>
 </body>
 </html>
