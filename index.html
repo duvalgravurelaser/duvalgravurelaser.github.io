@@ -332,6 +332,10 @@ h1 span{color:#e7c263}
 .silhouette-dialog .small-note{font-size:13px;color:#535b64}
 .silhouette-close{float:right;background:none;border:0;font-size:28px;cursor:pointer}
 .silhouette-actions{display:flex;justify-content:flex-end;margin-top:18px}
+/* Logo officiel : conserve les proportions sur ordinateur et téléphone */
+.top .logo{min-width:0;padding:7px 11px;display:flex;align-items:center;justify-content:center}
+.top .logo img{display:block;width:clamp(125px,18vw,205px);height:auto;max-width:100%}
+@media(max-width:760px){.top .logo{padding:5px 7px}.top .logo img{width:clamp(100px,27vw,145px)}}
 </style>
 
 <style>
@@ -406,8 +410,7 @@ h1 span{color:#e7c263}
 <section class="hero" id="accueil">
   <header class="top">
     <div class="logo" aria-label="Duval Gravure et Découpe Laser">
-      <div class="duval">DUVAL</div>
-      <div class="sub">gravure &amp; découpe laser</div>
+      <img src="logo-duval-officiel.webp" alt="Duval Gravure &amp; Découpe Laser — logo officiel" width="640" height="427">
     </div>
     <nav>
       <a href="#accueil">Accueil</a>
