@@ -413,6 +413,19 @@ h1 span{color:#e7c263}
 .pro-submit{border:0;cursor:pointer;width:100%;font:inherit}
 @media(max-width:760px){.pro-wrap{grid-template-columns:1fr}.pro-grid{grid-template-columns:1fr}.pro-field.full{grid-column:auto}}
 
+
+/* Accueil : le logo et le texte se suivent sans se chevaucher. */
+.hero{display:flex;flex-direction:column}
+.hero .top{position:relative;left:auto;right:auto;top:auto;margin:24px 4% 0;flex-shrink:0}
+.hero .content{position:relative;left:auto;top:auto;transform:none;width:min(560px,88vw);margin:clamp(52px,8vh,100px) 6% 80px}
+@media(max-width:900px){
+  .hero .top{margin:14px 3% 0}
+  .hero .content{width:min(580px,90vw);margin:52px 5% 70px}
+}
+@media(max-width:520px){
+  .hero .top{margin-top:10px}
+  .hero .content{width:92vw;margin:48px 4% 60px}
+}
 </style>
 </head>
 <body>
