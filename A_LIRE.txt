@@ -1,16 +1,2 @@
-MISE À JOUR V8 — CATÉGORIES CLIQUABLES
-
-À envoyer à la RACINE du dépôt GitHub :
-- index.html
-
-Cette version remplace les 4 carrés par 5 catégories :
-- Toutes les créations
-- Décoration & tableaux
-- Bijoux
-- Porte-clés bois
-- Porte-clés 3D
-
-Les carrés sont cliquables et filtrent directement la galerie.
-Les filtres de la galerie ont aussi été harmonisés avec ces 5 catégories.
-
-Les photos Cardabelle déjà présentes dans assets ne sont pas à renvoyer.
+V14 : image plein écran + boutons réellement cliquables.
+À envoyer : index.html et hero-v13.webp
