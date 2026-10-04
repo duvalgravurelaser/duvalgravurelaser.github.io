@@ -435,6 +435,11 @@ h1 span{color:#e7c263}
 .halloween-size-options th,.halloween-size-options td{padding:11px 3px;border-top:1px solid #e8e0d2}
 .halloween-size-options th{text-align:left;font-weight:600;color:#4d5660}
 .halloween-size-options td{text-align:right;font-weight:900;color:#1d2630;white-space:nowrap}
+
+.halloween-fixed-cart{display:block;margin:14px 3px 4px}
+.halloween-size-options td:last-child{text-align:right;padding-left:8px}
+.halloween-size-options .add-cart{font-size:12px;padding:8px 11px;white-space:nowrap}
+@media(max-width:520px){.halloween-size-options{font-size:12px}.halloween-size-options .add-cart{padding:7px 8px}}
 </style>
 </head>
 <body>
@@ -564,21 +569,26 @@ h1 span{color:#e7c263}
             <button class="photo" type="button" data-full="halloween-fantome-chaudron-face.webp" aria-label="Agrandir : fantôme au chaudron, vue de face"><img src="halloween-fantome-chaudron-face.webp" alt="Fantôme au chaudron, vue de face" loading="lazy"></button>
             <button class="photo" type="button" data-full="halloween-fantome-chaudron-profil.webp" aria-label="Agrandir : fantôme au chaudron, vue de profil"><img src="halloween-fantome-chaudron-profil.webp" alt="Fantôme au chaudron, vue de profil" loading="lazy"></button>
           </div>
-          <div class="halloween-model-info"><h4>Fantôme au chaudron</h4><span class="price">35 €</span></div><p class="halloween-model-detail">Figurine imprimée en 3D · 18 cm de haut</p>
+          <div class="halloween-model-info"><h4>Fantôme au chaudron</h4><span class="price">35 €</span></div><p class="halloween-model-detail">Figurine imprimée en 3D · 18 cm de haut</p><button class="add-cart halloween-add-cart halloween-fixed-cart" type="button" data-ref="HAL-FAN-18" data-size="18 cm" data-price="35">Ajouter au panier · 35 €</button>
         </div>
         <div class="halloween-model">
           <div class="gallery halloween-gallery">
             <button class="photo" type="button" data-full="halloween-chat-citrouille-face.webp" aria-label="Agrandir : chat sorcier sur sa citrouille, vue de face"><img src="halloween-chat-citrouille-face.webp" alt="Chat sorcier sur sa citrouille, vue de face" loading="lazy"></button>
             <button class="photo" type="button" data-full="halloween-chat-citrouille-profil.webp" aria-label="Agrandir : chat sorcier sur sa citrouille, vue de profil"><img src="halloween-chat-citrouille-profil.webp" alt="Chat sorcier sur sa citrouille, vue de profil" loading="lazy"></button>
           </div>
-          <div class="halloween-model-info"><h4>Chat sorcier sur sa citrouille</h4><span class="price">35 €</span></div><p class="halloween-model-detail">Figurine imprimée en 3D · 18 cm de haut</p>
+          <div class="halloween-model-info"><h4>Chat sorcier sur sa citrouille</h4><span class="price">35 €</span></div><p class="halloween-model-detail">Figurine imprimée en 3D · 18 cm de haut</p><button class="add-cart halloween-add-cart halloween-fixed-cart" type="button" data-ref="HAL-CHA-18" data-size="18 cm" data-price="35">Ajouter au panier · 35 €</button>
         </div>
         <div class="halloween-model">
           <div class="gallery halloween-gallery">
             <button class="photo" type="button" data-full="halloween-tableau-silhouette-sorciere-1.webp" aria-label="Agrandir : tableau silhouette sorcière, première photo"><img src="halloween-tableau-silhouette-sorciere-1.webp" alt="Tableau silhouette sorcière en bois, première photo" loading="lazy"></button>
             <button class="photo" type="button" data-full="halloween-tableau-silhouette-sorciere-2.webp" aria-label="Agrandir : tableau silhouette sorcière, deuxième photo"><img src="halloween-tableau-silhouette-sorciere-2.webp" alt="Tableau silhouette sorcière en bois, deuxième photo" loading="lazy"></button>
           </div>
-          <div class="halloween-model-info"><h4>Tableau silhouette sorcière</h4><span class="price">24,90 €</span></div><p class="halloween-model-detail">Création en bois · 24 cm de diamètre</p>
+          <div class="halloween-model-info"><h4>Tableau silhouette sorcière</h4></div><p class="halloween-model-detail">Création en bois · Deux tailles disponibles</p><table class="halloween-size-options" aria-label="Tailles et prix : Tableau silhouette sorcière">
+            <tbody>
+              <tr><th scope="row">Petit modèle · 12 cm</th><td>14,90 €</td><td><button class="add-cart halloween-add-cart" type="button" data-ref="HAL-SOR-12" data-size="12 cm" data-price="14.90" aria-label="Ajouter Tableau silhouette sorcière, 12 cm, à 14,90 € au panier">Ajouter</button></td></tr>
+              <tr><th scope="row">Grand modèle · 24 cm</th><td>24,90 €</td><td><button class="add-cart halloween-add-cart" type="button" data-ref="HAL-SOR-24" data-size="24 cm" data-price="24.90" aria-label="Ajouter Tableau silhouette sorcière, 24 cm, à 24,90 € au panier">Ajouter</button></td></tr>
+            </tbody>
+          </table>
         </div>
         <div class="halloween-model">
           <div class="gallery halloween-gallery halloween-single-photo">
@@ -587,7 +597,10 @@ h1 span{color:#e7c263}
           <div class="halloween-model-info"><h4>Tableau silhouette épouvantail</h4></div>
           <p class="halloween-model-detail">Création en bois · Deux tailles disponibles</p>
           <table class="halloween-size-options" aria-label="Tailles et prix : Tableau silhouette épouvantail">
-            <tbody><tr><th scope="row">Petit modèle · 12 cm</th><td>14,90 €</td></tr><tr><th scope="row">Grand modèle · 24 cm</th><td>24,90 €</td></tr></tbody>
+            <tbody>
+              <tr><th scope="row">Petit modèle · 12 cm</th><td>14,90 €</td><td><button class="add-cart halloween-add-cart" type="button" data-ref="HAL-EPO-12" data-size="12 cm" data-price="14.90" aria-label="Ajouter Tableau silhouette épouvantail, 12 cm, à 14,90 € au panier">Ajouter</button></td></tr>
+              <tr><th scope="row">Grand modèle · 24 cm</th><td>24,90 €</td><td><button class="add-cart halloween-add-cart" type="button" data-ref="HAL-EPO-24" data-size="24 cm" data-price="24.90" aria-label="Ajouter Tableau silhouette épouvantail, 24 cm, à 24,90 € au panier">Ajouter</button></td></tr>
+            </tbody>
           </table>
         </div>
         <div class="halloween-model">
@@ -597,7 +610,10 @@ h1 span{color:#e7c263}
           <div class="halloween-model-info"><h4>Tableau silhouette loup-garou</h4></div>
           <p class="halloween-model-detail">Création en bois · Deux tailles disponibles</p>
           <table class="halloween-size-options" aria-label="Tailles et prix : Tableau silhouette loup-garou">
-            <tbody><tr><th scope="row">Petit modèle · 12 cm</th><td>14,90 €</td></tr><tr><th scope="row">Grand modèle · 24 cm</th><td>24,90 €</td></tr></tbody>
+            <tbody>
+              <tr><th scope="row">Petit modèle · 12 cm</th><td>14,90 €</td><td><button class="add-cart halloween-add-cart" type="button" data-ref="HAL-LOU-12" data-size="12 cm" data-price="14.90" aria-label="Ajouter Tableau silhouette loup-garou, 12 cm, à 14,90 € au panier">Ajouter</button></td></tr>
+              <tr><th scope="row">Grand modèle · 24 cm</th><td>24,90 €</td><td><button class="add-cart halloween-add-cart" type="button" data-ref="HAL-LOU-24" data-size="24 cm" data-price="24.90" aria-label="Ajouter Tableau silhouette loup-garou, 24 cm, à 24,90 € au panier">Ajouter</button></td></tr>
+            </tbody>
           </table>
         </div>
       </div>
@@ -681,11 +697,15 @@ h1 span{color:#e7c263}
 (()=>{
 const prefixes=[["porte-clés bois","PCB"],["porte-clés pla","PLA"],["prénoms","PRE"],["tableaux","TAB"],["décorations de porte","DPO"],["silhouettes","SMU"],["boucles","BO"],["marque-pages","MP"],["figurines","V3D"]];
 const cart=JSON.parse(localStorage.getItem("duvalCart")||"{}");
+// Les anciennes lignes PROD Halloween n'indiquaient ni le bon prix ni la taille.
+Object.keys(cart).filter(ref=>/^PROD-\d+$/.test(ref)).forEach(ref=>delete cart[ref]);
+localStorage.setItem("duvalCart",JSON.stringify(cart));
 const panel=document.getElementById("cartPanel");
 const price=t=>{let m=(t||"").replace(",",".").match(/\d+(?:\.\d+)?/);return m?+m[0]:0};
 const money=n=>n.toFixed(2).replace(".",",")+" €";
 
 document.querySelectorAll(".product-category").forEach(cat=>{
+  if(cat.id==="halloween") return; // Chaque modèle Halloween gère son prix et sa taille.
   const title=(cat.querySelector("h3")?.textContent||"Produit").trim();
   const low=title.toLowerCase();
   const pref=(prefixes.find(x=>low.includes(x[0]))||["","PROD"])[1];
@@ -721,6 +741,18 @@ document.querySelectorAll(".product-category").forEach(cat=>{
         panel.classList.add("open");
       });
     });
+  });
+});
+
+document.querySelectorAll("#halloween .halloween-add-cart").forEach(button=>{
+  button.addEventListener("click",e=>{
+    e.preventDefault();
+    const ref=button.dataset.ref;
+    const name=button.closest(".halloween-model").querySelector("h4").textContent.trim()+" — "+button.dataset.size;
+    const pr=Number(button.dataset.price);
+    if(cart[ref]) cart[ref].qty++;
+    else cart[ref]={ref,name,price:pr,qty:1};
+    save();render();panel.classList.add("open");
   });
 });
 
