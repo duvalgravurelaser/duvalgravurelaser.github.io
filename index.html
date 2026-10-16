@@ -440,6 +440,30 @@ h1 span{color:#e7c263}
 .halloween-size-options td:last-child{text-align:right;padding-left:8px}
 .halloween-size-options .add-cart{font-size:12px;padding:8px 11px;white-space:nowrap}
 @media(max-width:520px){.halloween-size-options{font-size:12px}.halloween-size-options .add-cart{padding:7px 8px}}
+
+.lettering-gallery{grid-template-columns:minmax(0,520px)}
+.lettering-gallery .photo{aspect-ratio:4/3}
+.reviews-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;max-width:1150px;margin-top:30px}
+.reviews-list,.review-form{border:1px solid #e8e0d2;border-radius:18px;padding:26px;background:white;box-shadow:0 8px 26px #0000000e}
+.reviews-list h3,.review-form h3{font:normal 27px Georgia,serif;margin:0 0 14px}
+.reviews-list p{color:#65707b;line-height:1.6}
+.review-form{display:grid;gap:12px}
+.review-form label,.review-form legend{font-weight:700}
+.review-form input:not([type=radio]):not([type=checkbox]),.review-form textarea{width:100%;margin-top:6px;border:1px solid #cfc8bb;border-radius:8px;padding:11px;font:inherit}
+.review-form textarea{min-height:110px;resize:vertical}
+.review-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.review-rating{border:0;padding:0;margin:0}
+.review-stars{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:3px;margin-top:6px}
+.review-stars label{cursor:pointer;font-size:33px;line-height:1;color:#c8c2b8}
+.review-stars input{position:absolute;opacity:0;width:1px;height:1px}
+.review-stars label:hover span[aria-hidden],.review-stars label:hover~label span[aria-hidden],.review-stars label:has(input:checked) span[aria-hidden],.review-stars label:has(input:checked)~label span[aria-hidden]{color:#d5a32e}
+.review-stars label:focus-within{outline:2px solid #1d2630;outline-offset:3px;border-radius:3px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.review-consent{display:flex;align-items:flex-start;gap:9px;font-size:14px;font-weight:400!important;line-height:1.5}
+.review-consent input{margin-top:3px}
+.review-help{font-size:13px;color:#65707b;line-height:1.5;margin:0}
+.review-form button{border:0;cursor:pointer;justify-self:start;font:inherit;font-weight:800}
+@media(max-width:760px){.reviews-wrap{grid-template-columns:1fr}.review-fields{grid-template-columns:1fr}.lettering-gallery{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -452,6 +476,7 @@ h1 span{color:#e7c263}
       <a href="#accueil">Accueil</a>
       <a href="#savoir-faire">Savoir-faire</a>
       <a href="#creations">Nos créations</a>
+      <a href="#avis-clients">Avis clients</a>
       <a href="#professionnels">Pros &amp; associations</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -483,8 +508,8 @@ h1 span{color:#e7c263}
 <section class="section white" id="creations">
   <div class="kicker">Nos créations</div>
   <h2>Produits personnalisés &amp; créations locales</h2>
-  <p class="intro">Découvrez mes porte-clés en bois et en impression 3D, boucles d’oreilles en bois, prénoms personnalisés, tableaux, décorations de porte, silhouettes murales et figurines Halloween. Chaque modèle peut inspirer un cadeau personnalisé ou un souvenir des Gorges du Tarn, de la Jonte, de l’Aveyron et de la Lozère. Personnalisation et commandes en quantité sur demande.</p>
-  <div class="category-nav" aria-label="Catégories de créations"><a href="#porte-cles-bois">Porte-clés bois</a><a href="#porte-cles-pla">Porte-clés PLA / impression 3D</a><a href="#prenoms">Prénoms personnalisés</a><a href="#tableaux">Tableaux</a><a href="#decorations-porte">Décorations de porte</a><a href="#silhouettes">Silhouettes murales</a><a href="#boucles">Boucles d’oreilles en bois</a><a href="#marque-pages">Marque-pages</a><a href="#vautours">Figurines vautours en impression 3D</a><a href="#halloween">Halloween</a></div>
+  <p class="intro">Découvrez mes porte-clés en bois et en impression 3D, boucles d’oreilles en bois, prénoms personnalisés, tableaux, décorations de porte, silhouettes murales et figurines Halloween et lettrages avec prénom en PLA. Chaque modèle peut inspirer un cadeau personnalisé ou un souvenir des Gorges du Tarn, de la Jonte, de l’Aveyron et de la Lozère. Personnalisation et commandes en quantité sur demande.</p>
+  <div class="category-nav" aria-label="Catégories de créations"><a href="#porte-cles-bois">Porte-clés bois</a><a href="#porte-cles-pla">Porte-clés PLA / impression 3D</a><a href="#prenoms">Prénoms personnalisés</a><a href="#tableaux">Tableaux</a><a href="#decorations-porte">Décorations de porte</a><a href="#silhouettes">Silhouettes murales</a><a href="#boucles">Boucles d’oreilles en bois</a><a href="#marque-pages">Marque-pages</a><a href="#vautours">Figurines vautours en impression 3D</a><a href="#halloween">Halloween</a><a href="#lettrage-pla">Lettrage en PLA</a></div>
   <div class="products-wrap">
     <article class="product-category" id="porte-cles-bois">
       <div class="cat-head"><div><span class="cat-number">01</span><h3>Porte-clés bois</h3><p>Créations en bois gravées et découpées au laser.</p></div><div class="price">4,90 €</div></div>
@@ -614,10 +639,35 @@ h1 span{color:#e7c263}
         </div>
       </div>
       <div class="custom-request"><strong>Une création à votre image ?</strong><p>Envoyez-moi votre idée, une photo ou un croquis pour recevoir un devis personnalisé.</p><button type="button" class="btn primary open-custom-request" data-category="Halloween">Demander une personnalisation →</button></div>
+    </article>
+    <article class="product-category" id="lettrage-pla">
+      <div class="cat-head"><div><span class="cat-number">11</span><h3>Lettrage avec prénom en PLA</h3><p>Initiale et prénom personnalisés, réalisés en impression 3D · 15 à 17 cm · Deux couleurs au choix.</p></div><div class="price">19,90 €</div></div>
+      <div class="gallery lettering-gallery"><button class="photo" type="button" data-full="lettrage-prenom-adeline-pla.webp" aria-label="Agrandir : lettrage Adeline en PLA"><img src="lettrage-prenom-adeline-pla.webp" alt="Initiale A rose avec prénom Adeline en gris, réalisée en PLA" loading="lazy"></button></div>
+      <div class="custom-request"><strong>Votre prénom, vos couleurs</strong><p>Indiquez-moi le prénom, l’initiale, les couleurs et les dimensions souhaitées pour recevoir un devis adapté.</p><button type="button" class="btn primary open-custom-request" data-category="Lettrage avec prénom en PLA">Demander une personnalisation →</button></div>
     </article></div>
   <div class="price-note"><strong>Quantités &amp; professionnels :</strong> devis personnalisé sur demande. Pour un modèle, une couleur ou une personnalisation particulière, contactez-moi directement.</div>
 </section>
 
+
+<section class="section light" id="avis-clients">
+  <div class="kicker">Vos retours</div>
+  <h2>Avis clients</h2>
+  <p class="intro">Vous avez commandé une création ? Partagez votre expérience pour aider d’autres personnes à choisir.</p>
+  <div class="reviews-wrap">
+    <div class="reviews-list" aria-label="Avis publiés"><h3>Les avis de nos clients</h3><p>Aucun avis publié pour le moment. Soyez la première ou le premier à partager votre expérience.</p></div>
+    <form class="review-form" action="https://formsubmit.co/contact@duvalgravurelaser.fr" method="POST">
+      <input type="hidden" name="_subject" value="Nouvel avis client à valider – Duval Gravure Laser">
+      <input type="hidden" name="_captcha" value="true"><input type="hidden" name="_template" value="table"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <h3>Donner mon avis</h3>
+      <div class="review-fields"><div><label for="reviewName">Votre prénom *</label><input id="reviewName" name="Prenom" required maxlength="50" autocomplete="given-name"></div><div><label for="reviewEmail">Votre e-mail *</label><input id="reviewEmail" name="email" type="email" required autocomplete="email"></div></div>
+      <fieldset class="review-rating"><legend>Votre note *</legend><div class="review-stars"><label><input type="radio" name="Note" value="5/5" required><span aria-hidden="true">★</span><span class="sr-only">5 étoiles</span></label><label><input type="radio" name="Note" value="4/5"><span aria-hidden="true">★</span><span class="sr-only">4 étoiles</span></label><label><input type="radio" name="Note" value="3/5"><span aria-hidden="true">★</span><span class="sr-only">3 étoiles</span></label><label><input type="radio" name="Note" value="2/5"><span aria-hidden="true">★</span><span class="sr-only">2 étoiles</span></label><label><input type="radio" name="Note" value="1/5"><span aria-hidden="true">★</span><span class="sr-only">1 étoile</span></label></div></fieldset>
+      <label for="reviewText">Votre commentaire *</label><textarea id="reviewText" name="Avis" required minlength="10" maxlength="1200" placeholder="Parlez-nous de votre création et de votre expérience…"></textarea>
+      <label class="review-consent"><input type="checkbox" name="Accord_publication" value="Oui" required><span>J’accepte que mon prénom, ma note et mon commentaire soient publiés sur ce site après vérification. Mon e-mail ne sera pas affiché.</span></label>
+      <p class="review-help">Votre avis est envoyé au créateur pour validation avant publication. Votre adresse e-mail sert uniquement à vous recontacter au sujet de cet avis.</p>
+      <button class="btn primary" type="submit">Envoyer mon avis →</button>
+    </form>
+  </div>
+</section>
 
 <section class="section light" id="professionnels">
   <div class="kicker">Professionnels &amp; associations</div>
@@ -701,7 +751,7 @@ const price=t=>{let m=(t||"").replace(",",".").match(/\d+(?:\.\d+)?/);return m?+
 const money=n=>n.toFixed(2).replace(".",",")+" €";
 
 document.querySelectorAll(".product-category").forEach(cat=>{
-  if(cat.id==="halloween") return; // Chaque modèle Halloween gère son prix et sa taille.
+  if(cat.id==="halloween"||cat.id==="lettrage-pla") return; // Prix spécifiques ou devis personnalisé.
   const title=(cat.querySelector("h3")?.textContent||"Produit").trim();
   const low=title.toLowerCase();
   const pref=(prefixes.find(x=>low.includes(x[0]))||["","PROD"])[1];
