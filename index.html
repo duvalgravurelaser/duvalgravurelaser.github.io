@@ -117,8 +117,14 @@ h1 span{color:#e7c263}
 .price-note{margin-top:28px;padding:18px 20px;border-radius:12px;background:#f6f2e9;color:#4d5660;line-height:1.5}
 .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:1000;padding:28px;align-items:center;justify-content:center}
 .lightbox.open{display:flex}
-.lightbox img{max-width:min(1200px,96vw);max-height:90vh;object-fit:contain;border-radius:6px;background:white}
-.lightbox button{position:absolute;right:22px;top:16px;border:0;background:rgba(255,255,255,.94);width:42px;height:42px;border-radius:50%;font-size:28px;line-height:1;cursor:pointer}
+.lightbox img{max-width:min(1200px,86vw);max-height:86vh;object-fit:contain;border-radius:6px;background:white}
+.lightbox button{position:absolute;border:0;background:rgba(255,255,255,.94);width:44px;height:44px;border-radius:50%;font-size:28px;line-height:1;cursor:pointer}
+.lightbox-close{right:22px;top:16px}
+.lightbox-prev,.lightbox-next{top:50%;transform:translateY(-50%)}
+.lightbox-prev{left:16px}.lightbox-next{right:16px}
+.lightbox [hidden]{display:none}
+.lightbox-count{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);color:white;background:#0009;border-radius:20px;padding:6px 12px;font-size:14px}
+@media(max-width:600px){.lightbox{padding:10px}.lightbox img{max-width:96vw;max-height:82vh}.lightbox-prev{left:8px}.lightbox-next{right:8px}.lightbox-prev,.lightbox-next{background:#fffd!important}}
 @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}.cat-head{gap:14px}.product-category h3{font-size:26px}.price{font-size:17px}}
 @media(max-width:600px){.product-category{padding:16px}.gallery{gap:8px}.cat-head{display:block}.price{display:inline-block;margin-top:12px}.photo{aspect-ratio:1/1}.category-nav{margin-bottom:26px}.product-category h3{font-size:24px}}
 
@@ -715,13 +721,44 @@ h1 span{color:#e7c263}
   </div>
 </section>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie"><button type="button" aria-label="Fermer">×</button><img alt=""></div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie"><button class="lightbox-close" type="button" aria-label="Fermer">×</button><button class="lightbox-prev" type="button" aria-label="Photo précédente">‹</button><img alt=""><button class="lightbox-next" type="button" aria-label="Photo suivante">›</button><span class="lightbox-count" aria-live="polite"></span></div>
 <script>
 (function(){
-  const box=document.getElementById('lightbox'), big=box.querySelector('img'), close=box.querySelector('button');
-  document.querySelectorAll('.photo').forEach(b=>b.addEventListener('click',()=>{big.src=b.dataset.full;big.alt=b.querySelector('img').alt;box.classList.add('open');document.body.style.overflow='hidden';}));
-  function shut(){box.classList.remove('open');big.src='';document.body.style.overflow='';}
-  close.addEventListener('click',shut); box.addEventListener('click',e=>{if(e.target===box)shut()}); document.addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
+  const box=document.getElementById('lightbox'), big=box.querySelector('img');
+  const close=box.querySelector('.lightbox-close'), prev=box.querySelector('.lightbox-prev'), next=box.querySelector('.lightbox-next'), count=box.querySelector('.lightbox-count');
+  let photos=[],index=0,trigger=null,touchStart=null;
+  function show(i){
+    index=(i+photos.length)%photos.length;
+    const photo=photos[index];
+    big.src=photo.dataset.full;
+    big.alt=photo.querySelector('img').alt;
+    count.textContent=(index+1)+' / '+photos.length;
+  }
+  document.querySelectorAll('.product-category .photo').forEach(button=>button.addEventListener('click',()=>{
+    photos=[...button.closest('.product-category').querySelectorAll('.photo')];
+    trigger=button;
+    show(photos.indexOf(button));
+    const multiple=photos.length>1;
+    prev.hidden=next.hidden=count.hidden=!multiple;
+    box.classList.add('open');document.body.style.overflow='hidden';close.focus();
+  }));
+  function shut(){box.classList.remove('open');big.src='';document.body.style.overflow='';trigger?.focus();}
+  close.addEventListener('click',shut);
+  prev.addEventListener('click',()=>show(index-1));next.addEventListener('click',()=>show(index+1));
+  box.addEventListener('click',e=>{if(e.target===box)shut()});
+  document.addEventListener('keydown',e=>{
+    if(!box.classList.contains('open'))return;
+    if(e.key==='Escape')shut();
+    if(photos.length>1&&e.key==='ArrowLeft'){e.preventDefault();show(index-1)}
+    if(photos.length>1&&e.key==='ArrowRight'){e.preventDefault();show(index+1)}
+  });
+  box.addEventListener('touchstart',e=>{if(e.touches.length===1)touchStart={x:e.touches[0].clientX,y:e.touches[0].clientY}},{passive:true});
+  box.addEventListener('touchend',e=>{
+    if(!touchStart||photos.length<2||!box.classList.contains('open'))return;
+    const dx=e.changedTouches[0].clientX-touchStart.x,dy=e.changedTouches[0].clientY-touchStart.y;
+    if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.3)show(index+(dx<0?1:-1));
+    touchStart=null;
+  },{passive:true});
 })();
 </script>
 
